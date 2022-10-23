@@ -3,37 +3,43 @@ import Logo from "./Logo";
 import Link from "next/link";
 import { NavLinks, SocialLinks } from "../data/Data";
 
-function Sidebar() {
+function Sidebar({ showMenu }) {
   const router = useRouter();
   return (
-    <header className='w-24 bg-bg_secondary'>
-      <div className='flex flex-wrap px-2 py-6 h-full justify-between  '>
-        <Logo />
-        {/* menu nav */}
-        <nav className='flex flex-col  justify-between items-center w-full uppercase'>
+    <header
+      className={`w-24 bg-bg_secondary fixed lg:static flex flex-col transition-all ease-in-out duration-500 justify-between z-50 top-0 h-screen items-center px-2 py-4 ${
+        showMenu ? "left-0" : "-left-full"
+      } `}
+    >
+      <Logo />
+      {/* menu nav */}
+      <nav className='flex flex-col justify-between items-center w-full uppercase gap-6'>
+        <ul className='flex flex-col items-center gap-4 justify-center'>
           {NavLinks.map(({ title, Icon, slug }, idx) => (
-            <Link key={idx + title} href={slug}>
-              <div
-                className={`flex flex-col items-center justify-center hover:text-secondary text-2xl ${
-                  router.pathname === "/" + slug || router.pathname === slug ? "text-secondary" : "text-white"
-                }`}
-              >
-                <Icon />
-                <span className='text-base font-Urbanist'>{title}</span>
-              </div>
-            </Link>
+            <li key={idx + title}>
+              <Link href={slug}>
+                <div
+                  className={`flex flex-col items-center hover:text-secondary text-2xl ${
+                    router.pathname === "/" + slug || router.pathname === slug ? "text-secondary" : "text-white"
+                  }`}
+                >
+                  <Icon />
+                  <span className='text-base font-Urbanist sm:landscape:hidden lg:landscape:inline-block'>{title}</span>
+                </div>
+              </Link>
+            </li>
           ))}
-        </nav>
-        <footer className='w-full self-end flex flex-col gap-4 '>
-          {SocialLinks.map(({ title, link, Icon }, idx) => (
-            <Link key={idx + title} href={link} target='_blank'>
-              <div className='flex items-center justify-center gap-2 hover:text-secondary'>
-                <Icon className='text-3xl' />
-              </div>
-            </Link>
-          ))}
-        </footer>
-      </div>
+        </ul>
+      </nav>
+      <footer className='w-full self-end flex flex-col gap-4 '>
+        {SocialLinks.map(({ title, link, Icon }, idx) => (
+          <Link key={idx + title} href={link} target='_blank'>
+            <div className='flex items-center justify-center gap-2 hover:text-secondary'>
+              <Icon className='text-3xl' />
+            </div>
+          </Link>
+        ))}
+      </footer>
     </header>
   );
 }

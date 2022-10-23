@@ -1,16 +1,17 @@
 import Head from "next/head";
-
-export default function Home() {
+function about() {
   return (
     <div>
       <Head>
-        <title>Jaguar Ek Dev | Home</title>
-        <meta name='description' content='Jaguar Ek Dev' />
+        <title>Jaguar Ek Dev | About</title>
+        <meta name='description' content='Jaguar Ek Dev | about' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
       {/* Todo tendra contenido trendra el display dentro del Main  */}
 
-      <div className=' bg-red-400 h-screen'>hola!</div>
+      <div className=' bg-green-800 h-screen'>about!</div>
     </div>
   );
 }
+
+export default about;

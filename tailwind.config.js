@@ -8,6 +8,7 @@ module.exports = {
         secondary: "#1070e5",
         accent: "#00fb15",
         bg_primary: "#001322",
+        bg_secondary: "#010d17",
       },
       fontFamily: {
         Raleway: ["Raleway", ...defaultTheme.fontFamily.sans],

@@ -34,14 +34,24 @@ export default function Home() {
             <div className='bg-gradient-to-br from-bg_secondary/70 via-bg_secondary/50 to-bg_secondary/0 w-40 h-40 block rounded-full absolute -left-8 -top-10 '></div>
             <div className='relative'>
               <h1 className='font-Urbanist leading-none xl:text-4xl xl:top-4 xl:relative'>
-                <AnimatedLetters letterClass={` ${letterClasssup} `} text={txtgreating} idx={0}></AnimatedLetters>
+                <AnimatedLetters
+                  letterClass={` ${letterClasssup} `}
+                  text={txtgreating}
+                  idx={0}
+                ></AnimatedLetters>
               </h1>
               <p className='font-Raleway font-extrabold text-4xl xl:text-9xl text-accent leading-none transition-all '>
-                <AnimatedLetters letterClass={` ${letterClass} `} text={titlename} idx={10}></AnimatedLetters>
+                <AnimatedLetters
+                  letterClass={` ${letterClass} `}
+                  text={titlename}
+                  idx={10}
+                ></AnimatedLetters>
               </p>
               <p className={`max-w-prose mt-8 opacity-0 ${paragraphClass}`}>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda soluta molestias adipisci placeat distinctio facere quia sed quisquam, quas
-                eos ratione eum architecto repellat reiciendis ducimus laboriosam ipsum ipsa iusto.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Assumenda soluta molestias adipisci placeat distinctio facere
+                quia sed quisquam, quas eos ratione eum architecto repellat
+                reiciendis ducimus laboriosam ipsum ipsa iusto.
               </p>
             </div>
           </div>

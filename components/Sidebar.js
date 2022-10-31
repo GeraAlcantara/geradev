@@ -7,7 +7,7 @@ function Sidebar({ showMenu }) {
   const router = useRouter();
   return (
     <header
-      className={`w-24 bg-bg_secondary fixed lg:static flex flex-col transition-all ease-in-out duration-500 justify-between z-50 top-0 h-screen items-center px-2 py-4 ${
+      className={`w-24 bg-brand-black-300 fixed lg:static flex flex-col transition-all ease-in-out duration-500 justify-between z-50 top-0 h-screen items-center px-2 py-4  ${
         showMenu ? "left-0" : "-left-full"
       } `}
     >
@@ -19,8 +19,8 @@ function Sidebar({ showMenu }) {
             <li key={idx + title}>
               <Link href={slug}>
                 <div
-                  className={`flex flex-col items-center hover:text-secondary text-2xl ${
-                    router.pathname === "/" + slug || router.pathname === slug ? "text-secondary" : "text-white"
+                  className={`flex flex-col items-center hover:text-brand-pink-500 text-2xl ${
+                    router.pathname === "/" + slug || router.pathname === slug ? "text-brand-pink-500" : "text-brand-pink-100"
                   }`}
                 >
                   <Icon />
@@ -34,7 +34,7 @@ function Sidebar({ showMenu }) {
       <footer className='w-full self-end flex flex-col gap-4 '>
         {SocialLinks.map(({ title, link, Icon }, idx) => (
           <Link key={idx + title} href={link}>
-            <a target='_blank' className='flex items-center justify-center gap-2 hover:text-secondary'>
+            <a target='_blank' className='flex items-center justify-center gap-2 hover:text-brand-pink-500'>
               <Icon className='text-3xl' />
             </a>
           </Link>

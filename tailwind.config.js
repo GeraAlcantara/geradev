@@ -5,10 +5,30 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        secondary: "#1070e5",
-        accent: "#00fb15",
-        bg_primary: "#001322",
-        bg_secondary: "#010d17",
+        brand: {
+          pink: {
+            50: "#f1d3ee",
+            100: "#d6bdcd",
+            200: "#c5a8aa",
+            300: "#b07890",
+            400: "#ae7387",
+            500: "#b86a80",
+            600: "#7e4856",
+            700: "#715665",
+            800: "#42202e",
+            accent: "#f77fb5",
+          },
+          blue: {
+            100: "#618382",
+            300: "#70908f",
+            900: "#5c8b85",
+          },
+          black: {
+            100: "#201f22",
+            300: "#0f0d10",
+            900: "#0c0a0d",
+          },
+        },
       },
       fontFamily: {
         Raleway: ["Raleway", ...defaultTheme.fontFamily.sans],

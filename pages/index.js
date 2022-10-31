@@ -9,12 +9,13 @@ export default function Home() {
   const [paragraphClass, setParagraphClass] = useState("");
 
   const titlename = "Jaguar Ek";
-  const txtgreating = " Hola, soy";
+  const txtgreating = "Hola, soy";
+  const txtjobtitle = "Front End Developer";
   useEffect(() => {
     const removeaddClass = setTimeout(() => {
       setletterClass("animatedLeters-hover");
       setParagraphClass("slide-in-bottom");
-    }, 3000);
+    }, 4000);
 
     return () => {
       clearTimeout(removeaddClass);
@@ -31,14 +32,18 @@ export default function Home() {
       <div className=' h-screen'>
         <div className='h-full flex items-center p-20'>
           <div className='w-full xl:w-1/2 relative'>
-            <div className='bg-gradient-to-br from-bg_secondary/70 via-bg_secondary/50 to-bg_secondary/0 w-40 h-40 block rounded-full absolute -left-8 -top-10 '></div>
+            <div className='bg-gradient-to-br from-brand-black-300 via-brand-black-300/50 to-transparent w-40 h-40 block rounded-full absolute -left-8 -top-10 '></div>
             <div className='relative'>
-              <h1 className='font-Urbanist leading-none xl:text-4xl xl:top-4 xl:relative'>
-                <AnimatedLetters letterClass={` ${letterClasssup} `} text={txtgreating} idx={0}></AnimatedLetters>
-              </h1>
-              <p className='font-Raleway font-extrabold text-4xl xl:text-9xl text-accent leading-none transition-all '>
+              <div className='font-Urbanist xl:text-4xl xl:top-4 xl:relative mb-2'>
+                <AnimatedLetters letterClass={` ${letterClasssup} `} text={txtgreating} idx={1}></AnimatedLetters>
+              </div>
+
+              <div className='font-Raleway font-extrabold text-3xl xl:text-6xl transition-all '>
                 <AnimatedLetters letterClass={` ${letterClass} `} text={titlename} idx={10}></AnimatedLetters>
-              </p>
+              </div>
+              <div className='font-Urbanist xl:text-4xl xl:relative'>
+                <AnimatedLetters letterClass={` ${letterClass} `} text={txtjobtitle} idx={20}></AnimatedLetters>
+              </div>
               <p className={`max-w-prose mt-8 opacity-0 ${paragraphClass}`}>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda soluta molestias adipisci placeat distinctio facere quia sed quisquam, quas
                 eos ratione eum architecto repellat reiciendis ducimus laboriosam ipsum ipsa iusto.

@@ -5,7 +5,6 @@
 .animatedLeters {
     display: inline-block;
     opacity: 0;
-    min-width: 10px;
     animation: bounce-in-fwd 0.9s 0.3s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
@@ -19,12 +18,25 @@
         animation: jello-horizontal 0.8s ease-in-out;
         color: #f77fb5;
         cursor: progress;
+
     }
+}
+
+.animatedLeters-mouseover {
+    display: inline-block;
+    animation-fill-mode: both;
+    animation: jello-horizontal 1s ease-in-out;
+    color: #f77fb5;
+    opacity: 1;
+    cursor: progress;
+
+
+
 }
 
 @for $i from 1 through 50 {
     .animatedLeters._#{$i} {
-        animation-delay: #{$i /14}s;
+        animation-delay: #{$i /16}s;
     }
 }
 

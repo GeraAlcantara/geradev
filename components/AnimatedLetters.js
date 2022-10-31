@@ -3,7 +3,7 @@ function AnimatedLetters({ letterClass, text = "GeraAlcantara", idx }) {
     <span>
       {text.split("").map((char, i) => (
         <span className={`${letterClass} _${i + idx} `} key={i + idx}>
-          {char}
+          {char === " " ? <>&nbsp;</> : char}
         </span>
       ))}
     </span>

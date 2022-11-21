@@ -4,7 +4,6 @@ import AnimatedLetters from "../components/AnimatedLetters";
 
 export default function Home() {
   const [letterClass, setletterClass] = useState("animatedLeters");
-  const [letterClasssup, setletterClasssup] = useState("animatedLeters");
   const [paragraphClass, setParagraphClass] = useState("");
 
   const titlename = "Jaguar Ek";

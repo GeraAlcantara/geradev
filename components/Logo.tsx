@@ -1,6 +1,4 @@
-import React from "react";
-
-function Logo() {
+export default function Logo() {
   return (
     <div className='flex w-full justify-center'>
       <h1 className='font-Raleway font-extrabold text-xl'>Jaguar</h1>
@@ -8,5 +6,3 @@ function Logo() {
     </div>
   );
 }
-
-export default Logo;

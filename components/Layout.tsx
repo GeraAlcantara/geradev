@@ -2,7 +2,12 @@ import Sidebar from "./Sidebar";
 import { useState } from "react";
 import { RiMenuFill, RiCloseFill } from "react-icons/ri";
 
-function Layout({ children }) {
+/* pass to typescript  */
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+function Layout({ children }: LayoutProps) {
   const [showMenu, setShowMenu] = useState(false);
 
   const toogleMenu = () => {
@@ -11,7 +16,7 @@ function Layout({ children }) {
   return (
     <div className=' w-screen h-screen flex'>
       <Sidebar showMenu={showMenu} />
-      {/* icono menu y icono close menu */}
+
       <div className='fixed bottom-2 right-2 lg:hidden'>
         <button className='' onClick={toogleMenu}>
           {showMenu ? (

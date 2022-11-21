@@ -3,7 +3,12 @@ import Logo from "./Logo";
 import Link from "next/link";
 import { NavLinks, SocialLinks } from "../data/Data";
 
-function Sidebar({ showMenu }) {
+/* convert to typescript */
+interface SidebarProps {
+  showMenu: boolean;
+}
+
+export default function Sidebar({ showMenu, ...props }: SidebarProps) {
   const router = useRouter();
   return (
     <header
@@ -12,7 +17,7 @@ function Sidebar({ showMenu }) {
       } `}
     >
       <Logo />
-      {/* menu nav */}
+
       <nav className='flex flex-col justify-between items-center w-full uppercase gap-6'>
         <ul className='flex flex-col items-center gap-8 justify-center'>
           {NavLinks.map(({ title, Icon, slug }, idx) => (
@@ -43,5 +48,3 @@ function Sidebar({ showMenu }) {
     </header>
   );
 }
-
-export default Sidebar;

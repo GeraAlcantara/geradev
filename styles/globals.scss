@@ -29,9 +29,6 @@
     color: #f77fb5;
     opacity: 1;
     cursor: progress;
-
-
-
 }
 
 @for $i from 1 through 50 {
@@ -191,5 +188,33 @@
     100% {
         transform: translateY(0%);
         opacity: 1;
+    }
+}
+
+input span {
+    display: none;
+
+    &:not(:placeholder-shown) {
+        display: inline;
+    }
+
+    &:not(:focus) {
+        display: inline;
+    }
+}
+
+.hardHideen {
+    display: none !important;
+}
+
+.contactInput {
+    input {
+        &:invalid[focused='true']~span {
+            display: block;
+        }
+    }
+
+    span {
+        display: none;
     }
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 interface InputProps {
   placeholder: string;
   name: string;
@@ -11,11 +12,12 @@ interface InputProps {
   required?: boolean;
   pattern?: string;
   focused?: string;
+  errors?: string;
 }
 
 function FormInput(props: InputProps) {
   const [focus, setFocus] = useState<Boolean>(false);
-  const { label, onChange, errorMessage, id, ...inputProps } = props;
+  const { label, onChange, errorMessage, id, errors, ...inputProps } = props;
 
   const HandleFocus = (e: React.FocusEvent<HTMLInputElement>): void => {
     setFocus(true);
@@ -32,8 +34,8 @@ function FormInput(props: InputProps) {
         focused={focus.toString()}
         {...inputProps}
       />
-      {/* on focused true show span other wise not */}
-      <span className={` text-red-600`}>{errorMessage} </span>
+      <p className={` text-red-500`}>{errorMessage} </p>
+      {errors ? <span className={` text-red-500`}>{errors} </span> : null}
     </div>
   );
 }

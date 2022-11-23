@@ -209,12 +209,12 @@ input span {
 
 .contactInput {
     input {
-        &:invalid[focused='true']~span {
+        &:invalid[focused='true']~p {
             display: block;
         }
     }
 
-    span {
+    p {
         display: none;
     }
 }

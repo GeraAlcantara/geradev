@@ -218,3 +218,102 @@ input span {
         display: none;
     }
 }
+
+
+
+/* CSS */
+.button-54 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    /* border: 3px solid #eb008b; */
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    /* box-shadow: #b8046d 1px 1px 0px 0px, #b8046d 2px 2px 0px 0px, #b8046d 3px 3px 0px 0px, #b8046d 4px 4px 0px 0px, #b8046d 5px 5px 0px 0px; */
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-54Error {
+    @extend .button-54;
+    border-color: #eb008b;
+}
+
+.button-54:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+@media (min-width: 768px) {
+    .button-54 {
+        padding: 0.25em 0.75em;
+    }
+}
+
+
+/* CSS */
+.button-56 {
+    align-items: center;
+    background-color: #fee6e3;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-56:after {
+    background-color: #b8046d;
+    border-radius: 8px;
+    content: "";
+    display: block;
+    height: 48px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px, 8px);
+    transition: transform .2s ease-out;
+    z-index: -1;
+}
+
+.button-56:hover:after {
+    transform: translate(0, 0);
+}
+
+.button-56:active {
+    background-color: #ffdeda;
+    outline: 0;
+}
+
+.button-56:hover {
+    outline: 0;
+}
+
+@media (min-width: 768px) {
+    .button-56 {
+        padding: 0 40px;
+    }
+}

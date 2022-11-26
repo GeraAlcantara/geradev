@@ -24,7 +24,7 @@ function FormInput(props: InputProps) {
   };
   return (
     <div className='p-2 text-white flex flex-col justify-start group-input contactInput'>
-      <label htmlFor={inputProps.name} className='text-gray-400 group'>
+      <label htmlFor={inputProps.name} className='text-[#fed583] font-Raleway font-extrabold group'>
         {label}
       </label>
       <input

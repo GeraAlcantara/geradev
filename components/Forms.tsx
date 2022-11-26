@@ -2,22 +2,31 @@ import { useState, useEffect } from "react";
 import FormInput from "./FormInput";
 import axios from "axios";
 import { useRouter } from "next/router";
+import Captcha from "./Captcha";
+import SistemReboot from "./SistemReboot";
 
-function Forms() {
-  /* interface velues keys as string value as string */
-  const router = useRouter();
-  interface Values {
-    [key: string]: string;
-  }
-
+function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
+  const [selectedIndexes, setSelectedIndexes] = useState<number[]>([]);
+  const [captchaKey, setCaptchaKey] = useState<string>(defaultCaptchaKey);
+  const [captchaSolved, setCaptchaSolved] = useState<boolean>(false);
+  const [captchaError, setCaptchaError] = useState(false);
   const [values, setValues] = useState<Values>({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
-
   const [errors, setErrors] = useState<Values>({});
+
+  useEffect(() => {
+    console.log("desde el formulario", selectedIndexes);
+  }, [selectedIndexes]);
+
+  /* interface velues keys as string value as string */
+  const router = useRouter();
+  interface Values {
+    [key: string]: string;
+  }
 
   interface InputProps {
     id: number;
@@ -36,9 +45,9 @@ function Forms() {
       name: "name",
       type: "text",
       placeholder: "Name LastName",
-      errorMessage: "Please your full name",
+      errorMessage: "Please add your full name",
       /* regex all chars of words accents between 6 and 50 */
-      pattern: "^[a-zA-ZÀ-ÿ\\s]{6,50}$",
+      pattern: "^[a-zA-ZÀ-ÿ\\s]{3,50}$",
       label: "Name",
       required: true,
     },
@@ -91,31 +100,6 @@ function Forms() {
     console.log("handleSumit", values);
   };
 
-  /* save old fetch version */
-  // const sendFetch = async () => {
-  //   fetch("/api/contactgateway", {
-  //     method: "POST",
-  //     headers: {
-  //       Accept: "application/json, text/plain, */*",
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(values),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data.status);
-  //       if (data.status === "success") {
-  //         console.log(data);
-  //         alert("se envio el mensage.");
-  //       } else if (data.status === "fail") {
-  //         console.log("fail");
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       throw err;
-  //     });
-  // };
-
   const sendEmail = async (values: Values) => {
     let config = {
       method: "post",
@@ -123,17 +107,36 @@ function Forms() {
       headers: {
         "Content-Type": "application/json",
       },
-      data: values,
+      data: { ...values, selectedIndexes },
     };
     try {
       const response = await axios(config);
       if (response.status === 200) {
-        alert("se envio el mensage.");
-        router.replace("/thankyou");
+        console.log(response.data);
+        const { captchaIsOK, send } = response.data;
+        if (!captchaIsOK) {
+          setCaptchaKey(new Date().getTime().toString());
+          setCaptchaError(true);
+          console.log("The captcha is not solved");
+        }
+        if (send) {
+          console.log("respuesta del server = message sent", send);
+          setValues({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          });
+          setErrors({});
+        }
+        if (captchaIsOK) {
+          setCaptchaError(false);
+          setCaptchaSolved(true);
+          router.push("/thankyou");
+        }
       }
     } catch (error) {
       console.log(error);
-      throw error;
     }
   };
 
@@ -172,22 +175,45 @@ function Forms() {
     console.log(errors.length, "-- cantidad de errores", errors);
     setErrors(errors);
   };
-  /* useEffect(() => {
-    console.log("errors", errors);
-    console.log(Object.keys(errors).length === 0);
-  }, [errors]); */
 
   return (
-    <form action='POST' onSubmit={handleSubmit} className='text-black flex flex-col group'>
-      {inputs.map((input) => (
-        <FormInput key={input.id} value={values[input.name]} {...input} onChange={onChange} errors={errors[input.name]} />
-      ))}
-      <div className='pt-4'>
-        <button className='text-white bg-brand-pink-600 py-2 px-6 rounded-lg w-full transition-all duration-100 hover:bg-brand-pink-800 will-change-transform'>
-          Submit
-        </button>
-      </div>
-    </form>
+    <div className='flex-1 flex flex-col gap-4 px-10 justify-center '>
+      <form action='POST' onSubmit={handleSubmit} className='text-black flex  group'>
+        <div className='w-1/2'>
+          <h1 className='text-[#fed583] text-6xl uppercase text-center font-Raleway font-extrabold'>Contactame</h1>
+          {inputs.map((input) => (
+            <FormInput key={input.id} value={values[input.name]} {...input} onChange={onChange} errors={errors[input.name]} />
+          ))}
+        </div>
+        <div className='flex justify-center flex-1 relative'>
+          <div className='relative w-[555px] h-[705px]'>
+            <div
+              className={` absolute translate-x-3 translate-y-3 rounded-2xl flex-1 px-4 min-w-[555px] min-h-[705px] ${
+                captchaError ? "bg-red-600" : "bg-[#c2a467]"
+              } `}
+            ></div>
+            <div
+              className={` absolute inset-0 border-gray-900 border-2 rounded-2xl flex-1 px-4 min-w-[555px] min-h-[705px] ${
+                captchaError ? "bg-red-500" : "bg-[#fed583]"
+              }`}
+            >
+              <Captcha onChange={setSelectedIndexes} defaultCaptchaKey={captchaKey} />
+              <div className='pt-4 flex justify-end mb-4 mr-3'>
+                <button
+                  className={`text-gray-900 button-54 text-2xl font-extrabold font-Raleway  hover:border-gray-900 py-2 px-6 duration-100  will-change-transform uppercase ${
+                    captchaError ? "bg-[#c2a467] hover:bg-[#a38c5e]" : "bg-[#eb008b] hover:bg-pink-400"
+                  }`}
+                  disabled={captchaError}
+                >
+                  <i>I AM NOT A ROBOT</i>
+                </button>
+              </div>
+            </div>
+          </div>
+          {/* {captchaError ? <SistemReboot onChange={setCaptchaError} defaultCaptchaKey={setCaptchaKey} /> : null} */}
+        </div>
+      </form>
+    </div>
   );
 }
 

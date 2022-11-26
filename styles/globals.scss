@@ -252,6 +252,13 @@ input span {
     left: 5px;
 }
 
+/* button-54 disable active */
+.button-54:disabled:active {
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    top: 0px;
+    left: 0px;
+}
+
 @media (min-width: 768px) {
     .button-54 {
         padding: 0.25em 0.75em;

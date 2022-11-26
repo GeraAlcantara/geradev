@@ -33,8 +33,12 @@ export default withIronSessionApiRoute(
       return res.status(400).json({ error: "Invalid data" });
     }
     /* check wich images from captcha are correct */
-    const sessionImages = req.session.captchaImages;
-    console.log("sessionImages", sessionImages);
+
+    // check if selectedIndexes is not a empty array
+    if (selectedIndexes.length === 0) {
+      console.log("no captcha images ");
+      return res.status(400).json({ error: "No captcha images Selected!" });
+    }
 
     const correctIndexes = req.session.captchaImages.map((path, index) => (path.includes("correct") ? index : -1)).filter((index) => index !== -1);
     console.log(correctIndexes, selectedIndexes);
@@ -42,7 +46,6 @@ export default withIronSessionApiRoute(
     const captchaIsOK = correctIndexes.toString() === selectedIndexes.sort().toString();
 
     if (!captchaIsOK) {
-      console.log("captcha is not ok");
       req.session.captchaImages = robotCaptchaImage();
       await req.session.save();
     }

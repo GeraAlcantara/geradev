@@ -9,7 +9,7 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
   const [selectedIndexes, setSelectedIndexes] = useState<number[]>([]);
   const [captchaKey, setCaptchaKey] = useState<string>(defaultCaptchaKey);
   const [captchaSolved, setCaptchaSolved] = useState<boolean>(false);
-  const [captchaError, setCaptchaError] = useState(false);
+  const [captchaError, setCaptchaError] = useState(true);
   const [values, setValues] = useState<Values>({
     name: "",
     email: "",
@@ -200,17 +200,17 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
               <Captcha onChange={setSelectedIndexes} defaultCaptchaKey={captchaKey} />
               <div className='pt-4 flex justify-end mb-4 mr-3'>
                 <button
-                  className={`text-gray-900 button-54 text-2xl font-extrabold font-Raleway  hover:border-gray-900 py-2 px-6 duration-100  will-change-transform uppercase ${
+                  className={`text-gray-900 button-54 text-2xl font-extrabold font-Raleway hover:border-gray-900 py-2 px-6 duration-100  will-change-transform uppercase disabled:bg-gray-400 disabled:text-gray-800 ${
                     captchaError ? "bg-[#c2a467] hover:bg-[#a38c5e]" : "bg-[#eb008b] hover:bg-pink-400"
-                  }`}
-                  disabled={captchaError}
+                  } `}
+                  disabled={captchaError || selectedIndexes.length === 0}
                 >
                   <i>I AM NOT A ROBOT</i>
                 </button>
               </div>
             </div>
           </div>
-          {/* {captchaError ? <SistemReboot onChange={setCaptchaError} defaultCaptchaKey={setCaptchaKey} /> : null} */}
+          {captchaError ? <SistemReboot onChange={setCaptchaError} defaultCaptchaKey={setCaptchaKey} /> : null}
         </div>
       </form>
     </div>

@@ -108,7 +108,6 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
       url: `${process.env.NEXT_PUBLIC_API_URL}/contactgateway`,
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
       },
       data: { ...values, selectedIndexes },
     };

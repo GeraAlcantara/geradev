@@ -26,10 +26,9 @@ export default Contact;
 /* getServerSideProps withIronSessionSsr */
 export const getServerSideProps = withIronSessionSsr(async function getIronSession({ req }) {
   {
-    if (!req.session.captchaImages) {
-      req.session.captchaImages = newCaptchaImage();
-      await req.session.save();
-    }
+    req.session.captchaImages = newCaptchaImage();
+    await req.session.save();
+
     return {
       props: {
         defaultCaptchaKey: new Date().getTime(),

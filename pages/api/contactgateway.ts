@@ -44,7 +44,6 @@ export default withIronSessionApiRoute(
     if (!captchaIsOK) {
       req.session.captchaImages = robotCaptchaImage();
       await req.session.save();
-      console.log(req.session.captchaImages);
     }
 
     const transporter = nodemailer.createTransport({

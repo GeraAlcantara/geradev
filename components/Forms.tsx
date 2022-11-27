@@ -121,13 +121,6 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
         }
         if (send) {
           console.log("respuesta del server = message sent", send);
-          setValues({
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-          });
-          setErrors({});
         }
         if (captchaIsOK) {
           setCaptchaError(false);
@@ -140,6 +133,14 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    console.log(captchaSolved, "captchaSolved has changed");
+
+    if (captchaSolved) {
+      setCaptchaKey(new Date().getTime().toString());
+    }
+  }, [captchaSolved]);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setValues({ ...values, [e.currentTarget.name]: e.currentTarget.value });

@@ -1,21 +1,26 @@
 import { useState, useEffect } from "react";
 import { RiCheckboxCircleFill } from "react-icons/ri";
 interface CaptchaProps {
-  defaultCaptchaKey: string;
+  captchaKey: string;
   onChange: React.Dispatch<React.SetStateAction<number[]>>;
 }
-function Captcha({ onChange, defaultCaptchaKey }: CaptchaProps) {
+function Captcha({ onChange, captchaKey }: CaptchaProps) {
   const [selectedIndexes, setSelectedIndexes] = useState<number[]>([]);
-  const imageLocation = new Array(9).fill(null).map((value, index) => {
-    return `/api/captcha-images?index=${index}&key=${defaultCaptchaKey}`;
-  });
+  /* set a state for the incoming captchakey and check if the string have change in the parent */
+  const [captchaKeyState, setCaptchaKeyState] = useState<string>(captchaKey);
+  useEffect(() => {
+    if (captchaKey !== captchaKeyState) {
+      setSelectedIndexes([]);
+      setCaptchaKeyState(captchaKey);
+    }
+  }, [captchaKey, captchaKeyState]);
   useEffect(() => {
     onChange(selectedIndexes);
   }, [selectedIndexes, onChange]);
 
-  useEffect(() => {
-    setSelectedIndexes([]);
-  }, [defaultCaptchaKey]);
+  const imageLocation = new Array(9).fill(null).map((value, index) => {
+    return `/api/captcha-images?index=${index}&key=${captchaKeyState}`;
+  });
 
   function toggleIndex(index: number) {
     /* setiar el nuevo estado tomando elñ estado anterior y lo filtramos para saber si el index que le pasamos ya esta en el array si es así lo vamos a excluir logrando que en cada click si no esta en la lista lo incluya y si estaba lo excluya */

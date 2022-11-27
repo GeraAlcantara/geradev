@@ -6,7 +6,7 @@ export default function Home() {
   const [letterClass, setletterClass] = useState("animatedLeters");
   const [paragraphClass, setParagraphClass] = useState("");
 
-  const titlename = "Jaguar Ek";
+  const titlename = "Gerardo Alcantara";
   const txtgreating = "Hola, soy";
   const txtjobtitle = "Front End Developer";
   useEffect(() => {

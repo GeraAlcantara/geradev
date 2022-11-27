@@ -1,53 +1,56 @@
 import axios from "axios";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 interface Props {
-  setCaptchaError: React.Dispatch<React.SetStateAction<boolean>>;
+  onChange: React.Dispatch<React.SetStateAction<boolean>>;
   captchaKey: React.Dispatch<React.SetStateAction<string>>;
 }
-function SistemReboot({ setCaptchaError, captchaKey }: Props) {
+function SistemReboot({ onChange, captchaKey }: Props) {
   const [reboot, setReboot] = useState(false);
-  const router = useRouter();
+  const [captchaError, setCaptchaError] = useState(true);
+  // handle click will set state of reboot to true and ask for a new captcha key and new images for captcha from api captcha-images in post pasing if reboot and set the state of captchaError to false
+  const sendReboot = async () => {
+    let config = {
+      method: "post",
+      url: `${process.env.NEXT_PUBLIC_API_URL}/sistemreboot`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: { reboot: true },
+    };
+    try {
+      const response = await axios(config);
+      if (response.status === 200) {
+        const { reboot } = response.data;
+        if (reboot) {
+          console.log("respuesta del server = reboot", reboot);
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleClick = async (e: React.SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setReboot(true);
+    setCaptchaError(false);
     captchaKey(new Date().getTime().toString());
     setCaptchaError(false);
   };
 
+  if (reboot) {
+    sendReboot();
+  }
   useEffect(() => {
-    console.log("reboot? if is true will send the API request ", reboot);
-
-    if (reboot) {
-      const sendReboot = async () => {
-        let config = {
-          method: "post",
-          url: `${process.env.NEXT_PUBLIC_API_URL}/sistemreboot`,
-          headers: {
-            "Content-Type": "application/json",
-          },
-          data: { reboot: reboot },
-        };
-        try {
-          const response = await axios(config);
-          if (response.status === 200) {
-            const { reboot } = response.data;
-            if (reboot) {
-              console.log("respuesta del server = reboot", reboot);
-            }
-          }
-        } catch (error) {
-          console.log(error);
-        }
-      };
-      sendReboot();
-    }
-  }, [reboot, setCaptchaError, captchaKey]);
+    onChange(captchaError);
+    return () => {
+      console.log("unmounting");
+    };
+  }, [reboot, onChange, captchaError]);
 
   return (
-    <div className='select-none absolute'>
+    <div className='select-none absolute animate-scaleInCenter'>
       <div className='grid grid-cols-1 grid-rows-1 relative top-1/2 translate-y-3/4'>
         <div className='col-start-1 row-start-1  rounded-xl bg-[#fee300] border-2 border-gray-800 p-6 h-full z-10'>
           <div>
@@ -70,3 +73,43 @@ function SistemReboot({ setCaptchaError, captchaKey }: Props) {
 }
 
 export default SistemReboot;
+
+/* const sendReboot = async () => {
+  let config = {
+    method: "post",
+    url: `${process.env.NEXT_PUBLIC_API_URL}/sistemreboot`,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: { reboot: true },
+  };
+  try {
+    const response = await axios(config);
+    if (response.status === 200) {
+      const { reboot } = response.data;
+      if (reboot) {
+        console.log("respuesta del server = reboot", reboot);
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}; */
+
+/* const handleClick = async (e: React.SyntheticEvent<HTMLButtonElement>) => {
+  e.preventDefault();
+  setReboot(true);
+  setCaptchaError(false);
+  captchaKey(new Date().getTime().toString());
+  setCaptchaError(false);
+};
+
+if (reboot) {
+  sendReboot();
+}
+useEffect(() => {
+  onChange(captchaError);
+  return () => {
+    console.log("unmounting");
+  };
+}, [reboot, onChange, captchaError]); */

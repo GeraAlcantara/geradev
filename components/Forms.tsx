@@ -22,8 +22,7 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
 
   // from sistemReboot will change the captcha error state and the captcha key
   useEffect(() => {
-    console.log("captcha error", captchaError);
-    console.log("captcha key", captchaKey);
+    setCaptchaError(false);
   }, [captchaKey, captchaError]);
 
   /* interface velues keys as string value as string */
@@ -101,7 +100,6 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
       message: data.get("message") as string,
     });
     validate(values);
-    console.log("handleSumit", values);
   };
 
   const sendEmail = async (values: Values) => {
@@ -116,7 +114,6 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
     try {
       const response = await axios(config);
       if (response.status === 200) {
-        console.log(response.data);
         const { captchaIsOK, send } = response.data;
         if (!captchaIsOK) {
           setCaptchaKey(new Date().getTime().toString());
@@ -137,6 +134,7 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
           setCaptchaError(false);
           setCaptchaSolved(true);
           router.push("/thankyou");
+          setCaptchaKey(new Date().getTime().toString());
         }
       }
     } catch (error) {
@@ -172,11 +170,8 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
       errors.message = "Message must be between 20 and 150 characters ";
     }
     if (Object.keys(errors).length === 0) {
-      console.log(errors.length, "-- cantidad de errores", errors);
-
       sendEmail(values);
     }
-    console.log(errors.length, "-- cantidad de errores", errors);
     setErrors(errors);
   };
 
@@ -201,7 +196,7 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
                 captchaError ? "bg-red-500" : "bg-[#fed583]"
               }`}
             >
-              <Captcha onChange={setSelectedIndexes} defaultCaptchaKey={captchaKey} />
+              <Captcha onChange={setSelectedIndexes} captchaKey={captchaKey} />
               <div className='pt-4 flex justify-end mb-4 mr-3'>
                 <button
                   className={`text-gray-900 button-54 text-2xl font-extrabold font-Raleway hover:border-gray-900 py-2 px-6 duration-100  will-change-transform uppercase disabled:bg-gray-400 disabled:text-gray-800 ${
@@ -214,7 +209,7 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
               </div>
             </div>
           </div>
-          {captchaError ? <SistemReboot setCaptchaError={setCaptchaError} captchaKey={setCaptchaKey} /> : null}
+          {captchaError ? <SistemReboot onChange={setCaptchaError} captchaKey={setCaptchaKey} /> : null}
         </div>
       </form>
     </div>

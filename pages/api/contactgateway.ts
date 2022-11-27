@@ -13,7 +13,6 @@ export default withIronSessionApiRoute(
     }
     /* verify if in the req.body have {name & email & subject & message} */
     if (!req.body.name || !req.body.email || !req.body.subject || !req.body.message) {
-      console.log("missing data", req.body);
       return res.status(400).json({ error: "Missing data" });
     }
     const { name, email, subject, message, selectedIndexes } = req.body;
@@ -29,25 +28,23 @@ export default withIronSessionApiRoute(
     try {
       contactData.parse({ name, email, subject, message, selectedIndexes });
     } catch (err) {
-      console.log("invalid data", err);
       return res.status(400).json({ error: "Invalid data" });
     }
     /* check wich images from captcha are correct */
 
     // check if selectedIndexes is not a empty array
     if (selectedIndexes.length === 0) {
-      console.log("no captcha images ");
       return res.status(400).json({ error: "No captcha images Selected!" });
     }
 
     const correctIndexes = req.session.captchaImages.map((path, index) => (path.includes("correct") ? index : -1)).filter((index) => index !== -1);
-    console.log(correctIndexes, selectedIndexes);
 
     const captchaIsOK = correctIndexes.toString() === selectedIndexes.sort().toString();
 
     if (!captchaIsOK) {
       req.session.captchaImages = robotCaptchaImage();
       await req.session.save();
+      console.log(req.session.captchaImages);
     }
 
     const transporter = nodemailer.createTransport({
@@ -72,7 +69,7 @@ export default withIronSessionApiRoute(
     try {
       const send = captchaIsOK;
       if (captchaIsOK) {
-        /* await transporter.sendMail(mailOptions); */
+        await transporter.sendMail(mailOptions);
         return res.status(200).json({ message: "Message sent", captchaIsOK, send });
       }
       res.status(200).json({ message: "Message no send coz captcha is no correct ", captchaIsOK, send });

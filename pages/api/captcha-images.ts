@@ -37,16 +37,13 @@ export function robotCaptchaImage() {
 }
 
 export default withIronSessionApiRoute(
-  /**
-   * @param {NextApiRequest {req: {session: Object } }} req
-   * @param {NextApiResponse} res
-   */
-  async function handler(req, res) {
+  async function handler(req: NextApiRequest, res: NextApiResponse) {
     const index = Number(req.query.index);
 
     if (!req.session.captchaImages) {
       req.session.captchaImages = newCaptchaImage();
       await req.session.save();
+      console.log(req.session.captchaImages);
     }
     res.setHeader("Content-Type", "image/jpeg");
     const imageBuffer = fs.readFileSync(req.session.captchaImages[index]);

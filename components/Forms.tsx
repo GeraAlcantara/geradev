@@ -9,7 +9,7 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
   const [selectedIndexes, setSelectedIndexes] = useState<number[]>([]);
   const [captchaKey, setCaptchaKey] = useState<string>(defaultCaptchaKey);
   const [captchaSolved, setCaptchaSolved] = useState<boolean>(false);
-  const [captchaError, setCaptchaError] = useState(true);
+  const [captchaError, setCaptchaError] = useState(false);
   const [values, setValues] = useState<Values>({
     name: "",
     email: "",
@@ -18,9 +18,13 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
   });
   const [errors, setErrors] = useState<Values>({});
 
+  useEffect(() => {}, [selectedIndexes, captchaKey, captchaError]);
+
+  // from sistemReboot will change the captcha error state and the captcha key
   useEffect(() => {
-    console.log("desde el formulario", selectedIndexes);
-  }, [selectedIndexes]);
+    console.log("captcha error", captchaError);
+    console.log("captcha key", captchaKey);
+  }, [captchaKey, captchaError]);
 
   /* interface velues keys as string value as string */
   const router = useRouter();
@@ -210,7 +214,7 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
               </div>
             </div>
           </div>
-          {captchaError ? <SistemReboot onChange={setCaptchaError} defaultCaptchaKey={setCaptchaKey} /> : null}
+          {captchaError ? <SistemReboot setCaptchaError={setCaptchaError} captchaKey={setCaptchaKey} /> : null}
         </div>
       </form>
     </div>

@@ -1,38 +1,50 @@
 import axios from "axios";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 interface Props {
-  onChange: React.Dispatch<React.SetStateAction<boolean>>;
-  defaultCaptchaKey: React.Dispatch<React.SetStateAction<string>>;
+  setCaptchaError: React.Dispatch<React.SetStateAction<boolean>>;
+  captchaKey: React.Dispatch<React.SetStateAction<string>>;
 }
-function SistemReboot({ onChange, defaultCaptchaKey }: Props) {
+function SistemReboot({ setCaptchaError, captchaKey }: Props) {
   const [reboot, setReboot] = useState(false);
+  const router = useRouter();
+
   const handleClick = async (e: React.SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setReboot(true);
-    let config = {
-      method: "post",
-      url: `${process.env.NEXT_PUBLIC_API_URL}/sistemreboot`, //TODO: make api url
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: { reboot: reboot },
-    };
-    try {
-      const response = await axios(config);
-      if (response.status === 200) {
-        console.log(response.data);
-        const { reboot } = response.data;
-        if (reboot) {
-          console.log("respuesta del server = Sistem Reboot", reboot);
-          onChange(true);
-          defaultCaptchaKey(new Date().getTime().toString());
-        }
-      }
-    } catch (error) {
-      console.log(error);
-    }
+    captchaKey(new Date().getTime().toString());
+    setCaptchaError(false);
   };
+
+  useEffect(() => {
+    console.log("reboot? if is true will send the API request ", reboot);
+
+    if (reboot) {
+      const sendReboot = async () => {
+        let config = {
+          method: "post",
+          url: `${process.env.NEXT_PUBLIC_API_URL}/sistemreboot`,
+          headers: {
+            "Content-Type": "application/json",
+          },
+          data: { reboot: reboot },
+        };
+        try {
+          const response = await axios(config);
+          if (response.status === 200) {
+            const { reboot } = response.data;
+            if (reboot) {
+              console.log("respuesta del server = reboot", reboot);
+            }
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      sendReboot();
+    }
+  }, [reboot, setCaptchaError, captchaKey]);
 
   return (
     <div className='select-none absolute'>
@@ -51,7 +63,7 @@ function SistemReboot({ onChange, defaultCaptchaKey }: Props) {
             </div>
           </div>
         </div>
-        <div className='col-start-1 row-start-1 relative translate-y-2 translate-x-2  rounded-xl bg-[#987601] border-2 border-gray-800 '></div>
+        <div className='col-start-1 row-start-1 relative translate-y-3 translate-x-5  rounded-xl bg-[#987601] border-2 border-[#453602] '></div>
       </div>
     </div>
   );

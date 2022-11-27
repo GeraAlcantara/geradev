@@ -177,25 +177,17 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
 
   return (
     <div className='flex-1 flex flex-col gap-4 px-10 justify-center '>
-      <form action='POST' onSubmit={handleSubmit} className='text-black flex  group'>
-        <div className='w-1/2'>
-          <h1 className='text-[#fed583] text-6xl uppercase text-center font-Raleway font-extrabold'>Contactame</h1>
+      <form action='POST' onSubmit={handleSubmit} className='text-black flex justify-center items-center flex-col lg:flex-row group p-4'>
+        <div className='w-full lg:w-1/2'>
+          <h1 className='text-[#fed583] text-3xl xl:text-6xl uppercase text-center font-Raleway font-extrabold'>Contactame</h1>
           {inputs.map((input) => (
             <FormInput key={input.id} value={values[input.name]} {...input} onChange={onChange} errors={errors[input.name]} />
           ))}
         </div>
-        <div className='flex justify-center flex-1 relative'>
-          <div className='relative w-[555px] h-[705px]'>
-            <div
-              className={` absolute translate-x-3 translate-y-3 rounded-2xl flex-1 px-4 min-w-[555px] min-h-[705px] ${
-                captchaError ? "bg-red-600" : "bg-[#c2a467]"
-              } `}
-            ></div>
-            <div
-              className={` absolute inset-0 border-gray-900 border-2 rounded-2xl flex-1 px-4 min-w-[555px] min-h-[705px] ${
-                captchaError ? "bg-red-500" : "bg-[#fed583]"
-              }`}
-            >
+        <div className='flex justify-center relative lg:flex-1 '>
+          <div className='relative flex '>
+            <div className={` absolute translate-x-3 translate-y-3 rounded-2xl flex-1 px-4  ${captchaError ? "bg-red-600" : "bg-[#c2a467]"} `}></div>
+            <div className={` z-50 border-gray-900 border-2 rounded-2xl flex-1 px-4 ${captchaError ? "bg-red-500" : "bg-[#fed583]"}`}>
               <Captcha onChange={setSelectedIndexes} captchaKey={captchaKey} />
               <div className='pt-4 flex justify-end mb-4 mr-3'>
                 <button
@@ -204,7 +196,7 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
                   } `}
                   disabled={captchaError || selectedIndexes.length === 0}
                 >
-                  <i>I AM NOT A ROBOT</i>
+                  {captchaError ? <i>I am not a Robot</i> : <i>Send</i>}
                 </button>
               </div>
             </div>

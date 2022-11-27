@@ -13,7 +13,7 @@ function Contact({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
       </Head>
       {/* render inside main all content */}
 
-      <div className='h-screen flex bg-[#393092]'>
+      <div className='lg:h-screen flex bg-[#393092]'>
         <Forms defaultCaptchaKey={defaultCaptchaKey} />
         {/* <div className='w-1/2 bg-slate-500'>mapa</div> */}
       </div>

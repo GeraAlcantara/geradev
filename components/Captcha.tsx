@@ -34,15 +34,15 @@ function Captcha({ onChange, captchaKey }: CaptchaProps) {
   }
   return (
     <div className='p-2'>
-      <h2 className='text-6xl text-gray-900 font-Raleway font-extrabold uppercase'>Captcha</h2>
-      <p className='text-gray-900 text-2xl font-Raleway uppercase font-extrabold'>Select all the signs!!! 🤷‍♀️ </p>
+      <h2 className='text-3xl lg:text-6xl text-gray-900 font-Raleway font-extrabold uppercase'>Captcha</h2>
+      <p className='text-gray-900 text-lg lg:text-2xl font-Raleway uppercase font-extrabold'>Select all the signs!!! 🤷‍♀️ </p>
       <div className='flex justify-center py-4'>
-        <div className='bg-white grid grid-cols-3 gap-1 w-[515px] h-[475px]'>
+        <div className='bg-white grid grid-cols-3 gap-1 '>
           {imageLocation.map((imageUrl, index) => (
             <div key={index + imageUrl} className='relative' onClick={() => toggleIndex(index)}>
               <picture>
                 <source srcSet={imageUrl} type='image/jpg' />
-                <img src={imageUrl} draggable={false} alt='captcha' className='w-full h-full ' />
+                <img src={imageUrl} draggable={false} alt='captcha' />
               </picture>
               {/* depende de si esta seleccionado cambiar opacidad y regresar el translate a 0 */}
               <RiCheckboxCircleFill

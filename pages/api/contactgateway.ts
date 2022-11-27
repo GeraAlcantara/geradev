@@ -61,6 +61,7 @@ export default withIronSessionApiRoute(
       subject: subject,
       html: `
         <h1>Message from ${name}</h1>
+        <h2>Subject ${subject}</h2>
         <p>${message}</p>
         <p>From: ${email}</p>
         `,

@@ -22,14 +22,6 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
     console.log("iniciando el estado del error de captcha", captchaError);
   }, [selectedIndexes, captchaError]);
 
-  // from sistemReboot will change the captcha error state and the captcha key
-  useEffect(() => {
-    console.log("captchakey has changed");
-
-    setCaptchaError(false);
-    console.log("captchaError", captchaError);
-  }, [captchaKey, captchaError]);
-
   /* interface velues keys as string value as string */
   const router = useRouter();
   interface Values {

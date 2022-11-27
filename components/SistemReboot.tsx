@@ -22,6 +22,8 @@ function SistemReboot({ onChange, captchaKey }: Props) {
       const response = await axios(config);
       if (response.status === 200) {
         const { reboot } = response.data;
+        captchaKey(new Date().getTime().toString());
+
         if (reboot) {
           console.log("respuesta del server = reboot", reboot);
         }
@@ -34,8 +36,6 @@ function SistemReboot({ onChange, captchaKey }: Props) {
   const handleClick = async (e: React.SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setReboot(true);
-    setCaptchaError(false);
-    captchaKey(new Date().getTime().toString());
     setCaptchaError(false);
   };
 

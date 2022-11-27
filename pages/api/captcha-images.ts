@@ -43,7 +43,6 @@ export default withIronSessionApiRoute(
     if (!req.session.captchaImages) {
       req.session.captchaImages = newCaptchaImage();
       await req.session.save();
-      console.log(req.session.captchaImages);
     }
     res.setHeader("Content-Type", "image/jpeg");
     const imageBuffer = fs.readFileSync(req.session.captchaImages[index]);

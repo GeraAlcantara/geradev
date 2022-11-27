@@ -185,9 +185,11 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
           ))}
         </div>
         <div className='flex justify-center relative lg:flex-1 '>
-          <div className='relative flex '>
-            <div className={` absolute translate-x-3 translate-y-3 rounded-2xl flex-1 px-4  ${captchaError ? "bg-red-600" : "bg-[#c2a467]"} `}></div>
-            <div className={` z-50 border-gray-900 border-2 rounded-2xl flex-1 px-4 ${captchaError ? "bg-red-500" : "bg-[#fed583]"}`}>
+          <div className='relative grid grid-cols-1 grid-rows-1 '>
+            <div
+              className={`col-start-1 row-start-1 translate-x-3 translate-y-3 rounded-2xl flex-1 px-4  ${captchaError ? "bg-red-600" : "bg-[#c2a467]"} `}
+            ></div>
+            <div className={`col-start-1 row-start-1 z-10 border-gray-900 border-2 rounded-2xl flex-1 px-4 ${captchaError ? "bg-red-500" : "bg-[#fed583]"}`}>
               <Captcha onChange={setSelectedIndexes} captchaKey={captchaKey} />
               <div className='pt-4 flex justify-end mb-4 mr-3'>
                 <button

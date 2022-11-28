@@ -9,7 +9,7 @@ function service() {
       </Head>
       {/* Todo tendra contenido trendra el display dentro del Main  */}
 
-      <div className=' bg-blue-400 h-screen'>services!</div>
+      <div className=' bg-blue-400 h-screen font-Urbanist text-2xl'>services!</div>
     </div>
   );
 }

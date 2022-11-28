@@ -176,7 +176,7 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
   };
 
   return (
-    <div className='flex-1 flex flex-col gap-4 px-10 justify-center '>
+    <div className='flex-1 flex flex-col gap-4 px-4 lg:px-6 xl:px-10 justify-center '>
       <form action='POST' onSubmit={handleSubmit} className='text-black flex justify-center items-center flex-col lg:flex-row group p-4'>
         <div className='w-full lg:w-1/2'>
           <h1 className='text-[#fed583] text-3xl xl:text-6xl uppercase text-center font-Raleway font-extrabold'>Contactame</h1>

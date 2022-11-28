@@ -9,7 +9,7 @@ function about() {
       </Head>
       {/* Todo tendra contenido trendra el display dentro del Main  */}
 
-      <div className=' bg-green-800 h-screen'>about!</div>
+      <div className=' bg-green-800 h-screen font-Urbanist text-2xl'>Under Construction!</div>
     </div>
   );
 }

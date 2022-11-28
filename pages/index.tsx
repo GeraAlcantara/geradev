@@ -43,8 +43,9 @@ export default function Home() {
                 <AnimatedLetters letterClass={` ${letterClass} `} text={txtjobtitle} idx={20}></AnimatedLetters>
               </div>
               <p className={`max-w-prose mt-8 opacity-0 ${paragraphClass}`}>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda soluta molestias adipisci placeat distinctio facere quia sed quisquam, quas
-                eos ratione eum architecto repellat reiciendis ducimus laboriosam ipsum ipsa iusto.
+                I think there is never an age to start something new, my programming career started when I was 38 years old; that&#39;s right, I started late
+                but with giant steps which allowed me to change my profession without losing my job, I just changed my area. I have 5 years programming and 8
+                years in my job; the first 3 years I was a motion graphics artist.
               </p>
             </div>
           </div>

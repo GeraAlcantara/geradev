@@ -17,7 +17,7 @@ function Layout({ children }: LayoutProps) {
     <div className=' w-screen h-screen flex'>
       <Sidebar showMenu={showMenu} />
 
-      <div className='fixed bottom-2 right-2 lg:hidden z-10'>
+      <div className='fixed bottom-2 right-2 lg:hidden z-20'>
         <button className='' onClick={toogleMenu}>
           {showMenu ? (
             <RiCloseFill className='text-2xl p-3 rounded-full bg-brand-pink-200 text-brand-pink-800 box-content' />

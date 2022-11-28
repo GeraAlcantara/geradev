@@ -6,8 +6,8 @@ import { sessionOptions } from "../lib/session";
 import ImageOG from "../public/contactsocialog.jpg";
 function Contact({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
   const twitterHandle = "@geralcantara79";
-  const previewImage = "ImageOG";
-  const currentURL = "https://raw.githubusercontent.com/GeraAlcantara/geradev/main/public/contactsocialog.jpg";
+  const previewImage = "https://geradev.vercel.app/contactsocialog.jpg";
+  const currentURL = "https://geradev.vercel.app/contact";
   const siteName = "Jaguar Ek Dev";
   const pageTitle = "Jaguar Ek Dev | Contact";
   const description = "Contact me, while you do it you will be surprised with the coolest captcha on the WEB";
@@ -22,6 +22,8 @@ function Contact({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
         {/* Twitter */}
         <meta name='twitter:card' content='summary' key='twcard' />
         <meta name='twitter:creator' content={twitterHandle} key='twhandle' />
+        <meta name='twitter:title' content={pageTitle} />
+        <meta name='twitter:description' content={description} />
 
         {/* Open Graph */}
         <meta property='og:url' content={currentURL} key='ogurl' />

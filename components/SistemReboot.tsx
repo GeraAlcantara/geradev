@@ -50,7 +50,7 @@ function SistemReboot({ onChange, captchaKey }: Props) {
   }, [reboot, onChange, captchaError]);
 
   return (
-    <div className='select-none absolute animate-scaleInCenter'>
+    <div className='select-none absolute animate-scaleInCenter z-10'>
       <div className='grid grid-cols-1 grid-rows-1 relative top-1/2 translate-y-3/4'>
         <div className='col-start-1 row-start-1  rounded-xl bg-[#fee300] border-2 border-gray-800 p-6 h-full z-10'>
           <div>

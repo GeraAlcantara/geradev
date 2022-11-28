@@ -35,7 +35,7 @@ function Captcha({ onChange, captchaKey }: CaptchaProps) {
   return (
     <div className='p-2'>
       <h2 className='text-3xl lg:text-6xl text-gray-900 font-Raleway font-extrabold uppercase'>Captcha</h2>
-      <p className='text-gray-900 text-lg lg:text-2xl font-Raleway uppercase font-extrabold'>Select all the signs!!! 🤷‍♀️ </p>
+      <p className='text-gray-900 lg:text-2xl font-Raleway uppercase font-extrabold'>Select all the images that are a sign!!! 🤖 </p>
       <div className='flex justify-center py-4'>
         <div className='bg-white grid grid-cols-3 gap-1 '>
           {imageLocation.map((imageUrl, index) => (

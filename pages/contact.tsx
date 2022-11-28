@@ -7,7 +7,7 @@ import ImageOG from "../public/contactsocialog.jpg";
 function Contact({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
   const twitterHandle = "@geralcantara79";
   const previewImage = "ImageOG";
-  const currentURL = "https://geradev.vercel.app/contact";
+  const currentURL = "https://raw.githubusercontent.com/GeraAlcantara/geradev/main/public/contactsocialog.jpg";
   const siteName = "Jaguar Ek Dev";
   const pageTitle = "Jaguar Ek Dev | Contact";
   const description = "Contact me, while you do it you will be surprised with the coolest captcha on the WEB";

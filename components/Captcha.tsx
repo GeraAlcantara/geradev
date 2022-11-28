@@ -39,7 +39,7 @@ function Captcha({ onChange, captchaKey }: CaptchaProps) {
       <div className='flex justify-center py-4'>
         <div className='bg-white grid grid-cols-3 gap-1 '>
           {imageLocation.map((imageUrl, index) => (
-            <div key={index + imageUrl} className='relative' onClick={() => toggleIndex(index)}>
+            <div key={index + imageUrl} className='relative min-h-[72px] md:mi-h-[152px] bg-white' onClick={() => toggleIndex(index)}>
               <picture>
                 <source srcSet={imageUrl} type='image/jpg' />
                 <img src={imageUrl} draggable={false} alt='captcha' />

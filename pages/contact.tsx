@@ -3,9 +3,10 @@ import { withIronSessionSsr } from "iron-session/next";
 import Forms from "../components/Forms";
 import { newCaptchaImage } from "./api/captcha-images";
 import { sessionOptions } from "../lib/session";
+import ImageOG from "../public/contactsocialog.jpg";
 function Contact({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
   const twitterHandle = "@geralcantara79";
-  const previewImage = "https://geradev.vercel.app/public/contactsocialog.jpg";
+  const previewImage = "ImageOG";
   const currentURL = "https://geradev.vercel.app/contact";
   const siteName = "Jaguar Ek Dev";
   const pageTitle = "Jaguar Ek Dev | Contact";

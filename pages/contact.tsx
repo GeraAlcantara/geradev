@@ -34,7 +34,7 @@ function Contact({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
       </Head>
       {/* render inside main all content */}
 
-      <div className='lg:h-screen flex flex-col justify-between bg-[#393092]'>
+      <div className='lg:h-screen flex flex-col justify-between bg-brand-black-900'>
         <Forms defaultCaptchaKey={defaultCaptchaKey} />
         {/* <div className='w-1/2 bg-slate-500'>mapa</div> */}
         <div className='flex justify-center items-center p-4 xl:p-8 lg:w-3/4 xl:w-1/2'>

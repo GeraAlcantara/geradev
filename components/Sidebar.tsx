@@ -12,7 +12,7 @@ export default function Sidebar({ showMenu, ...props }: SidebarProps) {
   const router = useRouter();
   return (
     <header
-      className={`w-24 bg-brand-black-300 fixed lg:static flex flex-col transition-all ease-in-out duration-500 justify-between z-50 top-0 h-screen items-center px-2 py-4  ${
+      className={`w-24 bg-brand-black-300 fixed lg:fixed lg:top-0 lg:left-0 lg:bottom-0 flex flex-col transition-all ease-in-out duration-500 justify-between z-50 top-0 h-screen items-center px-2 py-4  ${
         showMenu ? "left-0" : "-left-full"
       } `}
     >

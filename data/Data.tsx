@@ -1,4 +1,4 @@
-import { RiHome2Fill, RiCustomerServiceFill, RiFacebookFill, RiInstagramFill, RiLinkedinBoxFill, RiTwitterFill, RiMailSendFill } from "react-icons/ri";
+import { RiHome2Fill, RiFacebookFill, RiInstagramFill, RiLinkedinBoxFill, RiTwitterFill, RiMailSendFill, RiNewspaperLine } from "react-icons/ri";
 import { GoPerson } from "react-icons/go";
 
 export interface NavLinksProps {
@@ -18,9 +18,9 @@ export const NavLinks: Array<NavLinksProps> = [
     Icon: GoPerson,
   },
   {
-    title: "service",
-    slug: "service",
-    Icon: RiCustomerServiceFill,
+    title: "blog",
+    slug: "blog",
+    Icon: RiNewspaperLine,
   },
   {
     title: "contact",

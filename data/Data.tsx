@@ -14,17 +14,17 @@ export const NavLinks: Array<NavLinksProps> = [
   },
   {
     title: "about",
-    slug: "about",
+    slug: "/about",
     Icon: GoPerson,
   },
   {
     title: "blog",
-    slug: "blog",
+    slug: "/blog",
     Icon: RiNewspaperLine,
   },
   {
     title: "contact",
-    slug: "contact",
+    slug: "/contact",
     Icon: RiMailSendFill,
   },
 ];

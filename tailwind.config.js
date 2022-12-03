@@ -4,6 +4,19 @@ module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            color: "#f2f2f2",
+            a: {
+              color: "#f1d3ee",
+              "&:hover": {
+                color: "#f77fb5",
+              },
+            },
+          },
+        },
+      },
       colors: {
         brand: {
           pink: {
@@ -76,5 +89,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

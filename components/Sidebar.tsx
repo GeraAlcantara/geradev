@@ -3,8 +3,6 @@ import Logo from "./Logo";
 import Link from "next/link";
 import { NavLinks, SocialLinks } from "../data/Data";
 import { useEffect } from "react";
-
-/* convert to typescript */
 interface SidebarProps {
   showMenu: boolean;
   setShowMenu: React.Dispatch<React.SetStateAction<boolean>>;

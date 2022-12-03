@@ -8,18 +8,14 @@ import Nprogress from "nprogress";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  /* Nprogress.configure({ showSpinner: false }); */
+  Nprogress.configure({ showSpinner: false });
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      if (url !== router.asPath) {
-        Nprogress.start();
-      }
+      Nprogress.start();
     };
 
     const handleRouteChangeComplete = (url: string) => {
-      if (url === router.asPath) {
-        Nprogress.done();
-      }
+      Nprogress.done();
     };
     router.events.on("routeChangeStart", handleRouteChange);
     router.events.on("routeChangeComplete", handleRouteChangeComplete);
@@ -29,7 +25,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       router.events.off("routeChangeComplete", handleRouteChangeComplete);
       router.events.off("routeChangeError", handleRouteChangeComplete);
     };
-  }, [router.events, router.asPath]);
+  }, [router.events]);
   return (
     <Layout>
       <Component {...pageProps} />

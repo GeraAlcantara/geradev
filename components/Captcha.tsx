@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { RiCheckboxCircleFill } from "react-icons/ri";
 interface CaptchaProps {
@@ -42,7 +43,8 @@ function Captcha({ onChange, captchaKey }: CaptchaProps) {
             <div key={index + imageUrl} className='relative min-h-[72px] md:mi-h-[152px] bg-white' onClick={() => toggleIndex(index)}>
               <picture>
                 <source srcSet={imageUrl} type='image/jpg' />
-                <img src={imageUrl} draggable={false} alt='captcha' />
+
+                <img src={imageUrl} draggable={false} alt='captcha' width={165} height={152} />
               </picture>
               {/* depende de si esta seleccionado cambiar opacidad y regresar el translate a 0 */}
               <RiCheckboxCircleFill

@@ -18,11 +18,7 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
   });
   const [errors, setErrors] = useState<Values>({});
 
-  useEffect(() => {
-    console.log("captchakey changed", captchaKey);
-
-    console.log("iniciando el estado del error de captcha", captchaError);
-  }, [selectedIndexes, captchaError, captchaKey]);
+  useEffect(() => {}, [selectedIndexes, captchaError]);
 
   /* interface velues keys as string value as string */
   const router = useRouter();

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import AnimatedLetters from "../components/AnimatedLetters";
+import CobeGlobe from "../components/CobeGlobe";
 
 export default function Home() {
   const [letterClass, setletterClass] = useState("animatedLeters");
@@ -27,8 +28,8 @@ export default function Home() {
         <meta name='description' content='Jaguar Ek Dev' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div className=' h-screen'>
-        <div className='h-full flex items-center p-20'>
+      <div className='h-screen'>
+        <div className='h-full flex flex-col-reverse landscape:flex-row lg:flex-row justify-center md:items-center p-2 lg:p-20'>
           <div className='w-full xl:w-1/2 relative'>
             <div className='bg-gradient-to-br from-brand-black-300 via-brand-black-300/50 to-transparent w-40 h-40 block rounded-full absolute -left-8 -top-10 '></div>
             <div className='relative'>
@@ -48,6 +49,9 @@ export default function Home() {
                 years in my job; the first 3 years I was a motion graphics artist.
               </p>
             </div>
+          </div>
+          <div className='xl:w-1/2'>
+            <CobeGlobe />
           </div>
         </div>
       </div>

@@ -11,6 +11,7 @@
   "dependencies": {
     "@vercel/analytics": "^0.1.5",
     "axios": "^1.2.0",
+    "cobe": "^0.6.2",
     "gray-matter": "^4.0.3",
     "iron-session": "^6.3.1",
     "next": "12.3.1",

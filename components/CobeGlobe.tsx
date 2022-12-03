@@ -9,6 +9,8 @@ export default function CobeGlobe() {
   });
   // state for ismobile
   const [isMobile, setIsMobile] = useState(false);
+  //state for isloading
+  const [isLoading, setIsLoading] = useState(true);
 
   // check if is mobile base on the window size or resize
   useEffect(() => {
@@ -29,6 +31,15 @@ export default function CobeGlobe() {
     }
     return () => window.removeEventListener("resize", handleResize);
   }, [windowSize.width, windowSize.height]);
+
+  // check if is loading the component
+  useEffect(() => {
+    // onmount set isloading to false
+    setIsLoading(false);
+    return () => {
+      setIsLoading(true);
+    };
+  }, []);
 
   // Crear un globo terraqueo en 3d como el de github Universe pero mas sencillo
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -65,5 +76,11 @@ export default function CobeGlobe() {
       };
     }
   }, [isMobile]);
-  return <canvas ref={canvasRef} className={`w-[360px] h-[360px] md:w-[600px] md:h-[600px] m-auto`} width={600} height={600}></canvas>;
+  return isLoading ? (
+    <div className='flex justify-center items-center h-screen'>
+      <div className='animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900'></div>
+    </div>
+  ) : (
+    <canvas ref={canvasRef} className={`w-[360px] h-[360px] md:w-[600px] md:h-[600px] m-auto bg-brand-black-900`} width={600} height={600}></canvas>
+  );
 }

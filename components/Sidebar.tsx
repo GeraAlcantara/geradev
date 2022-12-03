@@ -2,14 +2,28 @@ import { useRouter } from "next/router";
 import Logo from "./Logo";
 import Link from "next/link";
 import { NavLinks, SocialLinks } from "../data/Data";
+import { useEffect } from "react";
 
 /* convert to typescript */
 interface SidebarProps {
   showMenu: boolean;
+  setShowMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function Sidebar({ showMenu, ...props }: SidebarProps) {
+// TODO: hide sidebar on links click and show on burger click
+
+export default function Sidebar({ showMenu, setShowMenu, ...props }: SidebarProps) {
   const router = useRouter();
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      setShowMenu(false);
+    };
+    router.events.on("routeChangeStart", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, [router.events, setShowMenu]);
+
   return (
     <header
       className={`w-24 bg-brand-black-300 fixed lg:fixed lg:top-0 lg:left-0 lg:bottom-0 flex flex-col transition-all ease-in-out duration-500 justify-between z-50 top-0 h-screen items-center px-2 py-4  ${

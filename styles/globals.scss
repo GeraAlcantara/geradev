@@ -33,7 +33,9 @@
     cursor: progress;
 }
 
-@for $i from 1 through 50 {
+
+
+@for $i from 1 through 60 {
     .animatedLeters._#{$i} {
         animation-delay: #{$i /16}s;
     }

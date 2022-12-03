@@ -10,6 +10,7 @@ export default function Home() {
   const titlename = "Gerardo Alcantara";
   const txtgreating = "Hola, soy";
   const txtjobtitle = "Front End Developer";
+  const txtJoke = "Spinning your World! :)";
   useEffect(() => {
     const removeaddClass = setTimeout(() => {
       setletterClass("cursor-progress");
@@ -42,6 +43,9 @@ export default function Home() {
               </div>
               <div className='font-Urbanist xl:text-5xl xl:relative'>
                 <AnimatedLetters letterClass={` ${letterClass} `} text={txtjobtitle} idx={20}></AnimatedLetters>
+              </div>
+              <div className='font-Urbanist xl:text-4xl xl:relative text-brand-pink-50'>
+                <AnimatedLetters letterClass={` ${letterClass} animatedLetersLight-mouseover `} text={txtJoke} idx={30}></AnimatedLetters>
               </div>
               <p className={`max-w-prose mt-8 opacity-0 ${paragraphClass}`}>
                 I think there is never an age to start something new, my programming career started when I was 38 years old; that&#39;s right, I started late

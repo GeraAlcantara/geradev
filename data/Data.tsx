@@ -1,4 +1,4 @@
-import { RiHome2Fill, RiFacebookFill, RiInstagramFill, RiLinkedinBoxFill, RiTwitterFill, RiMailSendFill, RiNewspaperLine } from "react-icons/ri";
+import { RiHome2Fill, RiFacebookFill, RiInstagramFill, RiLinkedinBoxFill, RiTwitterFill, RiMailSendFill, RiNewspaperLine, RiGithubFill } from "react-icons/ri";
 import { GoPerson } from "react-icons/go";
 
 export interface NavLinksProps {
@@ -35,6 +35,11 @@ interface SocialLinksProps {
 }
 export const SocialLinks: Array<SocialLinksProps> = [
   {
+    title: "Github",
+    link: "https://github.com/GeraAlcantara",
+    Icon: RiGithubFill,
+  },
+  {
     title: "Linkedin",
     link: "https://www.linkedin.com/in/gerardo-alcantara-4804b328/",
     Icon: RiLinkedinBoxFill,
@@ -55,23 +60,3 @@ export const SocialLinks: Array<SocialLinksProps> = [
     Icon: RiFacebookFill,
   },
 ];
-
-/* TODO:
-            -----
-            logo
-            ----
-            
-            -------
-            1. home
-            2. About
-            3. service
-            ------
-
-            -------
-            Social
-            1.Twitter
-            2.face
-            3. insta
-            4.linkedin
-            ------
-        */

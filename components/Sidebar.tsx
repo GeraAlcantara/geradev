@@ -36,7 +36,7 @@ export default function Sidebar({ showMenu, setShowMenu, ...props }: SidebarProp
             <li key={idx + title}>
               <Link href={slug}>
                 <div
-                  className={`flex flex-col items-center hover:text-brand-pink-500 text-2xl ${
+                  className={`cursor-pointer flex flex-col items-center hover:text-brand-pink-500 text-2xl ${
                     router.pathname === "/" + slug || router.pathname === slug ? "text-brand-pink-500" : "text-brand-pink-100"
                   }`}
                 >

@@ -12,18 +12,18 @@ export const MetaData = [
 export const DefaultMetaData = {
   twitterHandle: "@geralcantara79",
   siteName: "GeraDev",
-  currentURL: "https://geralcantara.com",
+  currentURL: "https://geradev.vercel.app/",
 };
 
 export const MetaDataHome = {
   pageTitle: "Gerardo Alcantara | Front End Dev",
   pageDescription: "Sitio Personal de Gerardo Alcantara donde encontraras experimentos y diseños fuera de la norma en el desarrollo web.",
-  socialImage: "https://geralcantara.com/contactsocialog.jpg",
+  socialImage: "/contactsocialog.jpg",
   socialImageAlt: "imagen social del sitio web TODO",
 };
 export const MetaDataContact = {
   pageTitle: "Contacto | Gerardo Alcantara",
   pageDescription: "Contact me for any questions or suggestions you may have and while you do it, you´ll be surprised with the coolest captcha on the web.",
-  socialImage: "https://geralcantara.com/contactsocialog.jpg",
+  socialImage: "/contactsocialog.jpg",
   socialImageAlt: "An captcha illustration no sutible for readers sorry :(",
 };

@@ -27,3 +27,9 @@ export const MetaDataContact = {
   socialImage: "/contactsocialog.jpg",
   socialImageAlt: "An captcha illustration no sutible for readers sorry :(",
 };
+export const MetaDataBlog = {
+  pageTitle: "Blog | Gerardo Alcantara",
+  pageDescription: "Blog de Gerardo Alcantara donde encontraras recursos, noticias y articulos de interes. ",
+  socialImage: "/contactsocialog.jpg",
+  socialImageAlt: "imagen social del sitio web TODO",
+};

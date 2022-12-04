@@ -2,6 +2,8 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import AnimatedLetters from "../components/AnimatedLetters";
 import ArticleCard from "../components/ArticleCard";
+import { MetaDataBlog } from "../data/MetaData";
+import MetaPageHelper from "../lib/MetaPageHelper";
 import { getAllPosts, PostMeta } from "./api/blogpost";
 
 export default function Blog({ posts }: { posts: PostMeta[] }) {
@@ -23,11 +25,7 @@ export default function Blog({ posts }: { posts: PostMeta[] }) {
   }, []);
   return (
     <div>
-      <Head>
-        <title>Jaguar Ek Dev | Blog Post</title>
-        <meta name='description' content='Jaguar Ek Dev | services' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+      <MetaPageHelper {...MetaDataBlog} />
       {/* Todo tendra contenido trendra el display dentro del Main  */}
 
       <div className=' bg-brand-black-900 min-h-screen p-8'>

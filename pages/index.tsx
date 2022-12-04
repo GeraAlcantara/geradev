@@ -2,6 +2,8 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import AnimatedLetters from "../components/AnimatedLetters";
 import CobeGlobe from "../components/CobeGlobe";
+import MetaPageHelper from "../lib/MetaPageHelper";
+import { MetaDataHome } from "../data/MetaData";
 
 export default function Home() {
   const [letterClass, setletterClass] = useState("animatedLeters");
@@ -24,11 +26,7 @@ export default function Home() {
 
   return (
     <div>
-      <Head>
-        <title>Jaguar Ek Dev</title>
-        <meta name='description' content='Jaguar Ek Dev' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+      <MetaPageHelper {...MetaDataHome} />
       <div className='h-screen'>
         <div className='h-full flex flex-col-reverse landscape:flex-row lg:flex-row justify-center md:items-center p-2 lg:p-20'>
           <div className='w-full xl:w-1/2 relative'>

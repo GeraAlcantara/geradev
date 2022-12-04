@@ -12,11 +12,11 @@ export const NavLinks: Array<NavLinksProps> = [
     slug: "/",
     Icon: RiHome2Fill,
   },
-  {
+  /* {
     title: "about",
     slug: "/about",
     Icon: GoPerson,
-  },
+  }, */
   {
     title: "blog",
     slug: "/blog",

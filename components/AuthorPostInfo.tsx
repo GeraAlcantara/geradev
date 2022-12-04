@@ -15,7 +15,9 @@ export default function AuthorPostInfo({ authorName, authorAvatar, date }: Autho
         </div>
         <div className='flex flex-col gap-1'>
           <span className='text-sm capitalize'>{authorName}</span>
-          <span className='text-sm'>{new Date(date).toLocaleDateString("es-MX", { weekday: "long", year: "numeric", month: "long", day: "numeric" })}</span>
+          <time className='text-sm' dateTime={date}>
+            {new Date(date).toLocaleDateString("en-MX", { weekday: "long", year: "numeric", month: "long", day: "numeric" })}
+          </time>
         </div>
       </div>
     </>

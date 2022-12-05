@@ -3,10 +3,10 @@ const year = new Date().getFullYear();
 
 export default function Document(): JSX.Element {
   return (
-    <Html lang='en'>
+    <Html lang='es'>
       <Head>
-        <meta httpEquiv='Content-Language' content='en' />
-        <meta name='copyright' content={`Copyright ${year} by Gerardo Alcàntara`} />
+        <meta httpEquiv='Content-Language' content='es' />
+        <meta name='copyright' content={`Copyright ${year} by Gerardo Alcántara`} />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='true' />
         <link href='https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700;800;900&family=Urbanist:wght@500&display=swap' rel='stylesheet' />

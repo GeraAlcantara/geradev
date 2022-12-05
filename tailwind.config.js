@@ -14,6 +14,9 @@ module.exports = {
                 color: "#f77fb5",
               },
             },
+            strong: {
+              color: "#f77fb5",
+            },
           },
         },
       },

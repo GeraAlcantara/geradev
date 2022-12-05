@@ -10,6 +10,7 @@ import Image from "next/image";
 import YouTube from "../../../components/YouTube";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/atom-one-dark.css";
+import MetaPageHelper from "../../../lib/MetaPageHelper";
 
 // leer de mdx contenido y metadata renderiar a la pagina de blog
 interface PostPageProps {
@@ -20,8 +21,17 @@ interface PostPageProps {
 }
 
 export default function PostPage({ post }: PostPageProps) {
+  // desarrollo-web-inicio slug puede venir con guiones, si hay guiones removerlos y convertirlos en espacios
+
+  const titlefromSlug = post.meta.slug.replace(/-/g, " ").toUpperCase();
   return (
     <>
+      <MetaPageHelper
+        pageDescription={post.meta.descriptionSEO}
+        pageTitle={titlefromSlug}
+        socialImage={post.meta.imageSEO}
+        socialImageAlt={post.meta.imageSEOAlt}
+      />
       <Image
         src={`/blog/images/${post.meta.imageSrc}`}
         priority={true}

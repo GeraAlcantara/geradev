@@ -28,6 +28,8 @@ export interface PostMeta {
   date: string;
   excerpt: string;
   descriptionSEO: string;
+  imageSEO: string;
+  imageSEOAlt: string;
   imageSrc: string;
   imageAlt: string;
   authorAvatar: string;
@@ -49,6 +51,8 @@ export const getPostBySlug = (slug: string): Post => {
       date: data.date.toString() ?? new Date().toISOString(), // if no date is provided, use today's date
       excerpt: data.excerpt ?? " no excerpt provided",
       descriptionSEO: data.descriptionSEO ?? " no descriptionSEO provided",
+      imageSEO: data.imageSEO ?? " postDesarrollowebPrincipiantes.jpg",
+      imageSEOAlt: data.imageSEOAlt ?? " 'imagen social del sitio web'",
       imageAlt: data.imageAlt ?? " no imageAlt provided",
       authorAvatar: data.authorAvatar ?? "blogimage.jpg",
       authorName: data.authorName ?? "Gerardo",

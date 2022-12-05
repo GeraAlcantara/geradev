@@ -9,10 +9,10 @@ export default function Home() {
   const [letterClass, setletterClass] = useState("animatedLeters");
   const [paragraphClass, setParagraphClass] = useState("");
 
-  const titlename = "Gerardo Alcantara";
+  const titlename = "Jaguar Ek";
   const txtgreating = "Hola, soy";
   const txtjobtitle = "Front End Developer";
-  const txtJoke = "Spinning your World! :)";
+  const txtJoke = "Haciendo tu mundo girar! :)";
   useEffect(() => {
     const removeaddClass = setTimeout(() => {
       setletterClass("cursor-progress");
@@ -45,10 +45,10 @@ export default function Home() {
               <div className='font-Urbanist xl:text-4xl xl:relative text-brand-pink-50'>
                 <AnimatedLetters letterClass={` ${letterClass} animatedLetersLight-mouseover `} text={txtJoke} idx={30}></AnimatedLetters>
               </div>
-              <p className={`max-w-prose mt-8 opacity-0 ${paragraphClass}`}>
-                I think there is never an age to start something new, my programming career started when I was 38 years old; that&#39;s right, I started late
-                but with giant steps which allowed me to change my profession without losing my job, I just changed my area. I have 5 years programming and 8
-                years in my job; the first 3 years I was a motion graphics artist.
+              <p className={`max-w-prose mt-8 opacity-0 lg:text-xl ${paragraphClass}`}>
+                Creo que nunca hay una edad para empezar algo nuevo, mi carrera como programador empezó cuando tenía 38 años; así es, empecé tarde pero con
+                pasos de gigante que me permitieron cambiar de profesión sin perder el trabajo, simplemente cambié de área. tengo 5 años programando y 8 años en
+                mi trabajo; los primeros 3 años fui un artista de gráficos en movimiento.
               </p>
             </div>
           </div>

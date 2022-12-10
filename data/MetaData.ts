@@ -22,21 +22,21 @@ export const MetaDataContact = {
 export const MetaDataBlog = {
   pageTitle: "Blog | Jaguar Ek",
   pageDescription: "Blog de Gerardo Alcantara donde encontraras recursos, noticias y articulos de interes. ",
-  socialImage: "socialCards/contactsocialog.jpg",
+  socialImage: "/contactsocialog.jpg",
   socialImageAlt: "imagen social del sitio web TODO",
   slug: "/blog",
 };
 export const MetaRD = {
   pageTitle: "Busqueda y Desarrollo | Jaguar Ek",
   pageDescription: "Busqueda y Desarrollo de Jaguar Ek recursos, zona de juego para experimentos cool. ",
-  socialImage: "socialCards/rdSocialog.jpg",
+  socialImage: "/rdSocialog.jpg",
   socialImageAlt: "imagen social del sitio web TODO",
   slug: "/research-and-development",
 };
 export const MetaGracias = {
   pageTitle: "Gracias por contactarnos",
   pageDescription: "Gracias por contactarnos, pronto nos pondremos en contacto contigo. ",
-  socialImage: "socialCards/rdSocialog.jpg",
+  socialImage: "/rdSocialog.jpg",
   socialImageAlt: "imagen social del sitio web TODO",
   slug: "/gracias",
 };

@@ -51,7 +51,7 @@ export const getPostBySlug = (slug: string): Post => {
       date: data.date.toString() ?? new Date().toISOString(), // if no date is provided, use today's date
       excerpt: data.excerpt ?? " no excerpt provided",
       descriptionSEO: data.descriptionSEO ?? " no descriptionSEO provided",
-      imageSEO: data.imageSEO ?? " postDesarrollowebPrincipiantes.jpg",
+      imageSEO: data.imageSEO ?? "postDesarrollowebPrincipiantes.jpg",
       imageSEOAlt: data.imageSEOAlt ?? " 'imagen social del sitio web'",
       imageAlt: data.imageAlt ?? " no imageAlt provided",
       authorAvatar: data.authorAvatar ?? "blogimage.jpg",

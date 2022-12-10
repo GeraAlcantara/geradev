@@ -37,12 +37,12 @@ export default function About() {
       <MetaPageHelper {...MetaRD} />
       {/* Todo tendra contenido trendra el display dentro del Main  */}
 
-      <div className='lg:h-screen flex flex-col justify-between bg-brand-black-900'>
+      <div className='h-[100vh] lg:h-screen flex flex-col-reverse md:flex-col justify-between bg-brand-black-900'>
         <Canvas
           camera={{
             position: [9, 7, 8.2],
             fov: 50,
-            zoom: 2.8,
+            zoom: 2.3,
           }}
         >
           <ambientLight color={"white"} intensity={0.3} />
@@ -53,7 +53,7 @@ export default function About() {
           </Suspense>
           <OrbitControls />
         </Canvas>
-        <div className='inset-0 absolute pointer-events-none '>
+        <div className='inset-0 lg:absolute pointer-events-none '>
           <div className='p-8'>
             <div className='w-full xl:w-1/2 relative mb-10 flex flex-col justify-center'>
               <div className='font-Raleway font-extrabold text-3xl xl:text-6xl transition-all '>

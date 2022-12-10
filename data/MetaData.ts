@@ -20,12 +20,12 @@ export const MetaDataContact = {
 export const MetaDataBlog = {
   pageTitle: "Blog | Jaguar Ek",
   pageDescription: "Blog de Gerardo Alcantara donde encontraras recursos, noticias y articulos de interes. ",
-  socialImage: "/contactsocialog.jpg",
+  socialImage: "socialCard/contactsocialog.jpg",
   socialImageAlt: "imagen social del sitio web TODO",
 };
 export const MetaRD = {
   pageTitle: "Busqueda y Desarrollo | Jaguar Ek",
   pageDescription: "Busqueda y Desarrollo de Jaguar Ek recursos, zona de juego para experimentos cool. ",
-  socialImage: "/contactsocialog.jpg",
+  socialImage: "socialCard/rdSocialog.jpg",
   socialImageAlt: "imagen social del sitio web TODO",
 };

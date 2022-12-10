@@ -9,9 +9,9 @@ import { MetaRD } from "../data/MetaData";
 import MetaPageHelper from "../lib/MetaPageHelper";
 
 // import types from three
-
+const URL = "/model/scene.gltf";
 function Model() {
-  const obj = useLoader(GLTFLoader, "https://geradev.vercel.app/model/scene.gltf");
+  const obj = useLoader(GLTFLoader, URL);
   return <primitive object={obj.scene} scale={[2, 2, 2]} position={[0, -1, 0]} />;
 }
 

@@ -23,3 +23,9 @@ export const MetaDataBlog = {
   socialImage: "/contactsocialog.jpg",
   socialImageAlt: "imagen social del sitio web TODO",
 };
+export const MetaRD = {
+  pageTitle: "Busqueda y Desarrollo | Jaguar Ek",
+  pageDescription: "Busqueda y Desarrollo de Jaguar Ek recursos, zona de juego para experimentos cool. ",
+  socialImage: "/contactsocialog.jpg",
+  socialImageAlt: "imagen social del sitio web TODO",
+};

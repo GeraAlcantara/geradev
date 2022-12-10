@@ -20,6 +20,8 @@ export default function MetaPageHelper(props: MetaPageHelperProps) {
         <meta name='twitter:title' content={props.pageTitle} />
         <meta name='twitter:description' content={props.pageDescription} />
         <meta name='twitter:image' content={`${DefaultMetaData.currentURL}${props.socialImage}`} />
+        <meta name='twitter:image:alt' content={props.socialImageAlt} />
+        <meta name='twitter:card' content='summary_large_image' />
 
         {/* Open Graph */}
         <meta property='og:url' content={DefaultMetaData.currentURL} key='ogurl' />

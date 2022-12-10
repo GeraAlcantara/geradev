@@ -23,7 +23,7 @@ export default function MetaPageHelper(props: MetaPageHelperProps) {
           description: props.pageDescription,
           images: [
             {
-              url: `${DefaultMetaData.currentURL}socialCards${props.socialImage}`,
+              url: `${DefaultMetaData.currentURL}socialCards/${props.socialImage}`,
               width: 1280,
               height: 640,
               alt: props.socialImageAlt,

@@ -1,5 +1,3 @@
-// use getStatic Paths and getStaticProps context
-
 import { getSlugs, getPostBySlug, PostMeta, Post } from "../../api/blogpost";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
@@ -11,6 +9,8 @@ import YouTube from "../../../components/YouTube";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/atom-one-dark.css";
 import MetaPageHelper from "../../../lib/MetaPageHelper";
+import { ArticleJsonLd } from "next-seo";
+import { DefaultMetaData } from "../../../data/MetaData";
 
 // leer de mdx contenido y metadata renderiar a la pagina de blog
 interface PostPageProps {
@@ -31,6 +31,17 @@ export default function PostPage({ post }: PostPageProps) {
         pageTitle={titlefromSlug}
         socialImage={post.meta.imageSEO}
         socialImageAlt={post.meta.imageSEOAlt}
+        slug={post.meta.slug}
+      />
+      <ArticleJsonLd
+        url={`${DefaultMetaData.currentURL}${post.meta.slug}`}
+        title={post.meta.title}
+        images={[`${DefaultMetaData.currentURL}socialCards${post.meta.imageSEO}, ${DefaultMetaData.currentURL}blog/images/${post.meta.imageSrc}`]}
+        datePublished={new Date(post.meta.date).toISOString()}
+        authorName={[{ name: post.meta.authorName }]}
+        publisherName={DefaultMetaData.siteName}
+        description={post.meta.descriptionSEO}
+        isAccessibleForFree={true}
       />
       <Image
         src={`/blog/images/${post.meta.imageSrc}`}

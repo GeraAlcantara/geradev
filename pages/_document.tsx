@@ -5,6 +5,7 @@ export default function Document(): JSX.Element {
   return (
     <Html lang='es'>
       <Head>
+        <meta lang='es' />
         <meta httpEquiv='Content-Language' content='es' />
         <meta name='copyright' content={`Copyright ${year} by Gerardo Alcántara`} />
         <link rel='preconnect' href='https://fonts.googleapis.com' />

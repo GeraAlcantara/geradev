@@ -121,7 +121,7 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
         if (captchaIsOK) {
           setCaptchaError(false);
           setCaptchaSolved(true);
-          router.push("/thankyou");
+          router.push("/gracias");
           setCaptchaKey(new Date().getTime().toString());
         }
       }

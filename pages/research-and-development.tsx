@@ -1,5 +1,3 @@
-import Head from "next/head";
-// import canvas
 import { Canvas, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Suspense, useEffect, useState } from "react";

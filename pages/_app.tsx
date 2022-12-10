@@ -5,6 +5,10 @@ import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Nprogress from "nprogress";
+import { DefaultSeo } from "next-seo";
+
+// import your default seo configuration
+import SEO from "../next-seo.config";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -27,9 +31,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     };
   }, [router.events]);
   return (
-    <Layout>
-      <Component {...pageProps} />
-      <Analytics />
-    </Layout>
+    <>
+      <DefaultSeo {...SEO} />
+      <Layout>
+        <Component {...pageProps} />
+        <Analytics />
+      </Layout>
+    </>
   );
 }

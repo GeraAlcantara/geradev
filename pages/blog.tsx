@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { useEffect, useState } from "react";
 import AnimatedLetters from "../components/AnimatedLetters";
 import ArticleCard from "../components/ArticleCard";

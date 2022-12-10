@@ -9,6 +9,7 @@ export const MetaDataHome = {
   pageDescription: "Sitio Personal de Gerardo Alcantara donde encontraras experimentos y diseños fuera de la norma en el desarrollo web.",
   socialImage: "/contactsocialog.jpg",
   socialImageAlt: "imagen social del sitio web TODO",
+  slug: "/",
 };
 export const MetaDataContact = {
   pageTitle: "Contacto | Jaguar Ek",
@@ -16,16 +17,26 @@ export const MetaDataContact = {
     "Ponte en contacto conmigo para cualquier duda o sugerencia que tengas y mientras lo haces te sorprenderás con el captcha más chidito de la web.",
   socialImage: "/contactsocialog.jpg",
   socialImageAlt: "Una illustracíon de una imagen captcha",
+  slug: "/contacto",
 };
 export const MetaDataBlog = {
   pageTitle: "Blog | Jaguar Ek",
   pageDescription: "Blog de Gerardo Alcantara donde encontraras recursos, noticias y articulos de interes. ",
   socialImage: "socialCards/contactsocialog.jpg",
   socialImageAlt: "imagen social del sitio web TODO",
+  slug: "/blog",
 };
 export const MetaRD = {
   pageTitle: "Busqueda y Desarrollo | Jaguar Ek",
   pageDescription: "Busqueda y Desarrollo de Jaguar Ek recursos, zona de juego para experimentos cool. ",
   socialImage: "socialCards/rdSocialog.jpg",
   socialImageAlt: "imagen social del sitio web TODO",
+  slug: "/research-and-development",
+};
+export const MetaGracias = {
+  pageTitle: "Gracias por contactarnos",
+  pageDescription: "Gracias por contactarnos, pronto nos pondremos en contacto contigo. ",
+  socialImage: "socialCards/rdSocialog.jpg",
+  socialImageAlt: "imagen social del sitio web TODO",
+  slug: "/gracias",
 };

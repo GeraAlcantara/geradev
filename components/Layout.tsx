@@ -26,7 +26,7 @@ function Layout({ children }: LayoutProps) {
           )}
         </button>
       </div>
-      <main className='w-full lg:w-[calc(100vw-96px)] lg:absolute top-0 left-[96px] bg-brand-black-900 h-screen'>{children}</main>
+      <main className='w-full lg:w-[calc(100vw-96px)] lg:absolute top-0 left-[96px] bg-brand-black-900 min-h-screen'>{children}</main>
     </div>
   );
 }

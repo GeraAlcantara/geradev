@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stylized Airplane - The Flying Circus Diorama
+* source:	https://sketchfab.com/3d-models/stylized-airplane-the-flying-circus-diorama-cbb8d5ed7fd745e3a5b9af7ae3ab9b42
+* author:	Mikkel Garde Blaase (plorigon) (https://sketchfab.com/plorigon)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stylized Airplane - The Flying Circus Diorama" (https://sketchfab.com/3d-models/stylized-airplane-the-flying-circus-diorama-cbb8d5ed7fd745e3a5b9af7ae3ab9b42) by Mikkel Garde Blaase (plorigon) (https://sketchfab.com/plorigon) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

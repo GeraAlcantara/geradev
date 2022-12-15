@@ -2,18 +2,18 @@ import { Canvas, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Suspense, useEffect, useState } from "react";
 import { OrbitControls } from "@react-three/drei";
-import AnimatedLetters from "../components/AnimatedLetters";
-import { MetaRD } from "../data/MetaData";
-import MetaPageHelper from "../lib/MetaPageHelper";
+import AnimatedLetters from "../../components/AnimatedLetters";
+import { MetaPonnyCard } from "../../data/MetaData";
+import MetaPageHelper from "../../lib/MetaPageHelper";
 
 // import types from three
-const URL = "/model/scene.gltf";
+const URL = "../modelsThreeD/ponycar/scene.gltf";
 function Model() {
   const obj = useLoader(GLTFLoader, URL);
   return <primitive object={obj.scene} scale={[2, 2, 2]} position={[0, -1, 0]} />;
 }
 
-export default function About() {
+export default function PonnyCar() {
   const [letterClass, setletterClass] = useState("animatedLeters");
   const [paragraphClass, setParagraphClass] = useState("");
 
@@ -32,7 +32,7 @@ export default function About() {
   }, []);
   return (
     <div>
-      <MetaPageHelper {...MetaRD} />
+      <MetaPageHelper {...MetaPonnyCard} />
       {/* Todo tendra contenido trendra el display dentro del Main  */}
 
       <div className='h-[100vh] lg:h-screen flex flex-col-reverse md:flex-col justify-between bg-brand-black-900'>

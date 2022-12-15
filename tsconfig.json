@@ -15,6 +15,14 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/captcha-images.ts", "next-seo.config.js", "next-seo.config.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/api/captcha-images.ts",
+    "next-seo.config.js",
+    "next-seo.config.js",
+    "pages/research-and-development.jsx"
+  ],
   "exclude": ["node_modules"]
 }

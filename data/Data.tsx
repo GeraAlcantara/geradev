@@ -14,7 +14,7 @@ export const NavLinks: Array<NavLinksProps> = [
   },
   {
     title: "R&D",
-    slug: "/research-and-development",
+    slug: "/rd",
     Icon: GoPerson,
   },
   {

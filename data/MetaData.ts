@@ -28,8 +28,8 @@ export const MetaDataBlog = {
 };
 export const MetaRD = {
   pageTitle: "Busqueda y Desarrollo | Jaguar Ek",
-  pageDescription: "Busqueda y Desarrollo de Jaguar Ek recursos, zona de juego para experimentos cool. ",
-  socialImage: "rdSocialog.jpg",
+  pageDescription: "Busqueda y Desarrollo de Jaguar Ek recursos, zona de juego para experimentos cool. Imagenes por DALL-E-2  ",
+  socialImage: "rdJaguarSocialog.jpg",
   socialImageAlt: "imagen social del sitio web TODO",
   slug: "/research-and-development",
 };

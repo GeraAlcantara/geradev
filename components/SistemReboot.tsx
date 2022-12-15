@@ -58,10 +58,10 @@ function SistemReboot({ onChange, captchaKey }: Props) {
             <hr className=' border-gray-700 ' />
           </div>
           <div className='flex flex-col gap-4 items-center  pt-6 pb-10 min-h-[140px]'>
-            <h1 className='text-gray-900 text-5xl font-Raleway font-extrabold text-center  uppercase'>Sistem Error!</h1>
+            <h1 className='text-gray-900 text-5xl font-Raleway font-extrabold text-center  uppercase'>¡Error del sistema!</h1>
             <div>
               <button className='font-Raleway font-extrabold uppercase bg-[#eb008b] button-54Error' onClick={(e) => handleClick(e)}>
-                Sistem Reboot
+                Reinicio del sistema
               </button>
             </div>
           </div>

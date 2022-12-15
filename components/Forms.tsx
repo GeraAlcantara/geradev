@@ -42,11 +42,11 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
       id: 1,
       name: "name",
       type: "text",
-      placeholder: "Name LastName",
-      errorMessage: "Please add your full name",
+      placeholder: "Nombre y Apellido",
+      errorMessage: "Por favor agregue su nombre completo",
       /* regex all chars of words accents between 6 and 50 */
       pattern: "^[a-zA-ZÀ-ÿ\\s]{3,50}$",
-      label: "Name",
+      label: "Nombre",
       required: true,
     },
     {
@@ -54,7 +54,7 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
       name: "email",
       type: "email",
       placeholder: "Email",
-      errorMessage: "You must enter a valid email",
+      errorMessage: "Debes ingresar un correo electrónico válido",
       /* regex email */
       pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$",
       label: "Email",
@@ -64,11 +64,11 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
       id: 3,
       name: "subject",
       type: "text",
-      placeholder: "Subject",
-      errorMessage: "Keep it short, 60 characters or less",
+      placeholder: "Asunto del email",
+      errorMessage: "Que sea corto, 60 caracteres o menos.",
       /* regex max 60 char, letter and number special characters  */
       pattern: "^[\\w\\W]{1,60}$",
-      label: "Subject",
+      label: "Asunto",
       required: true,
     },
     {
@@ -76,10 +76,10 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
       name: "message",
       type: "text",
       placeholder: "Message",
-      errorMessage: "Minimum 20 characters and maximum 150",
+      errorMessage: "Mínimo 20 caracteres y máximo 150",
       /* word and non word chars min 20 max 150 */
       pattern: "^[\\w\\W]{20,150}$",
-      label: "Message",
+      label: "Mensaje",
       required: true,
     },
   ];
@@ -146,24 +146,24 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
   const validate = (values: Values) => {
     let errors: Values = {};
     if (!values.name) {
-      errors.name = "Name is required";
+      errors.name = "Se requiere el nombre";
     } else if (values.name.length < 6 || values.name.length > 150) {
-      errors.name = "Name must be between 6 and 50 characters and not include special characters or numbers";
+      errors.name = "El nombre debe tener entre 6 y 50 caracteres y no incluir caracteres especiales ni números";
     }
     if (!values.email) {
-      errors.email = "Email is required";
+      errors.email = "Correo electronico es requerido";
     } else if (!/[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$/.test(values.email)) {
-      errors.email = "Your email must be valid";
+      errors.email = "Su correo electrónico debe ser válido";
     }
     if (!values.subject) {
-      errors.subject = "Subject is required";
+      errors.subject = "El asunto es obligatorio";
     } else if (!/^[\w\W]{1,60}$/.test(values.subject)) {
-      errors.subject = "Subject must be less than 60 characters";
+      errors.subject = "El asunto debe tener menos de 60 caracteres";
     }
     if (!values.message) {
-      errors.message = "Message is required";
+      errors.message = "El mensaje es obligatorio";
     } else if (values.message.length < 20 || values.message.length > 150) {
-      errors.message = "Message must be between 20 and 150 characters ";
+      errors.message = "El mensaje debe tener entre 20 y 150 caracteres ";
     }
     if (Object.keys(errors).length === 0) {
       sendEmail(values);
@@ -194,7 +194,7 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
                   } `}
                   disabled={captchaError || selectedIndexes.length === 0}
                 >
-                  {captchaError ? <i>I am not a Robot</i> : <i>Send</i>}
+                  {captchaError ? <i>No soy un robot</i> : <i>Enviar</i>}
                 </button>
               </div>
             </div>

@@ -4,10 +4,10 @@ export default function Disclaimer() {
       <div>
         <p className='text-xs text-white'>
           <strong className='text-base'>Disclaimer: </strong>
-          Surfing the web I found the coolest captcha ever designed by Alex Castro for the digital magazine The Verge. The illustration was wonderful so I made
-          a fan art of what a captcha would really look like as close as possible within my limitations. Beyond trying to copy the illustration, my intention
-          was to get my code to make the captcha and it was super fun! If you are from The Verge or Alex Castro please contact me if you require me not to use
-          this captcha.
+          Navegando por la web encontré el captcha más genial jamás diseñado por Alex Castro para la revista digital The Verge. La ilustración fue maravillosa,
+          así que hice un fan art de cómo se vería realmente un captcha lo más cerca posible dentro de mis limitaciones. Más allá de intentar copiar la
+          ilustración, mi intención era conseguir mi código para hacer el captcha y ¡fue súper divertido! Si trabajas para The Verge o eres Alex Castro,
+          contáctame si requieres que no use este captcha.
         </p>
         <div className='flex gap-4'>
           <a
@@ -16,8 +16,9 @@ export default function Disclaimer() {
             target='_blank'
             rel='noopener noreferrer'
           >
-            The Verge article
+            El artículo de The Verge sobre el captcha
           </a>
+          por
           <a className='text text-brand-pink-50 hover:underline' href='https://www.alexecastro.com/' target='_blank' rel='noopener noreferrer'>
             Alex Castro
           </a>

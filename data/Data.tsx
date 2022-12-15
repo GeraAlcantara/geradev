@@ -8,7 +8,7 @@ export interface NavLinksProps {
 }
 export const NavLinks: Array<NavLinksProps> = [
   {
-    title: "home",
+    title: "inicio",
     slug: "/",
     Icon: RiHome2Fill,
   },

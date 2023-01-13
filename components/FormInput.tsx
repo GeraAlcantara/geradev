@@ -23,12 +23,12 @@ function FormInput(props: InputProps) {
     setFocus(true);
   };
   return (
-    <div className='p-2 text-white flex flex-col justify-start group-input contactInput'>
+    <div className='p-2 text-white flex flex-col justify-start group-input contactInput '>
       <label htmlFor={inputProps.name} className='text-[#fed583] font-Raleway font-extrabold group'>
         {label}
       </label>
       <input
-        className='p-4 my-2 mx-0 text-gray-900  group group-invalid:outline-red-500'
+        className='p-4 my-2 mx-0 text-gray-900 rounded-lg  group group-invalid:outline-red-500'
         onChange={onChange}
         onBlur={HandleFocus}
         focused={focus.toString()}

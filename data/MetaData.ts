@@ -1,7 +1,7 @@
 export const DefaultMetaData = {
   twitterHandle: "@geralcantara79",
   siteName: "Jaguar Ek",
-  currentURL: "https://www.jaguarek.dev/",
+  currentURL: "https://www.jaguarek.dev",
 };
 
 export const MetaDataHome = {

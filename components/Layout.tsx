@@ -18,7 +18,8 @@ function Layout({ children }: LayoutProps) {
       <Sidebar showMenu={showMenu} setShowMenu={setShowMenu} />
 
       <div className='fixed bottom-2 right-6 lg:hidden z-20'>
-        <button className='' onClick={toogleMenu}>
+        <button name='menu' title='menu' onClick={toogleMenu}>
+          <span className='sr-only'>Menu</span>
           {showMenu ? (
             <RiCloseFill className='text-2xl p-3 rounded-full bg-brand-pink-50 text-brand-pink-800 box-content' />
           ) : (

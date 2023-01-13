@@ -52,6 +52,7 @@ export default function Sidebar({ showMenu, setShowMenu, ...props }: SidebarProp
         {SocialLinks.map(({ title, link, Icon }, idx) => (
           <Link key={idx + title} href={link}>
             <a target='_blank' className='flex items-center justify-center gap-2 hover:text-brand-pink-500'>
+              <span className='sr-only'>{title}</span>
               <Icon className='text-3xl' />
             </a>
           </Link>

@@ -30,7 +30,7 @@ function ArticleCard({ post }: { post: PostMeta }) {
               <PostInfo />
             </div>
             <h2 className='text-4xl font-bold group-hover:text-brand-pink-accent '>{post.title}</h2>
-            <p className=' text-lg max-w-prose'>{post.excerpt}</p>
+            <p className=' text-lg '>{post.excerpt}</p>
             {/* avatar */}
             <AuthorPostInfo authorAvatar={post.authorAvatar} authorName={post.authorName} date={post.date} />
           </div>

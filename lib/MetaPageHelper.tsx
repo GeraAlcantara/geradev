@@ -18,7 +18,7 @@ export default function MetaPageHelper(props: MetaPageHelperProps) {
         description={props.pageDescription}
         canonical={DefaultMetaData.currentURL}
         openGraph={{
-          url: `${DefaultMetaData.currentURL}${props.slug}`,
+          url: `${DefaultMetaData.currentURL}/${props.slug}`,
           title: props.pageTitle,
           description: props.pageDescription,
           images: [

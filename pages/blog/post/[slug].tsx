@@ -54,7 +54,7 @@ export default function PostPage({ post }: PostPageProps) {
         className=''
       />
       <div className='mx-4'>
-        <section className='m-auto mt-4 md:container flex flex-col items-center   '>
+        <section className='m-auto mt-4 md:container flex flex-col items-center mb-10'>
           <article className='prose lg:prose-xl xl:prose-xl prose-headings:text-brand-pink-50 prose-code:text-cyan-300 mt-4 container xl:max-w-none xl:w-[80ch]'>
             <header className='mt-10 gap-y-4 bg-gradient-to-br from-brand-black-100 to-brand-black-300 bg-brand-pink-800 rounded-3xl py-10 px-10 flex flex-col gap-4 justify-center items-start  '>
               <AuthorPostInfo authorAvatar={post.meta.authorAvatar} date={post.meta.date} authorName={post.meta.authorName} />

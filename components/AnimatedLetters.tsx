@@ -11,7 +11,7 @@ export default function AnimatedLetters({ letterClass, text = "GeraAlcantara", i
         <span
           onMouseEnter={(e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => e.currentTarget.classList.add("animatedLeters-mouseover")}
           onAnimationEnd={(e: React.AnimationEvent<HTMLSpanElement>) => e.currentTarget.classList.remove("animatedLeters-mouseover")}
-          className={`${letterClass} _${i + idx} transition-colors`}
+          className={`${letterClass} _${i + idx} transition-colors ani`}
           key={i + idx}
         >
           {char === " " ? <>&nbsp;</> : char}

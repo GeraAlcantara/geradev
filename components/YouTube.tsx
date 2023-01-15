@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Youtube({ id }: { id: string }) {
   return (
     <div className='aspect-video w-full'>

@@ -61,7 +61,7 @@ export default function PostPage({ post }: PostPageProps) {
               <PostInfo />
               <h1 className='text-3xl  md:text-5xl text-brand-pink-50 font-bold font-Urbanist'>{post.meta.title}</h1>
             </header>
-            <MDXRemote {...post.content} components={{ Image, YouTube }} />
+            <MDXRemote {...post.content} components={{ Image, YouTube, }} />
           </article>
         </section>
       </div>

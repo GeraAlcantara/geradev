@@ -12,7 +12,7 @@ function ArticleCard({ post }: { post: PostMeta }) {
     <div className='pb-4'>
       <hr className='hidden md:block border-brand-blue-100 mb-4' />
       <Link href={`/blog/post/${post.slug}`}>
-        <article className='flex flex-col md:flex-row w-full group'>
+        <article className='flex flex-col md:flex-row w-full group cursor-pointer'>
           <div className='relative h-[200px] md:h-[300px] w-full md:w-10/12 rounded-xl overflow-hidden '>
             <Image
               src={`/blog/images/${post.imageSrc}`}

@@ -34,7 +34,7 @@ export default function PostPage({ post }: PostPageProps) {
         slug={post.meta.slug}
       />
       <ArticleJsonLd
-        url={`${DefaultMetaData.currentURL}${post.meta.slug}`}
+        url={`${DefaultMetaData.currentURL}/${post.meta.slug}`}
         title={post.meta.title}
         images={[`${DefaultMetaData.currentURL}socialCards/${post.meta.imageSEO}, ${DefaultMetaData.currentURL}blog/images/${post.meta.imageSrc}`]}
         datePublished={new Date(post.meta.date).toISOString()}

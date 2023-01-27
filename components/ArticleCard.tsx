@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { RiNewspaperLine } from "react-icons/ri";
-import { HiOutlineEye } from "react-icons/hi";
 import { PostMeta } from "../pages/api/blogpost";
 import AuthorPostInfo from "./AuthorPostInfo";
 import PostInfo from "./PostInfo";

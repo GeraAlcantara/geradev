@@ -61,5 +61,5 @@ export const MetadataRD = {
   pageDescription: "Research and Development de Jaguar Ek recursos, zona de juego para experimentos cool.",
   socialImage: "rdSocialog.jpg",
   socialImageAlt: "imagen social del sitio web TODO",
-  slug: "/rd",
+  slug: "rd",
 };

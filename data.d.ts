@@ -6,6 +6,7 @@ interface PreviewCardData {
   image?: string;
   imageog?: string;
   imageAlt?: string;
+  imagetwitter?: string;
   url?: string;
   urlog?: string;
   site_name?: string;

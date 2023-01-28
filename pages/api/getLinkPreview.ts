@@ -19,6 +19,7 @@ const getLinkPreview = async (req: NextApiRequest, res: NextApiResponse) => {
   const descriptionog = doc.querySelector('meta[name="og:description"]')?.getAttribute("content");
   const image = doc.querySelector('meta[property="image"]')?.getAttribute("content");
   const imageog = doc.querySelector('meta[property="og:image"]')?.getAttribute("content");
+  const imagetwitter = doc.querySelector('meta[name="twitter:image"]')?.getAttribute("content");
   const imageAlt = doc.querySelector('meta[property="image:alt"]')?.getAttribute("content");
   const url = doc.querySelector('meta[property="url"]')?.getAttribute("content");
   const urlog = doc.querySelector('meta[property="og:url"]')?.getAttribute("content");
@@ -32,6 +33,7 @@ const getLinkPreview = async (req: NextApiRequest, res: NextApiResponse) => {
   if (descriptionog) preview.descriptionog = descriptionog;
   if (image) preview.image = image;
   if (imageog) preview.imageog = imageog;
+  if (imagetwitter) preview.imagetwitter = imagetwitter;
   if (imageAlt) preview.imageAlt = imageAlt;
   if (url) preview.url = url;
   if (urlog) preview.urlog = urlog;

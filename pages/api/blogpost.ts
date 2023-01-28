@@ -64,8 +64,8 @@ export const getAllPosts = () => {
   const posts = getSlugs()
     .map((slug) => getPostBySlug(slug))
     .sort((a, b) => {
-      if (a.meta.date < b.meta.date) return 1;
-      if (a.meta.date > b.meta.date) return -1;
+      if (new Date(a.meta.date) < new Date(b.meta.date)) return -1;
+      if (new Date(a.meta.date) > new Date(b.meta.date)) return 1;
       return 0;
     })
     .reverse();

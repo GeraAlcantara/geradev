@@ -4,6 +4,7 @@ import Loading from "./Loading";
 function LinkWithPreview({ link }: { link: string }) {
   const [linkData, setLinkData] = useState<PreviewCardData>({});
   const [loading, setLoading] = useState<boolean>(false);
+  const [imagesrc, setImagesrc] = useState<string>("");
 
   useEffect(() => {
     const getPreview = async () => {
@@ -16,6 +17,8 @@ function LinkWithPreview({ link }: { link: string }) {
       });
       const data: PreviewCardData = await res.json();
       setLinkData(data);
+      const img = data.imageog ? data.imageog : data.image ? data.image : data.imagetwitter;
+      setImagesrc(img!);
       setLoading(false);
     };
     setLoading(true);
@@ -33,17 +36,12 @@ function LinkWithPreview({ link }: { link: string }) {
         <div className='border-gray-600 border-2 bg-slate-50 rounded-3xl overflow-hidden prose prose-a:no-underline prose-a:hover:text-gray-900 prose-a:text-gray-900 flex flex-col items-center justify-center m-auto max-w-[36rem] my-10 text-gray-900 cursor-pointer mb-6'>
           <a href={link} target='_blank' rel='noreferrer' className='prose-a:no-underline'>
             <div>
-              {(linkData.image || linkData.imageog) && (
+              {imagesrc && (
                 <picture>
-                  <source srcSet={linkData.imageog ? linkData.imageog : linkData.image} type='imagen/webp' />
-                  <source srcSet={linkData.imageog ? linkData.imageog : linkData.image} type='imagen/jpg' />
-                  <source srcSet={linkData.imageog ? linkData.imageog : linkData.image} type='imagen/png' />
-                  <img
-                    style={{ margin: 0 }}
-                    src={linkData.imageog ? linkData.imageog : linkData.image}
-                    alt={linkData.imageAlt ? linkData.imageAlt : ""}
-                    loading='lazy'
-                  />
+                  <source srcSet={imagesrc} type='imagen/webp' />
+                  <source srcSet={imagesrc} type='imagen/jpg' />
+                  <source srcSet={imagesrc} type='imagen/png' />
+                  <img style={{ margin: 0 }} width={1280} height={640} src={imagesrc} alt={linkData.imageAlt ? linkData.imageAlt : ""} loading='lazy' />
                 </picture>
               )}
               <div className='p-4'>

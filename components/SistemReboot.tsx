@@ -44,9 +44,6 @@ function SistemReboot({ onChange, captchaKey }: Props) {
   }
   useEffect(() => {
     onChange(captchaError);
-    return () => {
-      console.log("unmounting");
-    };
   }, [reboot, onChange, captchaError]);
 
   return (

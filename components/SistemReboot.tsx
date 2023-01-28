@@ -44,9 +44,6 @@ function SistemReboot({ onChange, captchaKey }: Props) {
   }
   useEffect(() => {
     onChange(captchaError);
-    return () => {
-      console.log("unmounting");
-    };
   }, [reboot, onChange, captchaError]);
 
   return (
@@ -54,13 +51,15 @@ function SistemReboot({ onChange, captchaKey }: Props) {
       <div className='grid grid-cols-1 grid-rows-1 relative top-1/2 translate-y-3/4'>
         <div className='col-start-1 row-start-1  rounded-xl bg-[#fee300] border-2 border-gray-800 p-6 h-full z-10'>
           <div>
-            <p>X-</p>
             <hr className=' border-gray-700 ' />
           </div>
           <div className='flex flex-col gap-4 items-center  pt-6 pb-10 min-h-[140px]'>
             <h1 className='text-gray-900 text-5xl font-Raleway font-extrabold text-center  uppercase'>¡Error del sistema!</h1>
             <div>
-              <button className='font-Raleway font-extrabold uppercase bg-[#eb008b] button-54Error' onClick={(e) => handleClick(e)}>
+              <button
+                className='font-Raleway font-extrabold uppercase bg-[#eb008b] button-54Error hover:bg-[#f71b90] transition-all duration-200 ease-out hover:scale-[1.05]'
+                onClick={(e) => handleClick(e)}
+              >
                 Reinicio del sistema
               </button>
             </div>

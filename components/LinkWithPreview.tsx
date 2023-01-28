@@ -53,9 +53,9 @@ function LinkWithPreview({ link }: { link: string }) {
                   <p className='text-sm text-gray-500 m-0'>{link.replace(/(^\w+:|^)\/\//, "")}</p>
                 )}
                 {linkData.title ? (
-                  <h1 className='text-xl font-bold leading-tight'>{linkData.title}</h1>
+                  <span className='text-xl font-bold leading-tight'>{linkData.title}</span>
                 ) : (
-                  <h1 className='text-xl font-bold leading-tight'>{linkData.titleog}</h1>
+                  <span className='text-xl font-bold leading-tight'>{linkData.titleog}</span>
                 )}
                 {linkData.description ? (
                   <p className='m-0 leading-tight'>{linkData.description}</p>

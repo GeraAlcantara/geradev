@@ -25,7 +25,7 @@ export default function Home() {
     <div>
       <MetaPageHelper {...MetaDataHome} />
       <div className='h-screen'>
-        <div className='h-full flex flex-col-reverse landscape:flex-row lg:flex-row justify-center md:items-center p-2 lg:p-20'>
+        <div className='h-full flex flex-col-reverse landscape:flex-row lg:flex-row justify-center md:items-center p-4 lg:p-20'>
           <div className='w-full xl:w-1/2 relative'>
             <div className='bg-gradient-to-br from-brand-black-300 via-brand-black-300/50 to-transparent w-40 h-40 block rounded-full absolute -left-8 -top-10 '></div>
             <div className='relative'>

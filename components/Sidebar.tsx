@@ -33,7 +33,7 @@ export default function Sidebar({ showMenu, setShowMenu, ...props }: SidebarProp
       <nav className='flex flex-col justify-between items-center w-full uppercase gap-6'>
         <ul className='flex flex-col items-center gap-8 justify-center'>
           {NavLinks.map(({ title, Icon, slug }, idx) => (
-            <li key={idx + title}>
+            <li title={title === "R&D" ? "Research and Develop" : ""} key={idx + title}>
               <Link href={slug}>
                 <div
                   className={`cursor-pointer flex flex-col items-center hover:text-brand-pink-500 text-2xl ${

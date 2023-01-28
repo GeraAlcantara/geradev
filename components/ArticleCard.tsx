@@ -23,7 +23,13 @@ function ArticleCard({ post }: { post: PostMeta }) {
           <div className='text-brandWhite py-4  md:p-4 flex flex-col gap-2 justify-between lg:gap-4 w-full '>
             <div className='flex flex-col md:flex-row items-start md:justify-between md:items-center gap-4 md:gap-0'>
               <div className='rounded-full bg-lineGradient_1 px-3 py-[0.2rem] '>
-                <p className='text-sm'>Tags</p>
+                <div className='flex  gap-x-2'>
+                  {post.tags.map((tag, i) => (
+                    <span key={i + tag} className='text-xs font-bold text-brand-pink-100 capitalize'>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
               <PostInfo />
             </div>

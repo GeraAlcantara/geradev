@@ -38,7 +38,7 @@ export default function RDPage() {
             <div>
               <div>
                 <p className='text-white'>
-                  Este trabajo se basa en Pony Cartoon
+                  Este trabajo se basa en
                   {/* source  */}
                   <a href='https://sketchfab.com/3d-models/pony-cartoon-885d9f60b3a9429bb4077cfac5653cf9' target='_blank' rel='noopener noreferrer'>
                     <span className='text-brand-pink-50 cursor-pointer hover:text-brand-pink-accent'> Pony Cartoon </span>
@@ -81,8 +81,7 @@ export default function RDPage() {
             <div>
               <div>
                 <p className='text-brand-black-300'>
-                  Este trabajo se basa en Pony Cartoon
-                  {/* source  */}
+                  Este trabajo se basa en
                   <a
                     href='https://sketchfab.com/3d-models/stylized-airplane-the-flying-circus-diorama-cbb8d5ed7fd745e3a5b9af7ae3ab9b42'
                     target='_blank'

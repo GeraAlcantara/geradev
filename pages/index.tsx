@@ -43,7 +43,7 @@ export default function Home() {
               </div>
               <p className={`max-w-prose mt-8 opacity-0 lg:text-xl ${paragraphClass}`}>
                 Creo que nunca hay una edad para empezar algo nuevo, mi carrera como programador empezó cuando tenía 38 años; así es, empecé tarde pero con
-                pasos de gigante que me permitieron cambiar de profesión sin perder el trabajo, simplemente cambié de área. tengo 5 años programando y 8 años en
+                pasos de gigante que me permitieron cambiar de profesión sin perder el trabajo, simplemente cambié de área. tengo 4 años programando y 7 años en
                 mi trabajo; los primeros 3 años fui un artista de gráficos en movimiento.
               </p>
             </div>

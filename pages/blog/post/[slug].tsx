@@ -11,6 +11,7 @@ import "highlight.js/styles/atom-one-dark.css";
 import MetaPageHelper from "../../../lib/MetaPageHelper";
 import { ArticleJsonLd } from "next-seo";
 import { DefaultMetaData } from "../../../data/MetaData";
+import LinkWithPreview from "../../../components/LinkWithPreview";
 
 // leer de mdx contenido y metadata renderiar a la pagina de blog
 interface PostPageProps {
@@ -61,7 +62,7 @@ export default function PostPage({ post }: PostPageProps) {
               <PostInfo />
               <h1 className='text-3xl  md:text-5xl text-brand-pink-50 font-bold font-Urbanist'>{post.meta.title}</h1>
             </header>
-            <MDXRemote {...post.content} components={{ Image, YouTube }} />
+            <MDXRemote {...post.content} components={{ Image, YouTube, LinkWithPreview }} />
           </article>
         </section>
       </div>

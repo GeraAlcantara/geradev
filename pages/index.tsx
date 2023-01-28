@@ -7,7 +7,6 @@ import { MetaDataHome } from "../data/MetaData";
 export default function Home() {
   const [letterClass, setletterClass] = useState("animatedLeters");
   const [paragraphClass, setParagraphClass] = useState("");
-
   const titlename = "Jaguar Ek";
   const txtgreating = "Hola, soy";
   const txtjobtitle = "Front End Developer";
@@ -17,7 +16,6 @@ export default function Home() {
       setletterClass("cursor-progress");
       setParagraphClass("slide-in-bottom");
     }, 4000);
-
     return () => {
       clearTimeout(removeaddClass);
     };
@@ -34,7 +32,6 @@ export default function Home() {
               <div className='font-Urbanist xl:text-5xl xl:top-4 xl:relative mb-2 '>
                 <AnimatedLetters letterClass={` ${letterClass} `} text={txtgreating} idx={1}></AnimatedLetters>
               </div>
-
               <div className='font-Raleway font-extrabold text-3xl xl:text-6xl transition-all '>
                 <AnimatedLetters letterClass={` ${letterClass} `} text={titlename} idx={10}></AnimatedLetters>
               </div>

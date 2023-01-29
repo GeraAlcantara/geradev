@@ -29,7 +29,7 @@ export default function Home() {
           <div className='w-full xl:w-1/2 relative'>
             <div className='bg-gradient-to-br from-brand-black-300 via-brand-black-300/50 to-transparent w-40 h-40 block rounded-full absolute -left-8 -top-10 '></div>
             <div className='relative'>
-              <div className='font-Urbanist xl:text-5xl xl:top-4 xl:relative mb-2 '>
+              <div className='font-Urbanist xl:text-5xl xl:top-4 xl:relative mb-0 xl:mb-2  '>
                 <AnimatedLetters letterClass={` ${letterClass} `} text={txtgreating} idx={1}></AnimatedLetters>
               </div>
               <div className='font-Raleway font-extrabold text-3xl xl:text-6xl transition-all '>

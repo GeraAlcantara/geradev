@@ -410,3 +410,211 @@ input span {
         transform: rotate(360deg);
     }
 }
+
+.memory {
+    &-game {
+        width: 99%;
+        height: 100%;
+        display: grid;
+
+        grid-template-columns: repeat(6, minmax(150px, 1fr));
+        /* rows auto min 250px */
+        grid-template-rows: repeat(2, minmax(440px, 1fr));
+        gap: 1rem;
+        perspective: 2000px;
+        /* max-width: 1280px; */
+
+    }
+
+    &-card {
+        margin: 5px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.5s;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+
+        &__wrapper {
+            padding: 0.5rem;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+        }
+
+        &__top {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            column-gap: 0.5rem;
+            color: #fafafa;
+
+            &-left {
+                display: flex;
+                align-items: flex-start;
+                column-gap: 0.5rem;
+            }
+
+            &-right {
+                display: flex;
+                align-items: flex-end;
+                flex-flow: column;
+            }
+
+            &-Name {
+                text-transform: uppercase;
+                line-height: 1;
+                letter-spacing: 1px;
+                font-weight: 900;
+                writing-mode: vertical-rl;
+                color: transparent;
+                -webkit-text-stroke: 1px #fafafa;
+                font-size: 2.5rem;
+            }
+
+            &__txtBolder {
+                font-weight: 900;
+                text-transform: uppercase;
+                font-size: 3.35rem;
+                line-height: 1;
+            }
+
+            &__txtBold {
+                font-weight: 700;
+                font-size: 1rem;
+                line-height: 1;
+            }
+
+            &__txt--small {
+                font-weight: 400;
+                font-size: 0.75rem;
+            }
+
+            &__txtThin--small {
+                font-size: 0.8rem;
+                font-weight: 100;
+            }
+
+
+        }
+
+        &__Icon {
+            grid-column-start: 2;
+            width: 100%;
+            position: relative;
+            display: flex;
+            height: 100%;
+            padding: 1rem;
+        }
+
+        &__center {
+            display: grid;
+            grid-template-columns: 2fr 3fr 2fr;
+            grid-template-rows: 1fr;
+            align-items: start;
+            width: 100%;
+        }
+
+        &__footer {
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            column-gap: 2rem;
+            margin-top: 0.5rem;
+
+            &-tier {
+                display: flex;
+                justify-content: space-between;
+
+                .tier__left {
+                    margin-top: 10px;
+                    display: flex;
+                    flex-flow: column;
+                    align-self: flex-start;
+
+                }
+
+                .tier-value {
+                    font-weight: 400;
+                    line-height: 0.75;
+                    font-size: 3.75rem;
+                    align-self: flex-end;
+
+                }
+
+                .txtLight {
+                    font-weight: 100;
+                    font-size: 0.6rem;
+                    text-transform: capitalize;
+                    line-height: 0.95;
+
+                }
+
+            }
+
+            &-description {
+                header {
+
+                    border-top: 1px solid #526e72;
+                    border-bottom: 1px solid #526e72;
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: space-evenly;
+
+
+
+                    h1 {
+                        font-size: 0.5rem;
+                    }
+
+                    span {
+                        font-size: 0.2rem;
+                    }
+                }
+
+                &__txtSmall {
+                    margin-top: 5px;
+                    font-size: 0.3rem;
+                }
+            }
+        }
+
+        &:active {
+            transform: scale(0.97);
+            transition: transform 0.2s;
+        }
+
+        &.flip {
+            transform: rotateY(180deg);
+        }
+    }
+
+}
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    background-color: #f5dfe8;
+    backface-visibility: hidden;
+
+}
+
+.back-face {
+
+    opacity: 1;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+    background-color: #0d1016;
+
+}
+
+.back-face {
+    background-color: #293243;
+}

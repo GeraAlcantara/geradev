@@ -52,6 +52,7 @@ module.exports = {
       fontFamily: {
         Raleway: ["Raleway", ...defaultTheme.fontFamily.sans],
         Urbanist: ["Urbanist", ...defaultTheme.fontFamily.sans],
+        PaytonOne: ["Payton One", ...defaultTheme.fontFamily.sans],
         sans: ["Lato", ...defaultTheme.fontFamily.sans],
       },
       animation: {

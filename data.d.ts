@@ -16,12 +16,13 @@ interface PreviewCardData {
 // memory Game interfaces
 interface ItemImgCard {
   name: string;
-  /* type as a image source import  */
+  nickname: string;
   img: string;
+  value: "S" | "A" | "B" | "C" | "D";
+  type: "Library" | "Framework" | "Runtime" | "Building Tool";
+  description: string;
 }
-interface MemoryCardProps {
-  name: string;
-  img: string;
+interface MemoryCardProps extends ItemImgCard {
   index: number;
   isDone: boolean;
   isOpen: boolean;

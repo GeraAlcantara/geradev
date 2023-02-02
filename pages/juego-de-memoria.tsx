@@ -63,7 +63,7 @@ function MemorieGame({ items }: Props) {
   }, [openCards, items]);
 
   return (
-    <section className='p-4 h-full bg-[#1f2534]'>
+    <section className=' bg-[#1f2534]'>
       <div className='memory-game'>
         {items.map((item, idx) => (
           <CardMemoryGame
@@ -75,6 +75,10 @@ function MemorieGame({ items }: Props) {
             isDone={checkCardIsDone(item)}
             isOpen={checkCardIsOpen(idx)}
             isEnable={clickable}
+            description={item.description}
+            nickname={item.nickname}
+            type={item.type}
+            value={item.value}
           />
         ))}
       </div>

@@ -12,7 +12,7 @@ export const itemsImgCard: ItemImgCard[] = [
   },
   {
     name: "Astro",
-    img: "/images/memoryGame/svgs/astrolight.svg",
+    img: "/images/memoryGame/svgs/astroDark.svg",
     value: "S",
     type: "Framework",
     nickname: "Astro",
@@ -26,7 +26,7 @@ export const itemsImgCard: ItemImgCard[] = [
     type: "Building Tool",
     nickname: "Vite",
     description:
-      "Vite is a build tool that aims to provide a faster and leaner development experience for modern web projects. It consists of two major parts: a dev server that provides rich feature enhancements over native ES Module imports, and a build command that bundles your code with Rollup.",
+      "Vite is a build tool that aims to provide a faster and leaner development experience for modern web projects. It consists of two major parts: a dev server that provides rich feature over native ES Module imports, and a build command that bundles your code.",
   },
 
   {

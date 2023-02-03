@@ -7,7 +7,6 @@ export default function Document(): JSX.Element {
       <Head>
         <meta lang='es' />
         <meta httpEquiv='Content-Language' content='es' />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta name='copyright' content={`Copyright ${year} by Gerardo Alcántara`} />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='true' />

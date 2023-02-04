@@ -1,5 +1,6 @@
 import { useRef, useCallback, useEffect } from "react";
 import ReactCanvasConfetti from "react-canvas-confetti";
+import styles from "../../styles/canvasConfetti.module.scss";
 
 function Confetti() {
   const refAnimation = useRef<any>(null);
@@ -45,7 +46,7 @@ function Confetti() {
   }, []);
   return (
     <>
-      <ReactCanvasConfetti refConfetti={getInstace} className='canvasConfettiStyles' />
+      <ReactCanvasConfetti refConfetti={getInstace} className={styles.canvasConfettiStyles} />
     </>
   );
 }

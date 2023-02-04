@@ -1,6 +1,3 @@
-import Image from "next/image";
-import JSBadge from "../../public/images/memoryGame/svgs/js-badge.svg";
-
 import clsx from "clsx";
 import BackFaceCardMemory from "./BackFaceCardMemory";
 import FrontFaceCardMemory from "./FrontFaceCardMemory";

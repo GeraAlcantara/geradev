@@ -1,20 +1,21 @@
 import Image from "next/image";
 import RestarSvg from "../../public/images/memoryGame/svgs/restarCardGame.svg";
+import styles from "../../styles/restartMemoryGame.module.scss";
 interface RestartmemoryGameProps {
   handleClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 function RestartmemoryGame({ handleClick }: RestartmemoryGameProps) {
   return (
-    <div className='restart'>
-      <div className='restart__wrapper'>
-        <div className='restart__wrapper__img'>
+    <div className={styles.restart}>
+      <div className={styles.restart__wrapper}>
+        <div className={styles.restart__wrapper__img}>
           <Image src={RestarSvg} layout='fill' alt='' />
         </div>
         <button onClick={handleClick}>
-          <div className='diamante'>
-            <div className='diamante__thin'>
-              <div className='restart__wrapper__txt font-PaytonOne'>
+          <div className={styles.diamante}>
+            <div className={styles.diamante__thin}>
+              <div className={`${styles.restart__wrapper__txt} font-PaytonOne`}>
                 <p>Restart</p>
                 <span>Game</span>
               </div>

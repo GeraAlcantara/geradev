@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import CardMemoryGame from "../components/memoryUI/CardMemoryGame";
+import Confetti from "../components/memoryUI/Confetti";
+import RestartmemoryGame from "../components/memoryUI/RestartmemoryGame";
+import ScrollDownIcon from "../components/memoryUI/ScrollDownIcon";
 import { itemsImgCard } from "../data/Datamemorygame";
 import { Shuffle } from "../lib/shuffleMemoryCards";
-// get props from server
+
 interface Props {
   items: ItemImgCard[];
 }
@@ -10,20 +13,18 @@ function MemorieGame({ items }: Props) {
   const [openCards, setOpenCards] = useState<number[]>([]);
   const [doneCards, setDoneCards] = useState<any>({});
   const [clickable, setClickable] = useState<boolean>(true);
+  const [gameFinished, setGameFinished] = useState<boolean>(false);
+  const [itemsShuffle, setItemsShuffle] = useState<ItemImgCard[]>(items);
 
   // useref for adding the class flip to the card when is clicked
   const cardClicked = (idx: number) => {
     if (openCards.length === 1) {
       const [prevCardIdx] = openCards;
       if (prevCardIdx !== idx) {
-        console.log([prevCardIdx, idx]);
-
         setOpenCards((prev) => [...prev, idx]);
         setClickable(false);
       }
     } else {
-      console.log([idx]);
-
       setOpenCards([idx]);
     }
   };
@@ -51,21 +52,37 @@ function MemorieGame({ items }: Props) {
   //card is open ?
   const checkCardIsOpen = (idx: number) => openCards.includes(idx);
 
+  // restart the game when the button is clicked and re render the component
+  const restartGame = () => {
+    setDoneCards({});
+    setOpenCards([]);
+    setGameFinished(false);
+    setItemsShuffle((prev) => prev.sort(() => Math.random() - 0.5));
+  };
+
   useEffect(() => {
     let timeout: any;
     if (openCards.length === 2) {
       timeout = setTimeout(checkForMatch, 1000);
     }
+    if (Object.keys(doneCards).length === items.length / 2) {
+      setGameFinished(true);
+    }
     // clean up
     return () => {
       clearTimeout(timeout);
+      setGameFinished(false);
     };
-  }, [openCards, items]);
+  }, [openCards, itemsShuffle, doneCards]);
 
   return (
     <section className=' bg-[#1f2534]'>
+      {gameFinished && <Confetti />}
+      {gameFinished && <RestartmemoryGame handleClick={restartGame} />}
+      <ScrollDownIcon />
+
       <div className='memory-game'>
-        {items.map((item, idx) => (
+        {itemsShuffle.map((item, idx) => (
           <CardMemoryGame
             key={idx}
             index={idx}

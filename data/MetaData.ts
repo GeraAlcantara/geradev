@@ -37,8 +37,7 @@ export const MetaPonnyCard = {
 };
 export const MemoryGame = {
   pageTitle: "Juego de Memoria | Jaguar Ek",
-  pageDescription:
-    "Remake juego de memoria, pasando de JavaScript puro a React, TypeScript, SASS y Tailwind. Se describen los pasos para mejorar la apariencia visual, la lógica y la funcionalidad del juego.",
+  pageDescription: "Encuentra las parejas de cartas.",
   socialImage: "socialCardMemoryGame.jpg",
   socialImageAlt: "imagen juego de memoria",
   slug: "rd/juego-de-memoria",

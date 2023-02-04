@@ -29,3 +29,32 @@ interface MemoryCardProps extends ItemImgCard {
   isEnable: boolean;
   handleClick: (index: number) => void;
 }
+
+/* RD */
+interface attribution {
+  baseonUrl: string;
+  baseonText: string;
+  authorUrl: string;
+  authorText: string;
+}
+interface gradientColors {
+  blue: ["#72aeff", "#377ddb"];
+  blueDark: ["#0c1724", "293052"];
+  pinkDark: ["#42202e", "42202e"];
+}
+
+interface RdCardProps {
+  prefixtitle: string;
+  title: string;
+  excerpt: string;
+  linkUrl: string;
+  linkText: string;
+  attribution?: attribution;
+  imgSrc: StaticImageData;
+  gradient: keyof gradientColors;
+  color: "light" | "dark";
+}
+interface RdCardComponentProp extends RdCardProps {
+  id: number;
+  isHighlight: boolean;
+}

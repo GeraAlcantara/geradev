@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import CardMemoryGame from "../components/memoryUI/CardMemoryGame";
-import Confetti from "../components/memoryUI/Confetti";
-import RestartmemoryGame from "../components/memoryUI/RestartmemoryGame";
-import ScrollDownIcon from "../components/memoryUI/ScrollDownIcon";
-import { itemsImgCard } from "../data/Datamemorygame";
-import { Shuffle } from "../lib/shuffleMemoryCards";
+import CardMemoryGame from "../../components/memoryUI/CardMemoryGame";
+import Confetti from "../../components/memoryUI/Confetti";
+import RestartmemoryGame from "../../components/memoryUI/RestartmemoryGame";
+import ScrollDownIcon from "../../components/memoryUI/ScrollDownIcon";
+import { itemsImgCard } from "../../data/Datamemorygame";
+import MetaPageHelper from "../../lib/MetaPageHelper";
+import { Shuffle } from "../../lib/shuffleMemoryCards";
+import { MemoryGame } from "../../data/MetaData";
 
 interface Props {
   items: ItemImgCard[];
@@ -76,30 +78,33 @@ function MemorieGame({ items }: Props) {
   }, [openCards, itemsShuffle, doneCards]);
 
   return (
-    <section className=' bg-[#1f2534]'>
-      {gameFinished && <Confetti />}
-      {gameFinished && <RestartmemoryGame handleClick={restartGame} />}
-      <ScrollDownIcon />
+    <>
+      <MetaPageHelper {...MemoryGame} />
+      <section className=' bg-[#1f2534]'>
+        {gameFinished && <Confetti />}
+        {gameFinished && <RestartmemoryGame handleClick={restartGame} />}
+        <ScrollDownIcon />
 
-      <div className='memory-game'>
-        {itemsShuffle.map((item, idx) => (
-          <CardMemoryGame
-            key={idx}
-            index={idx}
-            name={item.name}
-            img={item.img}
-            handleClick={cardClicked}
-            isDone={checkCardIsDone(item)}
-            isOpen={checkCardIsOpen(idx)}
-            isEnable={clickable}
-            description={item.description}
-            nickname={item.nickname}
-            type={item.type}
-            value={item.value}
-          />
-        ))}
-      </div>
-    </section>
+        <div className='memory-game'>
+          {itemsShuffle.map((item, idx) => (
+            <CardMemoryGame
+              key={idx}
+              index={idx}
+              name={item.name}
+              img={item.img}
+              handleClick={cardClicked}
+              isDone={checkCardIsDone(item)}
+              isOpen={checkCardIsOpen(idx)}
+              isEnable={clickable}
+              description={item.description}
+              nickname={item.nickname}
+              type={item.type}
+              value={item.value}
+            />
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
 

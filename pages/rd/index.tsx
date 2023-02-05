@@ -16,7 +16,7 @@ const rdCardsData: RdCardComponentProp[] = [
     prefixtitle: "Remake Proyecto",
     title: "Re haciendo el juego de memoria ",
     excerpt:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe dolor dolores repellat at quaerat aliquid maiores labore totam earum autem ad dolore quae quia perferendis, ipsa doloremque voluptate recusandae quibusdam?",
+      "Remake juego de memoria, pasando de JavaScript puro a React, TypeScript, SASS y Tailwind. Se mejoró la apariencia visual, la lógica y la funcionalidad del juego.",
     imgSrc: rdCardMemory,
     linkText: "visitar Juego",
     linkUrl: "/rd/juego-de-memoria",

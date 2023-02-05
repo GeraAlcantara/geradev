@@ -1,10 +1,8 @@
 import MetaPageHelper from "../../lib/MetaPageHelper";
 import { MetadataRD } from "../../data/MetaData";
 import BannerRD from "../../components/BannerRD";
-import Image from "next/image";
 import PonnyCarImg from "../../public/images/ponycarRender.png";
 import AirplaneImg from "../../public/images/airplaneRender.png";
-import Link from "next/link";
 import RdCard from "../../components/rdUi/RdCard";
 import RdCardBig from "../../components/rdUi/RdCardBig";
 import rdCardMemory from "../../public/images/memoryGame/svgs/backfaceCardWithBG.svg";

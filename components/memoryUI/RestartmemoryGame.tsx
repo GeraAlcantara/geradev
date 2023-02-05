@@ -15,7 +15,7 @@ function RestartmemoryGame({ handleClick }: RestartmemoryGameProps) {
         <button onClick={handleClick}>
           <div className={styles.diamante}>
             <div className={styles.diamante__thin}>
-              <div className={`${styles.restart__wrapper__txt} font-PaytonOne`}>
+              <div className={`${styles.restart__wrapper__txt} font-Poppins`}>
                 <p>Restart</p>
                 <span>Game</span>
               </div>

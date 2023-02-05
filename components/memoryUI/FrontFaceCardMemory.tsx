@@ -7,7 +7,7 @@ function FrontFaceCardMemory(props: ItemImgCard) {
         {/* top part */}
         <div className=' absolute inset-0 w-1/2 h-1/2 opacity-50 gradient gradient__glow col-start-1 col-end-4 row-start-1 row-span-4'></div>
         <div className='memory-card__top-left'>
-          <span className='memory-card__top-Name font-PaytonOne'>{props.name}</span>
+          <span className='memory-card__top-Name font-Poppins'>{props.name}</span>
         </div>
         <div className='memory-card__top-center'>
           <span className='memory-card__top__txt--small'>free and open-source</span>
@@ -29,7 +29,7 @@ function FrontFaceCardMemory(props: ItemImgCard) {
           </div>
         </div>
         <div className='memory-card__center-right'>
-          <span className='memory-card__top-Name font-PaytonOne self-end'>{props.name}</span>
+          <span className='memory-card__top-Name font-Poppins self-end'>{props.name}</span>
         </div>
         <div className='memory-card__footer-tier--prefix'>
           <span>Front</span>

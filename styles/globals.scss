@@ -415,20 +415,28 @@ input span {
     &-game {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(251.0345px, 1fr)); //307
-        grid-template-rows: repeat(auto-fill, minmax(349.9765px, 1fr)); //428
+        grid-template-rows: repeat(auto-fit, minmax(349.9765px, 1fr)); //428
         gap: 1rem;
-        perspective: 3600px;
+        perspective: 6000px;
         max-width: 100%;
+        min-height: 100vh;
         margin: 0 auto;
         padding: 1rem;
 
         @include media('md') {
+            perspective: 2000px;
             padding: 2rem;
         }
 
         @include media('lg') {
-            perspective: 2000px;
             max-width: 1340px;
+        }
+
+        @include media('xxl') {
+            grid-template-columns: repeat(auto-fit, minmax(251.0345px, 1fr)); //307
+            grid-template-rows: repeat(auto-fit, minmax(349.9765px, 1fr)); //428
+            max-width: 1800px;
+
         }
     }
 

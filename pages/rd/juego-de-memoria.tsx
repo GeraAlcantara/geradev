@@ -80,7 +80,7 @@ function MemorieGame({ items }: Props) {
   return (
     <>
       <MetaPageHelper {...MemoryGame} />
-      <section className=' bg-[#1f2534]'>
+      <section className=' bg-[#1f2534] '>
         {gameFinished && <Confetti />}
         {gameFinished && <RestartmemoryGame handleClick={restartGame} />}
         <ScrollDownIcon />

@@ -1,3 +1,5 @@
+@use "./utils" as *;
+
 // restar game 
 .restart {
     position: fixed;
@@ -12,6 +14,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
     transition: opacity 0.5s;
+    padding: 1rem;
 
 
     &__wrapper {
@@ -24,10 +27,20 @@
         height: 100%;
         max-width: 428px;
         max-height: 307px;
-
         position: relative;
         background-color: #13111c;
         border-radius: 16px;
+        border: 1px solid #ffd1906b;
+        aspect-ratio: 25/17;
+
+
+        @include media('xl') {
+            max-width: 700px;
+            max-height: 502px;
+            width: 100%;
+            height: 100%;
+
+        }
 
         &__img {
             width: 100%;
@@ -35,6 +48,7 @@
             position: absolute;
             top: 0;
             left: 0;
+            aspect-ratio: 25/17;
 
             object-fit: cover;
             object-position: center;
@@ -53,6 +67,10 @@
             text-transform: uppercase;
             font-weight: 900;
             transform: rotate(-45deg);
+
+            @include media('xl') {
+                font-size: 1.55rem;
+            }
 
         }
 
@@ -77,6 +95,11 @@
                 align-items: center;
                 background-color: #13111c;
                 transition: all 0.2s ease-out;
+
+                @include media('xl') {
+                    width: 10rem;
+                    height: 10rem;
+                }
 
                 &__thin {
                     width: 80%;

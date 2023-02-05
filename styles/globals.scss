@@ -433,10 +433,9 @@ input span {
         }
 
         @include media('xxl') {
-            grid-template-columns: repeat(auto-fit, minmax(251.0345px, 1fr)); //307
-            grid-template-rows: repeat(auto-fit, minmax(349.9765px, 1fr)); //428
+            grid-template-columns: repeat(auto-fill, minmax(251.0345px, 1fr)); //307
+            grid-template-rows: repeat(minmax(auto-fill, 6), minmax(349.9765px, 1fr)); //428
             max-width: 1800px;
-
         }
     }
 

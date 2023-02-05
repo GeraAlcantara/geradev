@@ -14,16 +14,20 @@ function CardMemoryGame(props: MemoryCardProps) {
 
   if (props.isDone) {
     return (
-      <div className='memory-card flip'>
-        <FrontFaceCardMemory {...itemsProps} />
-        <BackFaceCardMemory />
+      <div className='flex justify-center items-center h-full'>
+        <div className='memory-card flip'>
+          <FrontFaceCardMemory {...itemsProps} />
+          <BackFaceCardMemory />
+        </div>
       </div>
     );
   }
   return (
-    <div className={clsx("memory-card", { flip: props.isOpen })} onClick={flipCard}>
-      <BackFaceCardMemory />
-      <FrontFaceCardMemory {...itemsProps} />
+    <div className='flex justify-center items-center h-full'>
+      <div className={clsx("memory-card", { flip: props.isOpen })} onClick={flipCard}>
+        <BackFaceCardMemory />
+        <FrontFaceCardMemory {...itemsProps} />
+      </div>
     </div>
   );
 }

@@ -448,6 +448,17 @@ input span {
         height: 100%;
         aspect-ratio: 0.718;
         border-radius: 4.55% / 3.5%;
+        max-width: 271.0345px;
+        max-height: auto;
+
+        @include media('md') {
+            max-width: unset;
+            max-height: unset;
+        }
+
+        @include media('xxl') {
+            max-height: 390.9765px;
+        }
 
         &__wrapper {
             padding: 1rem;
@@ -507,7 +518,11 @@ input span {
                 writing-mode: vertical-rl;
                 color: transparent;
                 -webkit-text-stroke: 1px #fafafa;
-                font-size: 3rem;
+                font-size: clamp(2.5rem, 7vw, 3rem);
+
+                @include media('md') {
+                    font-size: clamp(2rem, 5vw, 2.5rem);
+                }
 
                 @include media('lg') {
                     font-size: 2.5rem;
@@ -519,7 +534,8 @@ input span {
                 font-weight: 900;
                 text-transform: uppercase;
                 line-height: 1;
-                font-size: 3.4rem;
+
+                font-size: clamp(2.4rem, 4vw, 3.4rem);
 
                 @include media('lg') {
                     font-size: 2.4rem;
@@ -528,7 +544,7 @@ input span {
 
             &__txtBold {
                 font-weight: 700;
-                font-size: 1.15rem;
+                font-size: 1.05rem;
 
                 @include media('lg') {
                     font-size: clamp(0.85rem, 1vw, 1.15rem);
@@ -638,7 +654,7 @@ input span {
                     align-self: flex-end;
 
                     @include media('md') {
-                        font-size: clamp(6rem, 9vw, 7rem);
+                        font-size: clamp(4rem, 9vw, 7rem);
                     }
 
                     @include media('lg') {

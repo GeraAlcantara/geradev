@@ -8,7 +8,7 @@ interface RestartmemoryGameProps {
 function RestartmemoryGame({ handleClick }: RestartmemoryGameProps) {
   return (
     <div className={styles.restart}>
-      <div className={styles.restart__wrapper}>
+      <div className={`${styles.restart__wrapper} animate-scaleInCenter`}>
         <div className={styles.restart__wrapper__img}>
           <Image src={RestarSvg} layout='fill' alt='' />
         </div>

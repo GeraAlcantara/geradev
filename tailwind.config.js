@@ -57,7 +57,7 @@ module.exports = {
       },
       animation: {
         jelloHorizontal: "jelloHorizontal 0.5s ease-out both infinite",
-        scaleInCenter: "scaleincenter 0.3s cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.3s both;",
+        scaleInCenter: "scaleincenter 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.3s both;",
       },
       keyframes: {
         scaleincenter: {

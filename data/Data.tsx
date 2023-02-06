@@ -1,6 +1,8 @@
 import { RiHome2Fill, RiFacebookFill, RiInstagramFill, RiLinkedinBoxFill, RiTwitterFill, RiMailSendFill, RiNewspaperLine, RiGithubFill } from "react-icons/ri";
 import { GoPerson } from "react-icons/go";
 
+import { BsTwitch } from "react-icons/bs";
+
 export interface NavLinksProps {
   title: string;
   slug: string;
@@ -40,23 +42,18 @@ export const SocialLinks: Array<SocialLinksProps> = [
     Icon: RiGithubFill,
   },
   {
+    title: "Twitch",
+    link: "https://www.twitch.tv/jaguar_ek",
+    Icon: BsTwitch,
+  },
+  {
     title: "Linkedin",
     link: "https://www.linkedin.com/in/gerardo-alcantara-4804b328/",
     Icon: RiLinkedinBoxFill,
   },
   {
-    title: "Instagram",
-    link: "https://www.instagram.com/gerardo_alcantara_rmz/",
-    Icon: RiInstagramFill,
-  },
-  {
     title: "Twitter",
     link: "https://twitter.com/geralcantara79",
     Icon: RiTwitterFill,
-  },
-  {
-    title: "facebook",
-    link: "https://www.facebook.com/gerardo.alcantara.rmz",
-    Icon: RiFacebookFill,
   },
 ];

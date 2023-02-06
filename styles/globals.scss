@@ -450,6 +450,9 @@ input span {
         border-radius: 4.55% / 3.5%;
         max-width: 271.0345px;
         max-height: auto;
+        backface-visibility: hidden;
+        user-select: none;
+
 
         @include media('md') {
             max-width: unset;
@@ -714,10 +717,12 @@ input span {
         &:active {
             transform: scale(0.97);
             transition: transform 0.2s;
+
         }
 
         &.flip {
             transform: rotateY(180deg);
+            cursor: default;
         }
     }
 

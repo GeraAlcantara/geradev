@@ -65,8 +65,9 @@ export default function RDPage() {
     <>
       <MetaPageHelper {...MetadataRD} />
       <BannerRD />
-      <div className='flex flex-col lg:grid md:grid-cols-12 gap-8 grid-rows-1 py-8 px-4 md:pl-4 md:pr-8 xl:container xl:m-auto'>
+      <div className='flex flex-col lg:grid md:grid-cols-12 gap-8 grid-rows-1 xl:container xl:m-auto py-8 px-4 md:pl-4 md:pr-8 '>
         {/* Card 1 big */}
+        
         {rdCardsData.map((card, idx) => (card.isHighlight ? <RdCardBig key={idx} {...card} /> : <RdCard key={idx} {...card} />))}
       </div>
     </>

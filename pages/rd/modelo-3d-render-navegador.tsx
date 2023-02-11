@@ -14,22 +14,9 @@ function Model() {
 }
 
 export default function PonnyCar() {
-  const [letterClass, setletterClass] = useState("animatedLeters");
-  const [paragraphClass, setParagraphClass] = useState("");
 
   const titlename = "3D Model";
   const txtgreating = "Gira el modelo";
-
-  useEffect(() => {
-    const removeaddClass = setTimeout(() => {
-      setletterClass("cursor-progress");
-      setParagraphClass("slide-in-bottom");
-    }, 4000);
-
-    return () => {
-      clearTimeout(removeaddClass);
-    };
-  }, []);
   return (
     <div>
       <MetaPageHelper {...MetaPonnyCard} />
@@ -55,10 +42,10 @@ export default function PonnyCar() {
           <div className='p-8'>
             <div className='w-full xl:w-1/2 relative mb-10 flex flex-col justify-center'>
               <div className='font-Raleway font-extrabold text-3xl xl:text-6xl transition-all '>
-                <AnimatedLetters letterClass={` ${letterClass} `} text={titlename} idx={10}></AnimatedLetters>
+                <AnimatedLetters text={titlename} ></AnimatedLetters>
               </div>
               <div className='font-Urbanist xl:text-5xl xl:top-4 xl:relative mb-4 '>
-                <AnimatedLetters letterClass={` ${letterClass} `} text={txtgreating} idx={1}></AnimatedLetters>
+                <AnimatedLetters text={txtgreating}></AnimatedLetters>
               </div>
             </div>
           </div>

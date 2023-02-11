@@ -13,7 +13,7 @@ function RdCard({ prefixtitle, title, attribution, excerpt, imgSrc, linkText, li
       <div className='px-4 md:px-8 flex flex-col gap-y-4 justify-around md:w-1/2 md:h-full'>
         <div>
           <h2
-            className={clsx("text-3xl lg:text-5xl  uppercase font-extrabold", {
+            className={clsx("text-3xl lg:text-3xl  uppercase font-extrabold", {
               "text-brand-pink-accent": color === "light",
               "text-[#2c3436]": color === "dark",
             })}
@@ -22,7 +22,7 @@ function RdCard({ prefixtitle, title, attribution, excerpt, imgSrc, linkText, li
           </h2>
           <div>
             <h2
-              className={clsx("text-3xl lg:text-5xl font-Urbanist  text-brand-pink-accent", {
+              className={clsx("text-3xl lg:text-3xl font-Urbanist  text-brand-pink-accent", {
                 "text-brand-pink-accent": color === "light",
                 "text-[#2c3436]": color === "dark",
               })}

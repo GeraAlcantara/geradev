@@ -27,7 +27,7 @@ export default function Blog({ posts }: { posts: PostMeta[] }) {
       <MetaPageHelper {...MetaDataBlog} />
       {/* Todo tendra contenido trendra el display dentro del Main  */}
 
-      <div className=' bg-brand-black-900 min-h-screen p-8'>
+      <div className=' bg-brand-black-900 min-h-screen p-8 container m-auto'>
         <div className='w-full xl:w-1/2 relative mb-10 flex flex-col justify-center'>
           <div className='font-Raleway font-extrabold text-3xl xl:text-6xl transition-all '>
             <AnimatedLetters letterClass={` ${letterClass} `} text={titlename} idx={10}></AnimatedLetters>

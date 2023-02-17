@@ -26,7 +26,6 @@ function SistemReboot({ onChange, captchaKey }: Props) {
         const { reboot } = response.data
 
         captchaKey(new Date().getTime().toString())
-
         if (reboot) {
           console.log('respuesta del server = reboot', reboot)
         }
@@ -77,43 +76,3 @@ function SistemReboot({ onChange, captchaKey }: Props) {
 }
 
 export default SistemReboot
-
-/* const sendReboot = async () => {
-  let config = {
-    method: "post",
-    url: `${process.env.NEXT_PUBLIC_API_URL}/sistemreboot`,
-    headers: {
-      "Content-Type": "application/json",
-    },
-    data: { reboot: true },
-  };
-  try {
-    const response = await axios(config);
-    if (response.status === 200) {
-      const { reboot } = response.data;
-      if (reboot) {
-        console.log("respuesta del server = reboot", reboot);
-      }
-    }
-  } catch (error) {
-    console.log(error);
-  }
-}; */
-
-/* const handleClick = async (e: React.SyntheticEvent<HTMLButtonElement>) => {
-  e.preventDefault();
-  setReboot(true);
-  setCaptchaError(false);
-  captchaKey(new Date().getTime().toString());
-  setCaptchaError(false);
-};
-
-if (reboot) {
-  sendReboot();
-}
-useEffect(() => {
-  onChange(captchaError);
-  return () => {
-    console.log("unmounting");
-  };
-}, [reboot, onChange, captchaError]); */

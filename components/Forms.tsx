@@ -119,7 +119,6 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
         if (!captchaIsOK) {
           setCaptchaKey(new Date().getTime().toString())
           setCaptchaError(true)
-          console.log('The captcha is not solved')
         }
         if (send) {
           console.log('respuesta del server = message sent', send)
@@ -137,8 +136,6 @@ function Forms({ defaultCaptchaKey }: { defaultCaptchaKey: string }) {
   }
 
   useEffect(() => {
-    console.log(captchaSolved, 'captchaSolved has changed')
-
     if (captchaSolved) {
       setCaptchaKey(new Date().getTime().toString())
     }

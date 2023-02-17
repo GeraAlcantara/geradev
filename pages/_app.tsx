@@ -14,13 +14,11 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 
   Nprogress.configure({ showSpinner: false })
   useEffect(() => {
-    const handleRouteChange = (url: string): void => {
-      if (router.asPath === url) return
+    const handleRouteChange = (_url: string): void => {
       Nprogress.start()
     }
 
-    const handleRouteChangeComplete = (url: string): void => {
-      if (router.asPath === url) return
+    const handleRouteChangeComplete = (_url: string): void => {
       Nprogress.done()
     }
 

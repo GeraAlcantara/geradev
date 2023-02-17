@@ -47,7 +47,7 @@
           "arrowParens": "always",
           "endOfLine":"auto",
           "space-before-function-paren": "off",
-          "trailingComma": "off"
+          "trailingComma": "none"
         }
       ],
       "@typescript-eslint/space-before-function-paren": "off",

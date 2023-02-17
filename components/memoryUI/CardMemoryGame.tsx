@@ -1,35 +1,37 @@
-import clsx from "clsx";
-import BackFaceCardMemory from "./BackFaceCardMemory";
-import FrontFaceCardMemory from "./FrontFaceCardMemory";
+import clsx from 'clsx'
 
-function CardMemoryGame(props: MemoryCardProps) {
-  const flipCard = () => {
+import BackFaceCardMemory from './BackFaceCardMemory'
+import FrontFaceCardMemory from './FrontFaceCardMemory'
+
+function CardMemoryGame(props: MemoryCardProps): JSX.Element {
+  const flipCard = (): void => {
     if (props.isEnable) {
-      props.handleClick(props.index);
+      props.handleClick(props.index)
     }
-  };
+  }
 
-  const { name, img, description, nickname, type, value } = props;
-  const itemsProps = { name, img, description, nickname, type, value };
+  const { name, img, description, nickname, type, value } = props
+  const itemsProps = { name, img, description, nickname, type, value }
 
   if (props.isDone) {
     return (
-      <div className='flex justify-center items-center h-full'>
-        <div className='memory-card flip'>
+      <div className="flex justify-center items-center h-full">
+        <div className="memory-card flip">
           <FrontFaceCardMemory {...itemsProps} />
           <BackFaceCardMemory />
         </div>
       </div>
-    );
+    )
   }
+
   return (
-    <div className='flex justify-center items-center h-full'>
-      <div className={clsx("memory-card", { flip: props.isOpen })} onClick={flipCard}>
+    <div className="flex justify-center items-center h-full">
+      <div className={clsx('memory-card', { flip: props.isOpen })} onClick={flipCard}>
         <BackFaceCardMemory />
         <FrontFaceCardMemory {...itemsProps} />
       </div>
     </div>
-  );
+  )
 }
 
-export default CardMemoryGame;
+export default CardMemoryGame

@@ -6,490 +6,1877 @@ source: https://sketchfab.com/3d-models/stylized-airplane-the-flying-circus-dior
 title: Stylized Airplane - The Flying Circus Diorama
 */
 
-import React, { useEffect, useRef } from "react";
-import { useGLTF, useAnimations } from "@react-three/drei";
+import React, { useEffect, useRef } from 'react'
+import { useGLTF, useAnimations } from '@react-three/drei'
 
-const URL = "../modelsThreeD/airplainDiorama/scene.gltf";
+const URL = '../modelsThreeD/airplainDiorama/scene.gltf'
+
 export default function ModelAirplane(props) {
-  const group = useRef();
-  const { nodes, materials, animations } = useGLTF(URL);
-  const { actions, clips, mixer, names, ref } = useAnimations(animations, group);
+  const group = useRef()
+  const { nodes, materials, animations } = useGLTF(URL)
+  const { actions, clips, mixer, names, ref } = useAnimations(animations, group)
+
   // play animation name Scene from animations
   useEffect(() => {
-    actions["Scene"].play();
+    actions['Scene'].play()
     //on component unmount stop animations
-  }, [actions]);
+  }, [actions])
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name='Sketchfab_Scene'>
-        <group name='Sketchfab_model' rotation={[-Math.PI / 2, 0, 0]}>
-          <group name='bb2b7121bdd541dd8608b622cb9145dffbx' rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
-            <group name='Object_2'>
-              <group name='RootNode'>
-                <group name='Empty027' position={[110.84, 40.92, -14.7]} scale={4122.79}>
-                  <group name='Empty028' position={[0.01, 0.01, -0.01]} rotation={[0.09, 0, 0]} scale={0.89}>
-                    <group name='cube004' position={[-0.33, 0.17, 0.1]} rotation={[-1.68, -0.05, 0.03]} scale={0.03}>
-                      <mesh name='cube004_M_Plane_0' geometry={nodes.cube004_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='cube004_M_Outline_0' geometry={nodes.cube004_M_Outline_0.geometry} material={materials.M_Outline} />
+      <group name="Sketchfab_Scene">
+        <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
+          <group
+            name="bb2b7121bdd541dd8608b622cb9145dffbx"
+            rotation={[Math.PI / 2, 0, 0]}
+            scale={0.01}
+          >
+            <group name="Object_2">
+              <group name="RootNode">
+                <group name="Empty027" position={[110.84, 40.92, -14.7]} scale={4122.79}>
+                  <group
+                    name="Empty028"
+                    position={[0.01, 0.01, -0.01]}
+                    rotation={[0.09, 0, 0]}
+                    scale={0.89}
+                  >
+                    <group
+                      name="cube004"
+                      position={[-0.33, 0.17, 0.1]}
+                      rotation={[-1.68, -0.05, 0.03]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.cube004_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="cube004_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.cube004_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="cube004_M_Outline_0"
+                      />
                     </group>
-                    <group name='Cube179' position={[0.18, 0.38, 0.51]} rotation={[-Math.PI / 2, -0.04, 0]} scale={0.03}>
-                      <mesh name='Cube179_M_Plane_0' geometry={nodes.Cube179_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube179_M_Outline_0' geometry={nodes.Cube179_M_Outline_0.geometry} material={materials.M_Outline} />
+                    <group
+                      name="Cube179"
+                      position={[0.18, 0.38, 0.51]}
+                      rotation={[-Math.PI / 2, -0.04, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube179_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube179_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube179_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube179_M_Outline_0"
+                      />
                     </group>
-                    <group name='Cube175' position={[0.76, 0.2, 0.14]} rotation={[-Math.PI / 2, -0.04, 0]} scale={0.03}>
-                      <mesh name='Cube175_M_Plane_0' geometry={nodes.Cube175_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube175_M_Outline_0' geometry={nodes.Cube175_M_Outline_0.geometry} material={materials.M_Outline} />
+                    <group
+                      name="Cube175"
+                      position={[0.76, 0.2, 0.14]}
+                      rotation={[-Math.PI / 2, -0.04, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube175_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube175_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube175_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube175_M_Outline_0"
+                      />
                     </group>
-                    <group name='Cube163' position={[0.74, 0.19, -0.23]} rotation={[-1.5, 0.23, 0.06]} scale={0.03}>
-                      <mesh name='Cube163_M_Plane_0' geometry={nodes.Cube163_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube163_M_Outline_0' geometry={nodes.Cube163_M_Outline_0.geometry} material={materials.M_Outline} />
+                    <group
+                      name="Cube163"
+                      position={[0.74, 0.19, -0.23]}
+                      rotation={[-1.5, 0.23, 0.06]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube163_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube163_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube163_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube163_M_Outline_0"
+                      />
                     </group>
-                    <group name='Cube162' position={[-0.31, 0.13, 0.17]} rotation={[0.87, -0.84, -0.25]} scale={0.03}>
-                      <mesh name='Cube162_M_Plane_0' geometry={nodes.Cube162_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube162_M_Outline_0' geometry={nodes.Cube162_M_Outline_0.geometry} material={materials.M_Outline} />
+                    <group
+                      name="Cube162"
+                      position={[-0.31, 0.13, 0.17]}
+                      rotation={[0.87, -0.84, -0.25]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube162_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube162_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube162_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube162_M_Outline_0"
+                      />
                     </group>
-                    <group name='Cube155' position={[0.18, 0.38, -0.51]} rotation={[-Math.PI / 2, 0.04, 0]} scale={0.03}>
-                      <mesh name='Cube155_M_Plane_0' geometry={nodes.Cube155_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube155_M_Outline_0' geometry={nodes.Cube155_M_Outline_0.geometry} material={materials.M_Outline} />
+                    <group
+                      name="Cube155"
+                      position={[0.18, 0.38, -0.51]}
+                      rotation={[-Math.PI / 2, 0.04, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube155_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube155_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube155_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube155_M_Outline_0"
+                      />
                     </group>
-                    <group name='Cylinder322' position={[0.15, 0.12, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cylinder322_M_Plane_0' geometry={nodes.Cylinder322_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder322_M_Outline_0' geometry={nodes.Cylinder322_M_Outline_0.geometry} material={materials.M_Outline} />
+                    <group
+                      name="Cylinder322"
+                      position={[0.15, 0.12, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder322_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder322_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder322_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder322_M_Outline_0"
+                      />
                     </group>
-                    <group name='Cylinder319' position={[0.02, 0.25, 0.01]} rotation={[-1.55, -0.13, 0]} scale={0.03}>
-                      <mesh name='Cylinder319_M_Plane_0' geometry={nodes.Cylinder319_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder319_M_Outline_0' geometry={nodes.Cylinder319_M_Outline_0.geometry} material={materials.M_Outline} />
+                    <group
+                      name="Cylinder319"
+                      position={[0.02, 0.25, 0.01]}
+                      rotation={[-1.55, -0.13, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder319_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder319_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder319_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder319_M_Outline_0"
+                      />
                     </group>
-                    <group name='Cylinder275' position={[0.15, 0.12, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cylinder275_M_Plane_0' geometry={nodes.Cylinder275_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder275_M_Outline_0' geometry={nodes.Cylinder275_M_Outline_0.geometry} material={materials.M_Outline} />
+                    <group
+                      name="Cylinder275"
+                      position={[0.15, 0.12, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder275_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder275_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder275_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder275_M_Outline_0"
+                      />
                     </group>
-                    <group name='Cylinder274' position={[0.15, 0.12, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cylinder274_M_Plane_0' geometry={nodes.Cylinder274_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder274_M_Outline_0' geometry={nodes.Cylinder274_M_Outline_0.geometry} material={materials.M_Outline} />
+                    <group
+                      name="Cylinder274"
+                      position={[0.15, 0.12, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder274_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder274_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder274_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder274_M_Outline_0"
+                      />
                     </group>
-                    <group name='Cylinder273' position={[0.15, 0.12, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cylinder273_M_Plane_0' geometry={nodes.Cylinder273_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder273_M_Outline_0' geometry={nodes.Cylinder273_M_Outline_0.geometry} material={materials.M_Outline} />
+                    <group
+                      name="Cylinder273"
+                      position={[0.15, 0.12, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder273_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder273_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder273_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder273_M_Outline_0"
+                      />
                     </group>
-                    <group name='Cylinder272' position={[0.15, 0.12, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cylinder272_M_Plane_0' geometry={nodes.Cylinder272_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder272_M_Outline_0' geometry={nodes.Cylinder272_M_Outline_0.geometry} material={materials.M_Outline} />
+                    <group
+                      name="Cylinder272"
+                      position={[0.15, 0.12, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder272_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder272_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder272_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder272_M_Outline_0"
+                      />
                     </group>
-                    <group name='Cylinder271' position={[0.15, 0.12, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cylinder271_M_Plane_0' geometry={nodes.Cylinder271_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder271_M_Outline_0' geometry={nodes.Cylinder271_M_Outline_0.geometry} material={materials.M_Outline} />
+                    <group
+                      name="Cylinder271"
+                      position={[0.15, 0.12, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder271_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder271_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder271_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder271_M_Outline_0"
+                      />
                     </group>
-                    <group name='Empty029' position={[0.21, 0.13, 0]} rotation={[0.81, 0, 0]} scale={0.03}>
-                      <group name='Cylinder321' position={[0.19, 0, 0]} rotation={[0, Math.PI / 2, 0]}>
-                        <mesh name='Cylinder321_M_Plane_0' geometry={nodes.Cylinder321_M_Plane_0.geometry} material={materials.M_Plane} />
-                        <mesh name='Cylinder321_M_Outline_0' geometry={nodes.Cylinder321_M_Outline_0.geometry} material={materials.M_Outline} />
-                      </group>
-                      <group name='Plane083' rotation={[0.36, 0, 0]}>
-                        <mesh name='Plane083_M_Plane_0' geometry={nodes.Plane083_M_Plane_0.geometry} material={materials.M_Plane} />
-                        <mesh name='Plane083_M_Outline_0' geometry={nodes.Plane083_M_Outline_0.geometry} material={materials.M_Outline} />
-                      </group>
-                      <group name='Plane072' position={[-0.1, 0, 0]} rotation={[-2.27, -Math.PI / 2, 0]} scale={-12.4}>
+                    <group
+                      name="Empty029"
+                      position={[0.21, 0.13, 0]}
+                      rotation={[0.81, 0, 0]}
+                      scale={0.03}
+                    >
+                      <group
+                        name="Cylinder321"
+                        position={[0.19, 0, 0]}
+                        rotation={[0, Math.PI / 2, 0]}
+                      >
                         <mesh
-                          name='Plane072_M_Plane_HasOpacity_0'
+                          geometry={nodes.Cylinder321_M_Plane_0.geometry}
+                          material={materials.M_Plane}
+                          name="Cylinder321_M_Plane_0"
+                        />
+                        <mesh
+                          geometry={nodes.Cylinder321_M_Outline_0.geometry}
+                          material={materials.M_Outline}
+                          name="Cylinder321_M_Outline_0"
+                        />
+                      </group>
+                      <group name="Plane083" rotation={[0.36, 0, 0]}>
+                        <mesh
+                          geometry={nodes.Plane083_M_Plane_0.geometry}
+                          material={materials.M_Plane}
+                          name="Plane083_M_Plane_0"
+                        />
+                        <mesh
+                          geometry={nodes.Plane083_M_Outline_0.geometry}
+                          material={materials.M_Outline}
+                          name="Plane083_M_Outline_0"
+                        />
+                      </group>
+                      <group
+                        name="Plane072"
+                        position={[-0.1, 0, 0]}
+                        rotation={[-2.27, -Math.PI / 2, 0]}
+                        scale={-12.4}
+                      >
+                        <mesh
                           geometry={nodes.Plane072_M_Plane_HasOpacity_0.geometry}
                           material={materials.M_Plane_HasOpacity}
+                          name="Plane072_M_Plane_HasOpacity_0"
                         />
                       </group>
                     </group>
-                    <group name='Plane082' position={[0.5, 0.38, 0.62]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
+                    <group
+                      name="Plane082"
+                      position={[0.5, 0.38, 0.62]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
                       <mesh
-                        name='Plane082_M_Plane_HasOpacity_0'
                         geometry={nodes.Plane082_M_Plane_HasOpacity_0.geometry}
                         material={materials.M_Plane_HasOpacity}
+                        name="Plane082_M_Plane_HasOpacity_0"
                       />
                     </group>
-                    <group name='Plane081' position={[0.77, 0.41, 0]} rotation={[-0.12, 0.19, -0.13]} scale={0.03}>
+                    <group
+                      name="Plane081"
+                      position={[0.77, 0.41, 0]}
+                      rotation={[-0.12, 0.19, -0.13]}
+                      scale={0.03}
+                    >
                       <mesh
-                        name='Plane081_M_Plane_HasOpacity_0'
                         geometry={nodes.Plane081_M_Plane_HasOpacity_0.geometry}
                         material={materials.M_Plane_HasOpacity}
+                        name="Plane081_M_Plane_HasOpacity_0"
                       />
                     </group>
-                    <group name='Plane074' position={[0.53, 0.36, -0.61]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
+                    <group
+                      name="Plane074"
+                      position={[0.53, 0.36, -0.61]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
                       <mesh
-                        name='Plane074_M_Plane_HasOpacity_0'
                         geometry={nodes.Plane074_M_Plane_HasOpacity_0.geometry}
                         material={materials.M_Plane_HasOpacity}
+                        name="Plane074_M_Plane_HasOpacity_0"
                       />
                     </group>
-                    <group name='Plane073' position={[0.88, 0.34, 0.01]} rotation={[-1.57, 0, 0]} scale={0.03}>
+                    <group
+                      name="Plane073"
+                      position={[0.88, 0.34, 0.01]}
+                      rotation={[-1.57, 0, 0]}
+                      scale={0.03}
+                    >
                       <mesh
-                        name='Plane073_M_Plane_HasOpacity_0'
                         geometry={nodes.Plane073_M_Plane_HasOpacity_0.geometry}
                         material={materials.M_Plane_HasOpacity}
+                        name="Plane073_M_Plane_HasOpacity_0"
                       />
                     </group>
-                    <group name='Circle020' position={[0.07, 0.06, 0.01]} rotation={[-Math.PI / 2, Math.PI / 2, 0]} scale={0.03}>
-                      <mesh name='Circle020_M_Plane_0' geometry={nodes.Circle020_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Circle020_M_Outline_0' geometry={nodes.Circle020_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Circle019' position={[0.07, 0.06, 0.01]} rotation={[-Math.PI / 2, Math.PI / 2, 0]} scale={0.03}>
-                      <mesh name='Circle019_M_Plane_0' geometry={nodes.Circle019_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Circle019_M_Outline_0' geometry={nodes.Circle019_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Circle018' position={[0.07, 0.07, 0.01]} rotation={[-Math.PI / 2, Math.PI / 2, 0]} scale={0.03}>
-                      <mesh name='Circle018_M_Plane_0' geometry={nodes.Circle018_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Circle018_M_Outline_0' geometry={nodes.Circle018_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='cube006' position={[0.02, 0.35, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='cube006_M_Plane_0' geometry={nodes.cube006_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='cube006_M_Outline_0' geometry={nodes.cube006_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='cube005' position={[0.02, 0.35, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='cube005_M_Plane_0' geometry={nodes.cube005_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='cube005_M_Outline_0' geometry={nodes.cube005_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube184' position={[-0.2, 0.1, 0.13]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cube184_M_Plane_0' geometry={nodes.Cube184_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube184_M_Outline_0' geometry={nodes.Cube184_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube183' position={[-0.3, 0.14, 0.01]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cube183_M_Plane_0' geometry={nodes.Cube183_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube183_M_Outline_0' geometry={nodes.Cube183_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube182' position={[-0.29, 0.15, 0.16]} rotation={[0.89, -0.84, -0.24]} scale={0.03}>
-                      <mesh name='Cube182_M_Plane_0' geometry={nodes.Cube182_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube182_M_Outline_0' geometry={nodes.Cube182_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube181' position={[0.01, 0.35, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cube181_M_Plane_0' geometry={nodes.Cube181_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube181_M_Outline_0' geometry={nodes.Cube181_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube180' position={[0.06, 0.38, 0.62]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cube180_M_Plane_0' geometry={nodes.Cube180_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube180_M_Outline_0' geometry={nodes.Cube180_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube178' position={[0.02, 0.35, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cube178_M_Plane_0' geometry={nodes.Cube178_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube178_M_Outline_0' geometry={nodes.Cube178_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube177' position={[0.02, 0.02, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cube177_M_Plane_0' geometry={nodes.Cube177_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube177_M_Outline_0' geometry={nodes.Cube177_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube176' position={[0.79, 0.23, 0.01]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cube176_M_Plane_0' geometry={nodes.Cube176_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube176_M_Outline_0' geometry={nodes.Cube176_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube174' position={[-0.29, 0.15, 0.16]} rotation={[0.89, -0.84, -0.24]} scale={0.03}>
-                      <mesh name='Cube174_M_Plane_0' geometry={nodes.Cube174_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube174_M_Outline_0' geometry={nodes.Cube174_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube173' position={[0.84, 0.22, 0.01]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cube173_M_Plane_0' geometry={nodes.Cube173_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube173_M_Outline_0' geometry={nodes.Cube173_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube172' position={[0.84, 0.22, 0.01]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cube172_M_Plane_0' geometry={nodes.Cube172_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube172_M_Outline_0' geometry={nodes.Cube172_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube171' position={[0.02, 0.2, 0.01]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cube171_M_Plane_0' geometry={nodes.Cube171_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube171_M_Outline_0' geometry={nodes.Cube171_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube170' position={[0.72, 0.19, -0.21]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cube170_M_Plane_0' geometry={nodes.Cube170_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube170_M_Outline_0' geometry={nodes.Cube170_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube169' position={[0.74, 0.18, 0.22]} rotation={[-Math.PI / 2, 0, -0.16]} scale={0.03}>
-                      <mesh name='Cube169_M_Plane_0' geometry={nodes.Cube169_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube169_M_Outline_0' geometry={nodes.Cube169_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube168' position={[0.73, 0.25, 0.03]} rotation={[-1.57, -0.18, 0.01]} scale={0.03}>
-                      <mesh name='Cube168_M_Plane_0' geometry={nodes.Cube168_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube168_M_Outline_0' geometry={nodes.Cube168_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube167' position={[0.72, 0.22, 0.03]} rotation={[-1.53, 0.29, -0.05]} scale={0.03}>
-                      <mesh name='Cube167_M_Plane_0' geometry={nodes.Cube167_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube167_M_Outline_0' geometry={nodes.Cube167_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube166' position={[0.78, 0.19, -0.06]} rotation={[-1.67, 0.41, 0.35]} scale={0.03}>
-                      <mesh name='Cube166_M_Plane_0' geometry={nodes.Cube166_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube166_M_Outline_0' geometry={nodes.Cube166_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube165' position={[0.01, 0.02, -0.29]} rotation={[-1.41, 0, 0]} scale={0.03}>
-                      <mesh name='Cube165_M_Plane_0' geometry={nodes.Cube165_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube165_M_Outline_0' geometry={nodes.Cube165_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube164' position={[-0.08, 0.37, -0.09]} rotation={[-1.47, 0, 0]} scale={0.03}>
-                      <mesh name='Cube164_M_Plane_0' geometry={nodes.Cube164_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube164_M_Outline_0' geometry={nodes.Cube164_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube161' position={[0.06, 0.39, -0.58]} rotation={[-Math.PI / 2, 0, -2.88]} scale={0.03}>
-                      <mesh name='Cube161_M_Plane_0' geometry={nodes.Cube161_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube161_M_Outline_0' geometry={nodes.Cube161_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube160' position={[0.01, 0.04, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cube160_M_Plane_0' geometry={nodes.Cube160_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube160_M_Outline_0' geometry={nodes.Cube160_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube159' position={[0.73, 0.23, 0]} rotation={[-1.53, 0.29, -0.05]} scale={0.03}>
-                      <mesh name='Cube159_M_Plane_0' geometry={nodes.Cube159_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube159_M_Outline_0' geometry={nodes.Cube159_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube158' position={[0.76, 0.18, 0.07]} rotation={[-Math.PI / 2, 0, -0.16]} scale={0.03}>
-                      <mesh name='Cube158_M_Plane_0' geometry={nodes.Cube158_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube158_M_Outline_0' geometry={nodes.Cube158_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cube157' position={[0.74, 0.17, -0.18]} rotation={[-Math.PI / 2, 0, 0.26]} scale={0.03}>
-                      <mesh name='Cube157_M_Plane_0' geometry={nodes.Cube157_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cube157_M_Outline_0' geometry={nodes.Cube157_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder331' position={[-0.06, 0.01, 0.36]} rotation={[-1.42, -0.12, 0.11]} scale={0.03}>
-                      <mesh name='Cylinder331_M_Plane_0' geometry={nodes.Cylinder331_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder331_M_Outline_0' geometry={nodes.Cylinder331_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder330' position={[-0.14, -0.21, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cylinder330_M_Plane_0' geometry={nodes.Cylinder330_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder330_M_Outline_0' geometry={nodes.Cylinder330_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder329' position={[-0.14, -0.21, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cylinder329_M_Plane_0' geometry={nodes.Cylinder329_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder329_M_Outline_0' geometry={nodes.Cylinder329_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder328' position={[-0.14, -0.21, 0]} scale={0.03}>
-                      <mesh name='Cylinder328_M_Plane_0' geometry={nodes.Cylinder328_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder328_M_Outline_0' geometry={nodes.Cylinder328_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder327' position={[-0.14, -0.21, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cylinder327_M_Plane_0' geometry={nodes.Cylinder327_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder327_M_Outline_0' geometry={nodes.Cylinder327_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder326' position={[-0.34, 0.14, 0.01]} rotation={[0, 0, 0.08]} scale={0.03}>
-                      <mesh name='Cylinder326_M_Plane_0' geometry={nodes.Cylinder326_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder326_M_Outline_0' geometry={nodes.Cylinder326_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder325' position={[-0.58, 0.21, 0.1]} rotation={[-2.96, 1.4, 1.78]} scale={0.03}>
-                      <mesh name='Cylinder325_M_Plane_0' geometry={nodes.Cylinder325_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder325_M_Outline_0' geometry={nodes.Cylinder325_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder324' position={[0.17, 0.39, 0.59]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cylinder324_M_Plane_0' geometry={nodes.Cylinder324_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder324_M_Outline_0' geometry={nodes.Cylinder324_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder323' position={[0.1, 0.32, 0.39]} rotation={[2.93, 1.02, 1.76]} scale={0.03}>
-                      <mesh name='Cylinder323_M_Plane_0' geometry={nodes.Cylinder323_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder323_M_Outline_0' geometry={nodes.Cylinder323_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder320' position={[0.15, 0.12, 0]} rotation={[-Math.PI / 2, Math.PI / 2, 0]} scale={0.03}>
-                      <mesh name='Cylinder320_M_Plane_0' geometry={nodes.Cylinder320_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder320_M_Outline_0' geometry={nodes.Cylinder320_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder318' position={[0.7, 0.03, 0.04]} rotation={[-Math.PI / 2, 0.13, 0]} scale={0.03}>
-                      <mesh name='Cylinder318_M_Plane_0' geometry={nodes.Cylinder318_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder318_M_Outline_0' geometry={nodes.Cylinder318_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder317' position={[0.74, 0.37, 0]} rotation={[-1.71, 0.13, 0.02]} scale={0.03}>
-                      <mesh name='Cylinder317_M_Plane_0' geometry={nodes.Cylinder317_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder317_M_Outline_0' geometry={nodes.Cylinder317_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder316' position={[0.75, 0.4, 0]} rotation={[-3.09, 1.08, 3.09]} scale={0.03}>
-                      <mesh name='Cylinder316_M_Plane_0' geometry={nodes.Cylinder316_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder316_M_Outline_0' geometry={nodes.Cylinder316_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder315' position={[0.71, 0.2, 0.02]} rotation={[0, 0.53, -0.18]} scale={0.03}>
-                      <mesh name='Cylinder315_M_Plane_0' geometry={nodes.Cylinder315_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder315_M_Outline_0' geometry={nodes.Cylinder315_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder314' position={[0.3, 0.06, -0.27]} rotation={[-Math.PI / 2, 0, 0.12]} scale={0.03}>
-                      <mesh name='Cylinder314_M_Plane_0' geometry={nodes.Cylinder314_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder314_M_Outline_0' geometry={nodes.Cylinder314_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder313' position={[0.45, 0.11, -0.17]} rotation={[-1.75, -0.26, -0.54]} scale={0.03}>
-                      <mesh name='Cylinder313_M_Plane_0' geometry={nodes.Cylinder313_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder313_M_Outline_0' geometry={nodes.Cylinder313_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder312' position={[0.14, 0.02, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cylinder312_M_Plane_0' geometry={nodes.Cylinder312_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder312_M_Outline_0' geometry={nodes.Cylinder312_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder311' position={[-0.12, 0.43, -0.06]} rotation={[-1.5, 0.23, -0.01]} scale={0.03}>
-                      <mesh name='Cylinder311_M_Plane_0' geometry={nodes.Cylinder311_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder311_M_Outline_0' geometry={nodes.Cylinder311_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder310' position={[0.18, 0.38, 0.42]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cylinder310_M_Plane_0' geometry={nodes.Cylinder310_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder310_M_Outline_0' geometry={nodes.Cylinder310_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder309' position={[0.17, 0.39, -0.59]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cylinder309_M_Plane_0' geometry={nodes.Cylinder309_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder309_M_Outline_0' geometry={nodes.Cylinder309_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder308' position={[0.18, 0.38, -0.42]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cylinder308_M_Plane_0' geometry={nodes.Cylinder308_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder308_M_Outline_0' geometry={nodes.Cylinder308_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder307' position={[0.18, 0.38, -0.42]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cylinder307_M_Plane_0' geometry={nodes.Cylinder307_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder307_M_Outline_0' geometry={nodes.Cylinder307_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder306' position={[0.74, 0.2, 0.22]} rotation={[-1.49, 0, -0.11]} scale={0.03}>
-                      <mesh name='Cylinder306_M_Plane_0' geometry={nodes.Cylinder306_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder306_M_Outline_0' geometry={nodes.Cylinder306_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder305' position={[0.74, 0.2, 0.22]} rotation={[-1.49, 0, -0.11]} scale={0.03}>
-                      <mesh name='Cylinder305_M_Plane_0' geometry={nodes.Cylinder305_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder305_M_Outline_0' geometry={nodes.Cylinder305_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder304' position={[0.74, 0.2, -0.22]} rotation={[-1.49, 0, 0.28]} scale={0.03}>
-                      <mesh name='Cylinder304_M_Plane_0' geometry={nodes.Cylinder304_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder304_M_Outline_0' geometry={nodes.Cylinder304_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder303' position={[0.11, 0.39, -0.01]} rotation={[-0.21, 1.02, 1.76]} scale={0.03}>
-                      <mesh name='Cylinder303_M_Plane_0' geometry={nodes.Cylinder303_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder303_M_Outline_0' geometry={nodes.Cylinder303_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder302' position={[0.14, 0.02, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Cylinder302_M_Plane_0' geometry={nodes.Cylinder302_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder302_M_Outline_0' geometry={nodes.Cylinder302_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder301' position={[0.71, 0.2, 0.02]} rotation={[0, 0.53, -0.18]} scale={0.03}>
-                      <mesh name='Cylinder301_M_Plane_0' geometry={nodes.Cylinder301_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder301_M_Outline_0' geometry={nodes.Cylinder301_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder300' position={[0.71, 0.2, 0.02]} rotation={[0, 0.53, -0.18]} scale={0.03}>
-                      <mesh name='Cylinder300_M_Plane_0' geometry={nodes.Cylinder300_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder300_M_Outline_0' geometry={nodes.Cylinder300_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder299' position={[0.71, 0.2, 0.02]} rotation={[0, 0.53, -0.18]} scale={0.03}>
-                      <mesh name='Cylinder299_M_Plane_0' geometry={nodes.Cylinder299_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder299_M_Outline_0' geometry={nodes.Cylinder299_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder298' position={[0.71, 0.2, 0.02]} rotation={[-0.2, -0.57, -0.27]} scale={0.03}>
-                      <mesh name='Cylinder298_M_Plane_0' geometry={nodes.Cylinder298_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder298_M_Outline_0' geometry={nodes.Cylinder298_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder297' position={[0.71, 0.2, 0.02]} rotation={[-0.2, -0.57, -0.27]} scale={0.03}>
-                      <mesh name='Cylinder297_M_Plane_0' geometry={nodes.Cylinder297_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder297_M_Outline_0' geometry={nodes.Cylinder297_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder296' position={[0.71, 0.2, 0.02]} rotation={[-0.2, -0.57, -0.27]} scale={0.03}>
-                      <mesh name='Cylinder296_M_Plane_0' geometry={nodes.Cylinder296_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder296_M_Outline_0' geometry={nodes.Cylinder296_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder295' position={[0.71, 0.2, 0.02]} rotation={[-0.2, -0.57, -0.27]} scale={0.03}>
-                      <mesh name='Cylinder295_M_Plane_0' geometry={nodes.Cylinder295_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder295_M_Outline_0' geometry={nodes.Cylinder295_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder294' position={[0.71, 0.2, 0.02]} rotation={[0, 0.53, -0.18]} scale={0.03}>
-                      <mesh name='Cylinder294_M_Plane_0' geometry={nodes.Cylinder294_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder294_M_Outline_0' geometry={nodes.Cylinder294_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder293' position={[0.71, 0.2, 0.02]} rotation={[-0.2, -0.57, -0.27]} scale={0.03}>
-                      <mesh name='Cylinder293_M_Plane_0' geometry={nodes.Cylinder293_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder293_M_Outline_0' geometry={nodes.Cylinder293_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder292' position={[0.7, 0.02, 0.01]} rotation={[0, 0.22, -1.68]} scale={0.03}>
-                      <mesh name='Cylinder292_M_Plane_0' geometry={nodes.Cylinder292_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder292_M_Outline_0' geometry={nodes.Cylinder292_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder291' position={[0.75, 0.4, 0]} rotation={[-0.03, 1.07, 0.05]} scale={0.03}>
-                      <mesh name='Cylinder291_M_Plane_0' geometry={nodes.Cylinder291_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder291_M_Outline_0' geometry={nodes.Cylinder291_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder290' position={[0.7, 0.16, 0.02]} rotation={[0.01, 0.51, 0.22]} scale={0.03}>
-                      <mesh name='Cylinder290_M_Plane_0' geometry={nodes.Cylinder290_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder290_M_Outline_0' geometry={nodes.Cylinder290_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder289' position={[0.7, 0.16, 0.02]} rotation={[0.01, 0.51, 0.22]} scale={0.03}>
-                      <mesh name='Cylinder289_M_Plane_0' geometry={nodes.Cylinder289_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder289_M_Outline_0' geometry={nodes.Cylinder289_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder288' position={[0.7, 0.16, 0.02]} rotation={[0.01, 0.51, 0.22]} scale={0.03}>
-                      <mesh name='Cylinder288_M_Plane_0' geometry={nodes.Cylinder288_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder288_M_Outline_0' geometry={nodes.Cylinder288_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder287' position={[1.1, 0.08, -0.09]} rotation={[0, 0.53, -0.18]} scale={0.03}>
-                      <mesh name='Cylinder287_M_Plane_0' geometry={nodes.Cylinder287_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder287_M_Outline_0' geometry={nodes.Cylinder287_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder286' position={[0.38, 0.29, 0.26]} rotation={[0.11, 0.46, 1.42]} scale={0.03}>
-                      <mesh name='Cylinder286_M_Plane_0' geometry={nodes.Cylinder286_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder286_M_Outline_0' geometry={nodes.Cylinder286_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder285' position={[0.34, 0.06, -0.25]} rotation={[-2.05, -0.5, -0.86]} scale={0.03}>
-                      <mesh name='Cylinder285_M_Plane_0' geometry={nodes.Cylinder285_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder285_M_Outline_0' geometry={nodes.Cylinder285_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder284' position={[0.18, 0.03, -0.31]} rotation={[-1.72, -0.15, -0.39]} scale={0.03}>
-                      <mesh name='Cylinder284_M_Plane_0' geometry={nodes.Cylinder284_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder284_M_Outline_0' geometry={nodes.Cylinder284_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder283' position={[0.72, 0.17, 0]} rotation={[-0.24, -0.56, 0.1]} scale={0.03}>
-                      <mesh name='Cylinder283_M_Plane_0' geometry={nodes.Cylinder283_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder283_M_Outline_0' geometry={nodes.Cylinder283_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder282' position={[0.98, 0.05, 0.17]} rotation={[-0.2, -0.57, -0.27]} scale={0.03}>
-                      <mesh name='Cylinder282_M_Plane_0' geometry={nodes.Cylinder282_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder282_M_Outline_0' geometry={nodes.Cylinder282_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder281' position={[0.75, 0.15, 0.01]} rotation={[0, 0.53, -0.18]} scale={0.03}>
-                      <mesh name='Cylinder281_M_Plane_0' geometry={nodes.Cylinder281_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder281_M_Outline_0' geometry={nodes.Cylinder281_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder280' position={[0.37, 0.27, 0.25]} rotation={[0.81, -0.58, 2.11]} scale={0.03}>
-                      <mesh name='Cylinder280_M_Plane_0' geometry={nodes.Cylinder280_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder280_M_Outline_0' geometry={nodes.Cylinder280_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder279' position={[0.35, 0.07, 0.24]} rotation={[-0.64, -0.38, 0.99]} scale={0.03}>
-                      <mesh name='Cylinder279_M_Plane_0' geometry={nodes.Cylinder279_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder279_M_Outline_0' geometry={nodes.Cylinder279_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder278' position={[0.61, 0.1, -0.11]} rotation={[-0.2, -0.57, -0.27]} scale={0.03}>
-                      <mesh name='Cylinder278_M_Plane_0' geometry={nodes.Cylinder278_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder278_M_Outline_0' geometry={nodes.Cylinder278_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder277' position={[0.03, 0.19, -0.05]} rotation={[0.94, -0.84, 1.47]} scale={0.03}>
-                      <mesh name='Cylinder277_M_Plane_0' geometry={nodes.Cylinder277_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder277_M_Outline_0' geometry={nodes.Cylinder277_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Cylinder276' position={[0.72, 0.19, 0.01]} rotation={[-3.03, -0.65, 1.71]} scale={0.03}>
-                      <mesh name='Cylinder276_M_Plane_0' geometry={nodes.Cylinder276_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Cylinder276_M_Outline_0' geometry={nodes.Cylinder276_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Plane084' position={[-0.26, 0.13, 0.12]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Plane084_M_Plane_0' geometry={nodes.Plane084_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Plane084_M_Outline_0' geometry={nodes.Plane084_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Plane080' position={[-0.05, 0.05, 0.12]} rotation={[-1.41, 0.17, -0.07]} scale={0.03}>
-                      <mesh name='Plane080_M_Plane_0' geometry={nodes.Plane080_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Plane080_M_Outline_0' geometry={nodes.Plane080_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Plane079' position={[0, 0, -0.1]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Plane079_M_Plane_0' geometry={nodes.Plane079_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Plane079_M_Outline_0' geometry={nodes.Plane079_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Plane078' position={[-0.15, 0.21, -0.06]} rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-                      <mesh name='Plane078_M_Plane_0' geometry={nodes.Plane078_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Plane078_M_Outline_0' geometry={nodes.Plane078_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Plane077' position={[-0.05, 0.41, -0.16]} rotation={[-1.47, 0, 0]} scale={0.03}>
-                      <mesh name='Plane077_M_Plane_0' geometry={nodes.Plane077_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Plane077_M_Outline_0' geometry={nodes.Plane077_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Plane076' position={[-0.05, 0.39, -0.02]} rotation={[-1.63, 0, 0]} scale={0.03}>
-                      <mesh name='Plane076_M_Plane_0' geometry={nodes.Plane076_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Plane076_M_Outline_0' geometry={nodes.Plane076_M_Outline_0.geometry} material={materials.M_Outline} />
-                    </group>
-                    <group name='Plane075' position={[0.03, 0.39, -0.11]} rotation={[-1.47, 0, 0]} scale={0.03}>
-                      <mesh name='Plane075_M_Plane_0' geometry={nodes.Plane075_M_Plane_0.geometry} material={materials.M_Plane} />
-                      <mesh name='Plane075_M_Outline_0' geometry={nodes.Plane075_M_Outline_0.geometry} material={materials.M_Outline} />
+                    <group
+                      name="Circle020"
+                      position={[0.07, 0.06, 0.01]}
+                      rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Circle020_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Circle020_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Circle020_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Circle020_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Circle019"
+                      position={[0.07, 0.06, 0.01]}
+                      rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Circle019_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Circle019_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Circle019_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Circle019_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Circle018"
+                      position={[0.07, 0.07, 0.01]}
+                      rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Circle018_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Circle018_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Circle018_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Circle018_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="cube006"
+                      position={[0.02, 0.35, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.cube006_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="cube006_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.cube006_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="cube006_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="cube005"
+                      position={[0.02, 0.35, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.cube005_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="cube005_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.cube005_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="cube005_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube184"
+                      position={[-0.2, 0.1, 0.13]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube184_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube184_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube184_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube184_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube183"
+                      position={[-0.3, 0.14, 0.01]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube183_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube183_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube183_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube183_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube182"
+                      position={[-0.29, 0.15, 0.16]}
+                      rotation={[0.89, -0.84, -0.24]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube182_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube182_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube182_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube182_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube181"
+                      position={[0.01, 0.35, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube181_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube181_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube181_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube181_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube180"
+                      position={[0.06, 0.38, 0.62]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube180_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube180_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube180_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube180_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube178"
+                      position={[0.02, 0.35, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube178_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube178_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube178_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube178_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube177"
+                      position={[0.02, 0.02, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube177_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube177_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube177_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube177_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube176"
+                      position={[0.79, 0.23, 0.01]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube176_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube176_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube176_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube176_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube174"
+                      position={[-0.29, 0.15, 0.16]}
+                      rotation={[0.89, -0.84, -0.24]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube174_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube174_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube174_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube174_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube173"
+                      position={[0.84, 0.22, 0.01]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube173_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube173_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube173_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube173_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube172"
+                      position={[0.84, 0.22, 0.01]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube172_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube172_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube172_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube172_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube171"
+                      position={[0.02, 0.2, 0.01]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube171_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube171_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube171_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube171_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube170"
+                      position={[0.72, 0.19, -0.21]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube170_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube170_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube170_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube170_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube169"
+                      position={[0.74, 0.18, 0.22]}
+                      rotation={[-Math.PI / 2, 0, -0.16]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube169_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube169_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube169_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube169_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube168"
+                      position={[0.73, 0.25, 0.03]}
+                      rotation={[-1.57, -0.18, 0.01]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube168_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube168_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube168_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube168_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube167"
+                      position={[0.72, 0.22, 0.03]}
+                      rotation={[-1.53, 0.29, -0.05]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube167_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube167_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube167_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube167_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube166"
+                      position={[0.78, 0.19, -0.06]}
+                      rotation={[-1.67, 0.41, 0.35]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube166_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube166_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube166_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube166_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube165"
+                      position={[0.01, 0.02, -0.29]}
+                      rotation={[-1.41, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube165_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube165_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube165_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube165_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube164"
+                      position={[-0.08, 0.37, -0.09]}
+                      rotation={[-1.47, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube164_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube164_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube164_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube164_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube161"
+                      position={[0.06, 0.39, -0.58]}
+                      rotation={[-Math.PI / 2, 0, -2.88]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube161_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube161_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube161_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube161_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube160"
+                      position={[0.01, 0.04, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube160_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube160_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube160_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube160_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube159"
+                      position={[0.73, 0.23, 0]}
+                      rotation={[-1.53, 0.29, -0.05]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube159_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube159_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube159_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube159_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube158"
+                      position={[0.76, 0.18, 0.07]}
+                      rotation={[-Math.PI / 2, 0, -0.16]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube158_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube158_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube158_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube158_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cube157"
+                      position={[0.74, 0.17, -0.18]}
+                      rotation={[-Math.PI / 2, 0, 0.26]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cube157_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cube157_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cube157_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cube157_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder331"
+                      position={[-0.06, 0.01, 0.36]}
+                      rotation={[-1.42, -0.12, 0.11]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder331_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder331_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder331_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder331_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder330"
+                      position={[-0.14, -0.21, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder330_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder330_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder330_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder330_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder329"
+                      position={[-0.14, -0.21, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder329_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder329_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder329_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder329_M_Outline_0"
+                      />
+                    </group>
+                    <group name="Cylinder328" position={[-0.14, -0.21, 0]} scale={0.03}>
+                      <mesh
+                        geometry={nodes.Cylinder328_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder328_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder328_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder328_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder327"
+                      position={[-0.14, -0.21, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder327_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder327_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder327_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder327_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder326"
+                      position={[-0.34, 0.14, 0.01]}
+                      rotation={[0, 0, 0.08]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder326_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder326_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder326_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder326_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder325"
+                      position={[-0.58, 0.21, 0.1]}
+                      rotation={[-2.96, 1.4, 1.78]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder325_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder325_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder325_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder325_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder324"
+                      position={[0.17, 0.39, 0.59]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder324_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder324_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder324_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder324_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder323"
+                      position={[0.1, 0.32, 0.39]}
+                      rotation={[2.93, 1.02, 1.76]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder323_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder323_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder323_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder323_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder320"
+                      position={[0.15, 0.12, 0]}
+                      rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder320_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder320_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder320_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder320_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder318"
+                      position={[0.7, 0.03, 0.04]}
+                      rotation={[-Math.PI / 2, 0.13, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder318_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder318_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder318_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder318_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder317"
+                      position={[0.74, 0.37, 0]}
+                      rotation={[-1.71, 0.13, 0.02]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder317_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder317_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder317_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder317_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder316"
+                      position={[0.75, 0.4, 0]}
+                      rotation={[-3.09, 1.08, 3.09]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder316_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder316_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder316_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder316_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder315"
+                      position={[0.71, 0.2, 0.02]}
+                      rotation={[0, 0.53, -0.18]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder315_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder315_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder315_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder315_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder314"
+                      position={[0.3, 0.06, -0.27]}
+                      rotation={[-Math.PI / 2, 0, 0.12]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder314_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder314_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder314_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder314_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder313"
+                      position={[0.45, 0.11, -0.17]}
+                      rotation={[-1.75, -0.26, -0.54]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder313_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder313_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder313_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder313_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder312"
+                      position={[0.14, 0.02, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder312_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder312_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder312_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder312_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder311"
+                      position={[-0.12, 0.43, -0.06]}
+                      rotation={[-1.5, 0.23, -0.01]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder311_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder311_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder311_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder311_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder310"
+                      position={[0.18, 0.38, 0.42]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder310_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder310_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder310_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder310_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder309"
+                      position={[0.17, 0.39, -0.59]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder309_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder309_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder309_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder309_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder308"
+                      position={[0.18, 0.38, -0.42]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder308_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder308_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder308_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder308_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder307"
+                      position={[0.18, 0.38, -0.42]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder307_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder307_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder307_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder307_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder306"
+                      position={[0.74, 0.2, 0.22]}
+                      rotation={[-1.49, 0, -0.11]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder306_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder306_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder306_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder306_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder305"
+                      position={[0.74, 0.2, 0.22]}
+                      rotation={[-1.49, 0, -0.11]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder305_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder305_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder305_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder305_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder304"
+                      position={[0.74, 0.2, -0.22]}
+                      rotation={[-1.49, 0, 0.28]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder304_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder304_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder304_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder304_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder303"
+                      position={[0.11, 0.39, -0.01]}
+                      rotation={[-0.21, 1.02, 1.76]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder303_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder303_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder303_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder303_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder302"
+                      position={[0.14, 0.02, 0]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder302_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder302_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder302_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder302_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder301"
+                      position={[0.71, 0.2, 0.02]}
+                      rotation={[0, 0.53, -0.18]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder301_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder301_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder301_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder301_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder300"
+                      position={[0.71, 0.2, 0.02]}
+                      rotation={[0, 0.53, -0.18]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder300_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder300_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder300_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder300_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder299"
+                      position={[0.71, 0.2, 0.02]}
+                      rotation={[0, 0.53, -0.18]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder299_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder299_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder299_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder299_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder298"
+                      position={[0.71, 0.2, 0.02]}
+                      rotation={[-0.2, -0.57, -0.27]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder298_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder298_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder298_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder298_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder297"
+                      position={[0.71, 0.2, 0.02]}
+                      rotation={[-0.2, -0.57, -0.27]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder297_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder297_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder297_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder297_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder296"
+                      position={[0.71, 0.2, 0.02]}
+                      rotation={[-0.2, -0.57, -0.27]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder296_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder296_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder296_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder296_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder295"
+                      position={[0.71, 0.2, 0.02]}
+                      rotation={[-0.2, -0.57, -0.27]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder295_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder295_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder295_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder295_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder294"
+                      position={[0.71, 0.2, 0.02]}
+                      rotation={[0, 0.53, -0.18]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder294_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder294_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder294_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder294_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder293"
+                      position={[0.71, 0.2, 0.02]}
+                      rotation={[-0.2, -0.57, -0.27]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder293_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder293_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder293_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder293_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder292"
+                      position={[0.7, 0.02, 0.01]}
+                      rotation={[0, 0.22, -1.68]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder292_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder292_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder292_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder292_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder291"
+                      position={[0.75, 0.4, 0]}
+                      rotation={[-0.03, 1.07, 0.05]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder291_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder291_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder291_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder291_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder290"
+                      position={[0.7, 0.16, 0.02]}
+                      rotation={[0.01, 0.51, 0.22]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder290_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder290_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder290_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder290_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder289"
+                      position={[0.7, 0.16, 0.02]}
+                      rotation={[0.01, 0.51, 0.22]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder289_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder289_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder289_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder289_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder288"
+                      position={[0.7, 0.16, 0.02]}
+                      rotation={[0.01, 0.51, 0.22]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder288_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder288_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder288_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder288_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder287"
+                      position={[1.1, 0.08, -0.09]}
+                      rotation={[0, 0.53, -0.18]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder287_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder287_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder287_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder287_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder286"
+                      position={[0.38, 0.29, 0.26]}
+                      rotation={[0.11, 0.46, 1.42]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder286_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder286_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder286_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder286_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder285"
+                      position={[0.34, 0.06, -0.25]}
+                      rotation={[-2.05, -0.5, -0.86]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder285_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder285_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder285_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder285_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder284"
+                      position={[0.18, 0.03, -0.31]}
+                      rotation={[-1.72, -0.15, -0.39]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder284_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder284_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder284_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder284_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder283"
+                      position={[0.72, 0.17, 0]}
+                      rotation={[-0.24, -0.56, 0.1]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder283_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder283_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder283_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder283_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder282"
+                      position={[0.98, 0.05, 0.17]}
+                      rotation={[-0.2, -0.57, -0.27]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder282_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder282_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder282_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder282_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder281"
+                      position={[0.75, 0.15, 0.01]}
+                      rotation={[0, 0.53, -0.18]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder281_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder281_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder281_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder281_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder280"
+                      position={[0.37, 0.27, 0.25]}
+                      rotation={[0.81, -0.58, 2.11]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder280_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder280_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder280_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder280_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder279"
+                      position={[0.35, 0.07, 0.24]}
+                      rotation={[-0.64, -0.38, 0.99]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder279_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder279_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder279_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder279_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder278"
+                      position={[0.61, 0.1, -0.11]}
+                      rotation={[-0.2, -0.57, -0.27]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder278_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder278_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder278_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder278_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder277"
+                      position={[0.03, 0.19, -0.05]}
+                      rotation={[0.94, -0.84, 1.47]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder277_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder277_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder277_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder277_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Cylinder276"
+                      position={[0.72, 0.19, 0.01]}
+                      rotation={[-3.03, -0.65, 1.71]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Cylinder276_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Cylinder276_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Cylinder276_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Cylinder276_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Plane084"
+                      position={[-0.26, 0.13, 0.12]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Plane084_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Plane084_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Plane084_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Plane084_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Plane080"
+                      position={[-0.05, 0.05, 0.12]}
+                      rotation={[-1.41, 0.17, -0.07]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Plane080_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Plane080_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Plane080_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Plane080_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Plane079"
+                      position={[0, 0, -0.1]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Plane079_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Plane079_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Plane079_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Plane079_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Plane078"
+                      position={[-0.15, 0.21, -0.06]}
+                      rotation={[-Math.PI / 2, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Plane078_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Plane078_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Plane078_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Plane078_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Plane077"
+                      position={[-0.05, 0.41, -0.16]}
+                      rotation={[-1.47, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Plane077_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Plane077_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Plane077_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Plane077_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Plane076"
+                      position={[-0.05, 0.39, -0.02]}
+                      rotation={[-1.63, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Plane076_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Plane076_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Plane076_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Plane076_M_Outline_0"
+                      />
+                    </group>
+                    <group
+                      name="Plane075"
+                      position={[0.03, 0.39, -0.11]}
+                      rotation={[-1.47, 0, 0]}
+                      scale={0.03}
+                    >
+                      <mesh
+                        geometry={nodes.Plane075_M_Plane_0.geometry}
+                        material={materials.M_Plane}
+                        name="Plane075_M_Plane_0"
+                      />
+                      <mesh
+                        geometry={nodes.Plane075_M_Outline_0.geometry}
+                        material={materials.M_Outline}
+                        name="Plane075_M_Outline_0"
+                      />
                     </group>
                   </group>
                 </group>
-                <group name='Empty026' position={[6779.42, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                  <group name='Plane069' position={[102.91, -1.39, 0.49]} scale={[102.59, 1, 1]}>
+                <group
+                  name="Empty026"
+                  position={[6779.42, 0, 0]}
+                  rotation={[-Math.PI / 2, 0, 0]}
+                  scale={100}
+                >
+                  <group name="Plane069" position={[102.91, -1.39, 0.49]} scale={[102.59, 1, 1]}>
                     <mesh
-                      name='Plane069_M_Plane_HasOpacity_0'
                       geometry={nodes.Plane069_M_Plane_HasOpacity_0.geometry}
                       material={materials.M_Plane_HasOpacity}
+                      name="Plane069_M_Plane_HasOpacity_0"
                     />
                   </group>
                 </group>
@@ -499,7 +1886,7 @@ export default function ModelAirplane(props) {
         </group>
       </group>
     </group>
-  );
+  )
 }
 
-useGLTF.preload(URL);
+useGLTF.preload(URL)

@@ -1,8 +1,9 @@
-import { NextApiResponse } from "next";
-import { NextApiRequest } from "next";
-import { withIronSessionApiRoute } from "iron-session/next";
-import fs from "fs";
-import path from "path";
+import fs from 'fs'
+import path from 'path'
+
+import { NextApiResponse } from 'next'
+import { NextApiRequest } from 'next'
+import { withIronSessionApiRoute } from 'iron-session/next'
 
 /* 
 1.- probabilidad de ser imaghen correcta o falsa
@@ -15,41 +16,45 @@ regresar el directorio/filename de cada imagen por iteracion
  */
 /* array type */
 export function newCaptchaImage() {
-  const correctProbability = 0.5;
-  return new Array(9).fill(0).map((value, index) => {
-    const imageTypeCorrect = "correct"; // correct1, correct2
-    const imageTypeIncorrect = "wrong"; //incorrect1, incorrect2
-    const isCorrect = Math.random() < correctProbability; // true or false
-    const number = Math.floor(Math.random() * (isCorrect ? 4 : 5)) + 1; // correct4, incorrect5
-    const filename = (isCorrect ? imageTypeCorrect : imageTypeIncorrect) + number + ".jpg"; // correct4.jpg, incorrect5.jpg
-    const imageDirectory = path.join(process.cwd(), "public/captcha");
-    return `${imageDirectory}/${filename}`;
-  });
+  const correctProbability = 0.5
+
+  return new Array(9).fill(0).map((_value, _index) => {
+    const imageTypeCorrect = 'correct' // correct1, correct2
+    const imageTypeIncorrect = 'wrong' //incorrect1, incorrect2
+    const isCorrect = Math.random() < correctProbability // true or false
+    const number = Math.floor(Math.random() * (isCorrect ? 4 : 5)) + 1 // correct4, incorrect5
+    const filename = (isCorrect ? imageTypeCorrect : imageTypeIncorrect) + number + '.jpg' // correct4.jpg, incorrect5.jpg
+    const imageDirectory = path.join(process.cwd(), 'public/captcha')
+
+    return `${imageDirectory}/${filename}`
+  })
 }
 export function robotCaptchaImage() {
-  return new Array(9).fill(0).map((value, index) => {
-    const imageTypeRobot = "robot";
+  return new Array(9).fill(0).map((_value, index) => {
+    const imageTypeRobot = 'robot'
     /* crear a path as public/captcha/imageTypeRobot+1 till 9 */
-    const filename = imageTypeRobot + (index + 1) + ".jpg"; // index 0 +1 = robot1.jpg
-    const imageDirectory = path.join(process.cwd(), "public/captcha");
-    return `${imageDirectory}/${filename}`;
-  });
+    const filename = imageTypeRobot + (index + 1) + '.jpg' // index 0 +1 = robot1.jpg
+    const imageDirectory = path.join(process.cwd(), 'public/captcha')
+
+    return `${imageDirectory}/${filename}`
+  })
 }
 
 export default withIronSessionApiRoute(
   async function handler(req: NextApiRequest, res: NextApiResponse) {
-    const index = Number(req.query.index);
+    const index = Number(req.query.index)
 
     if (!req.session.captchaImages) {
-      req.session.captchaImages = newCaptchaImage();
-      await req.session.save();
+      req.session.captchaImages = newCaptchaImage()
+      await req.session.save()
     }
-    res.setHeader("Content-Type", "image/jpeg");
-    const imageBuffer = fs.readFileSync(req.session.captchaImages[index]);
-    res.send(imageBuffer);
+    res.setHeader('Content-Type', 'image/jpeg')
+    const imageBuffer = fs.readFileSync(req.session.captchaImages[index])
+
+    res.send(imageBuffer)
   },
   {
-    cookieName: "captcha",
-    password: process.env.SESSION_SECRET as string,
+    cookieName: 'captcha',
+    password: process.env.SESSION_SECRET as string
   }
-);
+)

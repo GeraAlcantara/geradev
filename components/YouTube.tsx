@@ -1,13 +1,13 @@
-export default function Youtube({ id }: { id: string }) {
+export default function Youtube({ id }: { id: string }): JSX.Element {
   return (
-    <div className='aspect-video w-full'>
+    <div className="aspect-video w-full">
       <iframe
+        allow="autoplay; encrypted-media"
+        className="w-full h-full"
+        referrerPolicy="no-referrer"
         src={`https://www.youtube.com/embed/${id}`}
-        className='w-full h-full'
-        allow='autoplay; encrypted-media'
-        title='Embedded YouTube video'
-        referrerPolicy='no-referrer'
+        title="Embedded YouTube video"
       />
     </div>
-  );
+  )
 }

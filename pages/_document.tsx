@@ -11,6 +11,7 @@ export default function Document(): JSX.Element {
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
           strategy="afterInteractive"
         />
+
         <Script
           dangerouslySetInnerHTML={{
             __html: `

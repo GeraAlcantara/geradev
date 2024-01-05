@@ -13,7 +13,6 @@
     "@react-three/drei": "^9.46.4",
     "@react-three/fiber": "^8.9.1",
     "@types/three": "^0.146.0",
-    "@vercel/analytics": "^0.1.5",
     "axios": "^1.2.0",
     "clsx": "^1.2.1",
     "cobe": "^0.6.2",

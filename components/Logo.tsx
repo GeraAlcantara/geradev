@@ -1,12 +1,12 @@
-import Link from 'next/link'
+import Link from "next/link"
 
-export default function Logo(): JSX.Element {
+export default function Logo() {
   return (
-    <Link href="/">
-      <div className="flex w-full justify-center cursor-pointer">
-        <h1 className="font-Raleway font-extrabold text-xl">Jaguar</h1>
-        <div className="bg-brand-pink-500 w-2 h-2 rounded-full relative top-[14px] " />
-      </div>
+    <Link href={"/"} className="flex relative">
+      <h1 className="font-black font-[family-name:var(--font-kanit)] text-4xl uppercase ">
+        Jaguar
+      </h1>
+      <div className="size-4 rounded-full bg-nB-black top-[18px] relative" />
     </Link>
   )
 }

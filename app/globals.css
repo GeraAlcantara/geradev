@@ -1,0 +1,234 @@
+@import "tailwindcss";
+
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+@theme {
+  --color-nB-gray-dark: hsl(var(--nb-gray-dark));
+  --color-nB-shadow: hsl(var(--nB-shadow));
+  --color-nB-black: hsl(var(--nB-black));
+  --color-nB-white: hsl(var(--nB-white));
+
+  --color-nB-green: hsl(var(--nB-green));
+  --color-nB-lime: hsl(var(--nB-lime));
+  --color-nB-purple: hsl(var(--nB-purple));
+  --color-nB-blue: hsl(var(--nB-blue));
+  --color-nB-blue-vista: hsl(var(--nB-blue-vista));
+  --color-nB-orange: hsl(var(--nB-orange));
+  --color-nB-violet: hsl(var(--nB-violet));
+  --color-nB-pink: hsl(var(--nB-pink));
+  --color-nB-yellow: hsl(var(--nB-yellow));
+  --color-nB-gray: hsl(var(--nB-gray));
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--nB-green));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-black, currentColor);
+  }
+}
+
+@layer utilities {
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+/* 
+definir en variables la paleta de colores 
+nB-
+neoBrutalist
+cL
+*/
+
+@layer base {
+  :root {
+    --nb-gray-dark: 270 4% 32%;
+    --nB-shadow: 285 31% 5%;
+    --nB-black: 285 31% 5%;
+    --nB-white: 60 15% 95%;
+    --nB-green: 148 86% 45%;
+    --nB-lime: 78 100% 43%;
+    --nB-purple: 250 69% 56%;
+    --nB-blue: 245 100% 64%;
+    --nB-blue-vista: 224 72% 75%;
+    --nB-orange: 27 98% 53%;
+    --nB-violet: 306 75% 70%;
+    --nB-pink: 324 100% 74%;
+    --nB-yellow: 47 100% 50%;
+    --nB-gray: 210 13% 27%;
+    --background: 60 15% 95%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 285 31% 5%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 278 14% 93%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 20 100% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --nb-gray-dark: 270 4% 32%;
+    --nB-shadow: 270 4% 32%;
+    --nB-black: 285 31% 5%;
+    --nB-white: 60 15% 95%;
+    --nB-green: 148 86% 45%;
+    --nB-lime: 76 100% 52%;
+    --nB-purple: 250 69% 56%;
+    --nB-blue: 245 100% 64%;
+    --nB-blue-vista: 224 72% 75%;
+    --nB-orange: 27 98% 52%;
+    --nB-violet: 306 75% 70%;
+    --nB-pink: 324 100% 74%;
+    --nB-yellow: 47 100% 50%;
+    --nB-gray: 210 13% 27%;
+    --background: 285 31% 5%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 148 86% 45%;
+    --secondary-foreground: 285 31% 5%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 20 100% 52%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.kanit {
+  font-family: "Kanit", sans-serif;
+}
+/* scroll bar */
+/* width */
+
+.spin12s {
+  animation: spin 12s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit calc(var(--duration) * 1s) linear infinite;
+}
+@keyframes orbit {
+  0% {
+    transform: rotate(calc(var(--angle) * 1deg))
+      translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+  }
+  100% {
+    transform: rotate(calc(var(--angle) * 1deg + 360deg))
+      translateY(calc(var(--radius) * 1px))
+      rotate(calc((var(--angle) * -1deg) - 360deg));
+  }
+}
+
+.toon-shadow {
+  text-shadow: 0px -6px 0 #0f0911, 0px -6px 0 #0f0911, 0px 6px 0 #0f0911,
+    0px 6px 0 #0f0911, -6px 0px 0 #0f0911, 6px 0px 0 #0f0911, -6px 0px 0 #0f0911,
+    6px 0px 0 #0f0911, -6px -6px 0 #0f0911, 6px -6px 0 #0f0911,
+    -6px 6px 0 #0f0911, 6px 6px 0 #0f0911, -6px 18px 0 #0f0911,
+    0px 18px 0 #0f0911, 6px 18px 0 #0f0911, 0 19px 1px rgba(0, 0, 0, 0.1),
+    0 0 6px rgba(0, 0, 0, 0.1), 0 6px 3px rgba(0, 0, 0, 0.3),
+    0 12px 6px rgba(0, 0, 0, 0.2), 0 18px 18px rgba(0, 0, 0, 0.25),
+    0 24px 24px rgba(0, 0, 0, 0.2), 0 36px 36px rgba(0, 0, 0, 0.15);
+}

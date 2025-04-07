@@ -1,0 +1,13 @@
+{
+  "homePage": {
+    "heroSection": {
+      "title": "Front-end Developer",
+      "subtitle": "Creativity for the Web",
+      "cta": {
+        "label": "Learn more",
+        "href": "/#about-me"
+      },
+      "imageAlt": "Gerardo Alcantara also known as JaguarEk"
+    }
+  }
+}

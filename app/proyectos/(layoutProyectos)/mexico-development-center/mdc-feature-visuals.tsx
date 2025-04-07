@@ -13,7 +13,6 @@ import {
   slideXsfromRight,
 } from "@/lib/animations/variants"
 import IconDemoCourse from "@/components/icons/icon-demo-course"
-import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { buttonNBVariants } from "@/components/ui/buttonNB"
 import TabletImg from "@/public/assets/projects/mdc/tablet_card.png"

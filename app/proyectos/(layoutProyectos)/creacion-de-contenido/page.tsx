@@ -34,7 +34,6 @@ import PostImgIsometric from "@/public/assets/projects/design/a_isometric_3d.jpg
 import StackOrbitCreator from "./stack-orbit-creator"
 import MasonryGrid from "@/components/ui/masonry-grid"
 import GalleryImgs from "./gallery-imgs"
-import MiniCard from "@/components/ui/mini-card"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {

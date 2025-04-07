@@ -1,29 +1,29 @@
-"use client";
-import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
-import Image from "next/image";
-import { encode } from "qss";
-import React from "react";
+"use client"
+import * as HoverCardPrimitive from "@radix-ui/react-hover-card"
+import Image from "next/image"
+import { encode } from "qss"
+import React from "react"
 import {
   AnimatePresence,
   motion,
   useMotionValue,
   useSpring,
-} from "framer-motion";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
+} from "framer-motion"
+import Link from "next/link"
+import { cn } from "@/lib/utils"
 
 type LinkPreviewProps = {
-  children: React.ReactNode;
-  url: string;
-  className?: string;
-  width?: number;
-  height?: number;
-  quality?: number;
-  layout?: string;
+  children: React.ReactNode
+  url: string
+  className?: string
+  width?: number
+  height?: number
+  quality?: number
+  layout?: string
 } & (
   | { isStatic: true; imageSrc: string }
   | { isStatic?: false; imageSrc?: never }
-);
+)
 
 export const LinkPreview = ({
   children,
@@ -36,7 +36,7 @@ export const LinkPreview = ({
   isStatic = false,
   imageSrc = "",
 }: LinkPreviewProps) => {
-  let src;
+  let src
   if (!isStatic) {
     const params = encode({
       url,
@@ -48,31 +48,32 @@ export const LinkPreview = ({
       "viewport.deviceScaleFactor": 1,
       "viewport.width": width * 3,
       "viewport.height": height * 3,
-    });
-    src = `https://api.microlink.io/?${params}`;
+    })
+    src = `https://api.microlink.io/?${params}`
   } else {
-    src = imageSrc;
+    src = imageSrc
   }
 
-  const [isOpen, setOpen] = React.useState(false);
+  const [isOpen, setOpen] = React.useState(false)
 
-  const [isMounted, setIsMounted] = React.useState(false);
+  const [isMounted, setIsMounted] = React.useState(false)
 
   React.useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    setIsMounted(true)
+  }, [])
 
-  const springConfig = { stiffness: 100, damping: 15 };
-  const x = useMotionValue(0);
+  const springConfig = { stiffness: 100, damping: 15 }
+  const x = useMotionValue(0)
 
-  const translateX = useSpring(x, springConfig);
-
+  const translateX = useSpring(x, springConfig)
+  // eslint no explicit any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleMouseMove = (event: any) => {
-    const targetRect = event.target.getBoundingClientRect();
-    const eventOffsetX = event.clientX - targetRect.left;
-    const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2; // Reduce the effect to make it subtle
-    x.set(offsetFromCenter);
-  };
+    const targetRect = event.target.getBoundingClientRect()
+    const eventOffsetX = event.clientX - targetRect.left
+    const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2 // Reduce the effect to make it subtle
+    x.set(offsetFromCenter)
+  }
 
   return (
     <>
@@ -94,7 +95,7 @@ export const LinkPreview = ({
         openDelay={50}
         closeDelay={100}
         onOpenChange={(open) => {
-          setOpen(open);
+          setOpen(open)
         }}
       >
         <HoverCardPrimitive.Trigger
@@ -153,5 +154,5 @@ export const LinkPreview = ({
         </HoverCardPrimitive.Content>
       </HoverCardPrimitive.Root>
     </>
-  );
-};
+  )
+}

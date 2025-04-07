@@ -13,14 +13,6 @@ import {
   SectionTwoCols,
 } from "@/components/ui/section-two-col"
 
-const containerSucces: Variants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-}
 /* rotate clockwise, scale up from center */
 const laptopAnimation: Variants = {
   hidden: {

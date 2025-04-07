@@ -12,7 +12,6 @@ import {
   slideXsfromRight,
 } from "@/lib/animations/variants"
 import { Variants } from "motion/react"
-import CtaLink from "@/components/ui/ctaLink"
 
 const containerBannerSection: Variants = {
   hidden: {

@@ -1,10 +1,9 @@
 import * as motion from "motion/react-client"
 import { type Variants } from "motion/react"
-import IconWhatsapp from "@/components/icons/icon-whatsapp"
-import CTASvg from "@/components/ui/CTASvg"
+
 import { cn } from "@/lib/utils"
 import { fadeSlideUp, slideSmfromLeft } from "@/lib/animations/variants"
-import { contactInfo } from "@/content/data"
+
 import ContactCta from "./contact-cta"
 
 const containerHeaderAnimation: Variants = {

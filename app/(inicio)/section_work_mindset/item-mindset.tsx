@@ -1,6 +1,3 @@
-import { buttonNBVariants } from "@/components/ui/buttonNB"
-import { cn } from "@/lib/utils"
-import Link from "next/link"
 import { type JSX } from "react"
 import * as motion from "motion/react-client"
 import { type Variants } from "motion/react"
@@ -52,24 +49,10 @@ const textAnimation: Variants = {
     translateY: 0,
   },
 }
-const linkAnimation: Variants = {
-  hidden: {
-    opacity: 0,
-    translateX: -20,
-  },
-  show: {
-    opacity: 1,
-    translateX: 0,
-    transition: {
-      at: "<",
-    },
-  },
-}
 
 export default function ItemMindset({
   title,
   excerpt,
-  cta,
   icon: Icon,
 }: ItemMindsetProps) {
   return (

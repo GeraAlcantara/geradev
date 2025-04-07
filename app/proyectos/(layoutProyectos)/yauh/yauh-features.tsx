@@ -2,7 +2,6 @@ import * as motion from "motion/react-client"
 import {
   SectionCard,
   SectionCardContent,
-  SectionCardFooter,
   SectionColumn,
   SectionMotionCardTitle,
   SectionTwoCols,

@@ -70,6 +70,8 @@ export default function ContactForm({
   const formRef = useRef<HTMLFormElement>(null)
 
   // Use the useActionState hook to handle form submission with server action
+  /* diseable eslint */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [state, formAction] = useActionState(submitContactForm, initialState)
 
   const { setOpen } = useContactDialog()
@@ -96,7 +98,7 @@ export default function ContactForm({
 
       return () => clearTimeout(timer)
     }
-  }, [state.success])
+  }, [state.success, setOpen])
   return (
     <form ref={formRef} className={cn("grid items-start gap-4 ", className)}>
       {state.success && (

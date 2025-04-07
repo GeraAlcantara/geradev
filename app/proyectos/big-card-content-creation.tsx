@@ -1,7 +1,4 @@
 import Image from "next/image"
-
-import IMGYauhLogoLight from "@/public/assets/projects/yauh/logo_yauh_light.png"
-
 import IMGIACHARACTERS from "@/public/assets/bento/ai_generation_animation_style_characters.png"
 import Link from "next/link"
 import { cn } from "@/lib/utils"

@@ -1,6 +1,5 @@
 import { ButtonNB } from "@/components/ui/buttonNB"
 import CtaLink from "@/components/ui/ctaLink"
-import InputTest from "@/components/ui/input-test"
 
 export default function PageDesignSistem() {
   return (
@@ -8,9 +7,7 @@ export default function PageDesignSistem() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <section className="w-full mt-8 flex flex-col gap-y-8">
           {/* header */}
-          <div>
-            <InputTest />
-          </div>
+
           <div className="flex justify-center items-center w-full bg-nB-pink/80 pb-1">
             <div className="font-[family-name:var(--font-kanit)] text-[3.56rem] font-black uppercase flex flex-col leading-0">
               <span className="text-8xl leading-4">Buttons </span>

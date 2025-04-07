@@ -2,15 +2,13 @@
 
 import { useState } from "react"
 import { useMotionValueEvent, useScroll } from "motion/react"
-import Logo from "../logo"
 
 import NavLink from "./navLink"
 import ModeToggle from "../modeToggle"
 import { ButtonNB } from "../ui/buttonNB"
 import IconCross from "@/components/icons/icon-cross"
 import IconMenu from "@/components/icons/icon-menu"
-
-import HeaderContact from "./header-contact"
+import Logo from "@/components/logo"
 
 type NavLinks = {
   href: string

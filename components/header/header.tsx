@@ -8,7 +8,7 @@ import ModeToggle from "../modeToggle"
 import { ButtonNB } from "../ui/buttonNB"
 import IconCross from "@/components/icons/icon-cross"
 import IconMenu from "@/components/icons/icon-menu"
-import Logo from "@/components/logo"
+import LogoJaguar from "./logo-jaguar"
 
 type NavLinks = {
   href: string
@@ -44,7 +44,7 @@ export default function Header() {
       >
         <div className="px-4 lg:px-0 h-full flex items-center justify-between border-b border-gray-400/80 lg:border-0 ">
           {/* Logo */}
-          <Logo />
+          <LogoJaguar />
           <div className="flex items-center gap-8 relative">
             <div className="lg:hidden">
               <ModeToggle />
